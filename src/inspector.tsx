@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Dialog, DialogHeader } from './dialogs'
-import { Icon, MatrixArt } from './graphics'
+import { assetUrl, Icon, MatrixArt } from './graphics'
 import { attachmentsOf, kinds, longDate, safeUrl, type Attachment, type Clip, type Collection, type Passage } from './model'
 import { rasterType } from './content'
 import { relatedMemories } from './inference'
 import type { Hit } from './retrieval'
 import { download } from './store'
 import { TypeMark } from './views'
+import { showcasePreview } from './showcase'
 
 type Props = {
   clip: Clip; collections: Collection[]; siblings: Clip[]; busy?: string; canClassify: boolean
@@ -36,6 +37,7 @@ export function InspectDialog(props: Props) {
   const [related, setRelated] = useState<Hit[]>()
   const [relatedError, setRelatedError] = useState(false)
   const files = attachmentsOf(clip)
+  const preview = showcasePreview(clip)
   const url = clip.kind === 'link' ? safeUrl(clip.body) : undefined
 
   useEffect(() => {
@@ -74,6 +76,7 @@ export function InspectDialog(props: Props) {
       {url ? <a className="inspect-link" href={url.href} target="_blank" rel="noopener noreferrer"><Icon name="link" size={18}/><span>{url.href}</span><Icon name="external" size={16}/></a> : clip.body && <p className="inspect-body">{clip.body}</p>}
       {!!files.length && <div className="inspector-files">{files.map(file => <div key={file.id}>
         {rasterType.test(file.blob.type) && <AttachmentImage file={file}/>}
+        {file.blob.type === 'application/pdf' && preview && <img className="inspection-image pdf-preview" src={assetUrl(preview)} loading="lazy" decoding="async" alt={'Page 1 preview of ' + clip.title}/>}
         <button className="button outline download-button" onClick={() => download(file.blob, file.name)}><Icon name="download" size={17}/><span>{file.name}</span></button>
       </div>)}</div>}
       <dl className="inspection-meta">

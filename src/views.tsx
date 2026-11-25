@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Aperture, assetUrl, Icon, MatrixArt, Wordmark, type IconName } from './graphics'
 import { clockTime, describe, formatDay, kinds, visibleClips, type Clip, type Collection, type Kind, type Library, type Theme } from './model'
+import { hasShowcaseId, isShowcase, showcasePreview, showcaseSize } from './showcase'
 
 export type Page = string
 export type Filter = Kind | 'all'
@@ -20,7 +21,7 @@ const libraryNavigation: { id: Page; label: string; icon: IconName }[] = [
 export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, desktop }: {
   library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; desktop?: boolean
 }) {
-  const isDemo = library.clips.some(clip => clip.demo)
+  const isDemo = library.clips.some(clip => clip.demo && !clip.trashed)
   return <>
     {mobile && <button className="mobile-scrim" aria-label="Close menu" onClick={onClose}/>}
     <aside className={'sidebar' + (mobile ? ' is-open' : '')} aria-label="Workspace sidebar">
@@ -37,7 +38,7 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
         {libraryNavigation.map(item => <button key={item.id} className={'nav-item' + (page === item.id ? ' active' : '')} aria-current={page === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon name={item.icon} size={17}/><span>{item.label}</span></button>)}
         <div className="sidebar-divider"/>
         <div className="nav-label collection-label micro"><span>My collections</span><button className="icon-button small" aria-label="New collection" title="New collection" onClick={addCollection}><Icon name="plus" size={16}/></button></div>
-        {library.collections.map(collection => <button key={collection.id} className={'nav-item collection-nav' + (page === collection.id ? ' active' : '')} aria-current={page === collection.id ? 'page' : undefined} onClick={() => navigate(collection.id)}>
+        {library.collections.map(collection => <button key={collection.id} className={'nav-item collection-nav' + (page === collection.id ? ' active' : '')} aria-current={page === collection.id ? 'page' : undefined} title={collection.name} onClick={() => navigate(collection.id)}>
           <i className="collection-dot" style={{ background: collection.color }}/><span>{collection.name}</span>
         </button>)}
         {!library.collections.length && <button className="nav-item" onClick={addCollection}><Icon name="plus" size={17}/> Add a collection</button>}
@@ -66,17 +67,25 @@ export function Header({ title, scrolled, onMenu, onSearch, onCapture, menuOpen 
   </header>
 }
 
-export function Welcome({ onCapture, onTour, onCollapse }: { onCapture: () => void; onTour: () => void; onCollapse: () => void }) {
+export function Welcome({ onCapture, onTour, onCollapse, firstRun, demoLoading, onDemo, onEmpty }: {
+  onCapture: () => void; onTour: () => void; onCollapse: () => void
+  firstRun: boolean; demoLoading: boolean; onDemo: () => void; onEmpty: () => void
+}) {
   return <section className="hero" aria-labelledby="hero-title">
     <Aperture/>
-    <button className="icon-button collapse-hero" aria-label="Collapse introduction" title="Collapse introduction" onClick={onCollapse}><Icon name="close" size={18}/></button>
+    {!firstRun && <button className="icon-button collapse-hero" aria-label="Collapse introduction" title="Collapse introduction" onClick={onCollapse}><Icon name="close" size={18}/></button>}
     <div className="hero-copy">
       <div className="hero-kicker micro"><span className="signal"/><span>Your personal inbox</span></div>
       <h1 id="hero-title">Copy anything.<br/><span>Forget nothing.</span></h1>
-      <p>A place for the things you want to keep.</p>
+      <p>{firstRun ? 'Try search and Review with ' + showcaseSize + ' sample captures, or start a library of your own.' : 'A place for the things you want to keep.'}</p>
       <div className="hero-actions">
-        <button className="button accent" onClick={onCapture}><Icon name="plus" size={18}/> Capture something</button>
-        <button className="button tour-button" onClick={onTour}><Icon name="play" size={15}/> Quick tour</button>
+        {firstRun ? <>
+          <button className="button accent" onClick={onDemo} disabled={demoLoading}><Icon name="folder" size={17}/> {demoLoading ? 'Loading demo…' : 'Explore demo library'}</button>
+          <button className="button tour-button" onClick={onEmpty} disabled={demoLoading}>Start with an empty library</button>
+        </> : <>
+          <button className="button accent" onClick={onCapture}><Icon name="plus" size={18}/> Capture something</button>
+          <button className="button tour-button" onClick={onTour}><Icon name="play" size={15}/> Quick tour</button>
+        </>}
       </div>
     </div>
   </section>
@@ -93,9 +102,10 @@ export function TypeMark({ clip }: { clip: Clip }) {
 }
 
 function ClipCard({ clip, open }: { clip: Clip; open: () => void }) {
+  const preview = showcasePreview(clip)
   return <button className="clip-card" onClick={open}>
-    <div className={'card-art ' + (clip.artwork ?? 'basic-art')}>
-      {clip.artwork === 'dots' ? <MatrixArt/> : clip.artwork === 'quote' ?
+    <div className={'card-art ' + (preview ? 'showcase-art' + (clip.kind === 'file' ? ' document-preview' : '') : clip.artwork ?? 'basic-art')}>
+      {preview ? <img src={assetUrl(preview)} alt="" decoding="async"/> : clip.artwork === 'dots' ? <MatrixArt/> : clip.artwork === 'quote' ?
         <><span className="quote-mark" aria-hidden="true">“</span><span className="quote-text">{clip.body}</span></> :
         <><Icon name={clip.kind} size={33}/><span>{describe(clip)}</span></>}
       <span className="card-pin" aria-label="Pinned"><Icon name="pin" size={15}/></span>
@@ -114,7 +124,7 @@ export function PinnedCards({ clips, onOpen, onViewAll, compact }: { clips: Clip
 export function ClipRow({ clip, onOpen, search = false }: { clip: Clip; onOpen: () => void; search?: boolean }) {
   return <button className="clip-row" onClick={onOpen}>
     <TypeMark clip={clip}/>
-    <span className="row-description"><strong>{clip.title}</strong><small>{describe(clip)}</small></span>
+    <span className="row-description"><strong>{clip.title}</strong><small>{describe(clip)}{clip.demo && ' · Demo'}</small></span>
     {!search && <span className="row-time">{clockTime(clip.created)}</span>}
     <Icon name="chevron" size={16}/>
   </button>
@@ -184,10 +194,13 @@ const appearances: { id: Theme; icon: IconName; label: string }[] = [
   { id: 'light', icon: 'sun', label: 'Light' }, { id: 'dark', icon: 'moon', label: 'Dark' }, { id: 'system', icon: 'monitor', label: 'System' },
 ]
 
-export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo, onTour, desktop, children }: {
+export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo, onLoadDemo, demoLoading, onTour, desktop, children }: {
   library: Library; setTheme: (theme: Theme) => void; setReduced: (reduced: boolean) => void; onExport: () => void; onRemoveDemo: () => void; onTour: () => void
-  desktop?: boolean; children?: React.ReactNode
+  onLoadDemo: () => void; demoLoading: boolean; desktop?: boolean; children?: React.ReactNode
 }) {
+  const pack = library.clips.filter(isShowcase)
+  const hasExamples = library.clips.some(clip => clip.demo && !clip.trashed)
+  const mayLoad = library.showcaseChoice !== 'demo' || library.clips.filter(hasShowcaseId).length < showcaseSize || pack.some(clip => clip.trashed)
   return <>
     <PageTitle eyebrow="Your workspace" title="Settings" description="Make Catch feel at home on this device."/>
     <div className="settings-stack">
@@ -200,7 +213,12 @@ export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo
       <section className="settings-panel"><h2><Icon name="lock" size={18}/> Privacy and storage</h2>
         <div className="settings-row"><div><strong>{desktop ? 'Stored in this Windows profile' : 'Stored in this browser'}</strong><p>{desktop ? 'Windows storage stays separate from browser libraries. Use a backup to transfer captures.' : 'Captures and attachments stay in this browser profile. Clearing site data removes your library.'} Catch uses local storage without its own encryption layer.</p></div></div>
         <div className="settings-row"><div><strong>Export library</strong><p>Download your captures, collections, and attachments as JSON.</p></div><button className="button outline" onClick={onExport}><Icon name="download" size={16}/> Export</button></div>
-        {library.clips.some(clip => clip.demo) && <div className="settings-row"><div><strong>Demo content</strong><p>Remove the example captures when you’re ready.</p></div><button className="button outline" onClick={onRemoveDemo}>Remove examples</button></div>}
+        <div className="settings-row"><div><strong>Demo library</strong><p>Explore {showcaseSize} examples stored on this device. Keyword search works immediately. Semantic search, category suggestions and OCR use optional models.</p></div>
+          <div className="demo-controls">
+            {mayLoad && <button className="button outline" onClick={onLoadDemo} disabled={demoLoading}>{demoLoading ? 'Loading demo…' : library.showcaseChoice === 'demo' ? 'Restore demo library' : 'Explore demo library'}</button>}
+            {hasExamples && <button className="button outline" onClick={onRemoveDemo} disabled={demoLoading}>Remove examples</button>}
+          </div>
+        </div>
       </section>
       {children}
       <section className="settings-panel"><h2><Icon name="info" size={19}/> Using Catch</h2>

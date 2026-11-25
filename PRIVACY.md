@@ -7,6 +7,7 @@ Catch keeps originals, attachments, categories, decisions and search indexes in 
 - Windows text monitoring checks likely credentials, OTPs, recovery codes, private-key markers and card numbers. It keeps a short-lived fingerprint for permitted repeated clipboard content and only a reason when it skips a likely secret. Some secrets are missed and ordinary text can be flagged.
 - Background clipboard image capture starts off. Images may show information the text filter cannot inspect. Locally reading a stored image is a separate OCR setting.
 - Search history is optional and starts off. You can clear it in Settings. It is excluded from portable backups. Recently viewed information belongs to the local library.
+- Choosing **Explore demo library** downloads original sample files from Catch's web host and saves them in the active library. The demo pack contains fictional data and no excerpts of anyone's private library. Removing the examples moves them to local Trash.
 - Trash is recoverable until a user explicitly deletes an item. Optional retention only moves eligible unpinned inbox items into Trash when opening the library.
 
 Catch has no analytics, capture-upload endpoint or cloud database. Browsers initially load the web application from its host. An explicit model download contacts Hugging Face or GitHub Raw for fixed artifacts, with credentials omitted and no referrer. Hosts may receive ordinary network metadata such as an IP address. Following a saved link opens the destination selected by the user.

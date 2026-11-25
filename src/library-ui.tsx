@@ -33,7 +33,7 @@ export function ImportDialog({ onClose, onImport }: { onClose: () => void; onImp
       {fileName && <p className="backup-name">{fileName}</p>}
       {busy && <p role="status">Checking the backup…</p>}
       {issue && <p className="form-issue" role="alert">{issue}</p>}
-      {imported && <><p role="status">{imported.clips.length} captures · {imported.collections.length} collections</p><label className="check-label"><input type="checkbox" checked={preferences} onChange={event => setPreferences(event.target.checked)}/> Restore appearance and optional processing preferences</label></>}
+      {imported && <><p role="status">{imported.clips.length} {imported.clips.length === 1 ? 'capture' : 'captures'} · {imported.collections.length} {imported.collections.length === 1 ? 'collection' : 'collections'}</p><label className="check-label"><input type="checkbox" checked={preferences} onChange={event => setPreferences(event.target.checked)}/> Restore appearance and optional processing preferences</label></>}
       <div className="dialog-actions"><button className="button outline" onClick={onClose}>Cancel</button><button className="button accent" disabled={!imported || busy} onClick={async () => {
         if (!imported) return
         setBusy(true)

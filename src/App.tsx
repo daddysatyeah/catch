@@ -13,6 +13,7 @@ import { applyCaptureState, recordSearch } from './privacy'
 import { decide } from './review'
 import { SearchDialog } from './search'
 import { sensitiveReason } from './sensitive'
+import { isShowcase, mergeShowcase, missingShowcase } from './showcase'
 import { exportLibrary, useLibrary } from './store'
 import { useModels } from './use-models'
 import { Collections, CompactInbox, Empty, Header, PageTitle, PinnedCards, Settings, Sidebar, Timeline, Welcome, type BulkAction, type Page } from './views'
@@ -38,6 +39,7 @@ export function App() {
   const [scrolled, setScrolled] = useState(false)
   const [toast, setToast] = useState('')
   const [busy, setBusy] = useState<{ id: string; label: string }>()
+  const [demoLoading, setDemoLoading] = useState(false)
   const [desktopStatus, setDesktopStatus] = useState<DesktopStatus>()
   const toastTimer = useRef<number>(0)
   const toastRegion = useRef<HTMLDivElement>(null)
@@ -46,6 +48,7 @@ export function App() {
   const overlayReturn = useRef<HTMLElement | null>(null)
   const job = useRef<AbortController | undefined>(undefined)
   const attempted = useRef(new Set<string>())
+  const importingDemo = useRef(false)
   const activeCollection = library?.collections.find(value => value.id === requestedPage)
   const page = Object.hasOwn(pages, requestedPage) || activeCollection ? requestedPage : 'inbox'
   const title = activeCollection?.name ?? pages[page] ?? 'Inbox'
@@ -187,10 +190,12 @@ export function App() {
   }, [update])
   useEffect(() => {
     if (!library || busy || job.current) return
-    const active = library.clips.filter(clip => !clip.demo && !clip.trashed)
+    const candidates = library.clips.filter(clip => !clip.trashed && (!clip.demo || isShowcase(clip)))
+    const active = [...candidates.filter(clip => !clip.demo), ...candidates.filter(isShowcase)]
     const pending = active.find(clip => !clip.processing && !attempted.current.has('read:' + clip.id + clip.modified) &&
       attachmentsOf(clip).some(file => /\.(pdf|docx|txt|md|markdown|csv|tsv)$/i.test(file.name) || (ocrEnabled && rasterType.test(file.blob.type))))
-    const modelJob = !pending && canClassify && library.preferences?.autoClassify ?
+    const interactive = overlay?.type === 'search' || overlay?.type === 'inspect'
+    const modelJob = !pending && !interactive && canClassify && library.preferences?.autoClassify ?
       active.find(clip => !clip.prediction && !attempted.current.has('classify:' + clip.id + clip.modified)) : undefined
     const candidate = pending ?? modelJob
     if (!candidate) return
@@ -201,13 +206,32 @@ export function App() {
       void runJob(candidate, mode, true)
     }, 360)
     return () => clearTimeout(timer)
-  }, [library, busy, canClassify, ocrEnabled])
+  }, [library, busy, canClassify, ocrEnabled, overlay?.type])
 
   if (!library) return <div className="loading"><img src={assetUrl('catch.svg')} width="48" height="48" alt="Catch"/>{error ? <><p>Catch couldn’t open your library. Close other Catch tabs and try again.</p><button className="button outline" onClick={load}>Try again</button></> : <p>Opening your inbox…</p>}</div>
 
   const inbox = visibleClips(library.clips)
   const pinned = inbox.filter(clip => clip.pinned).sort((a, b) => b.created - a.created)
   const compact = library.welcomeCollapsed ?? library.tourDone
+  const firstRun = !library.showcaseChoice && !library.clips.length
+
+  async function loadDemo() {
+    if (!library || importingDemo.current) return
+    importingDemo.current = true
+    setDemoLoading(true)
+    try {
+      const prepared = await missingShowcase(library, assetUrl)
+      if (await commit(state => mergeShowcase(state, prepared), 'Demo library ready')) {
+        navigate('inbox')
+        requestAnimationFrame(() => main.current?.focus({ preventScroll: true }))
+      }
+    } catch {
+      notify('Couldn’t load the demo files. Check your connection and try again.')
+    } finally {
+      importingDemo.current = false
+      setDemoLoading(false)
+    }
+  }
 
   async function writeCapture(draft: Clip, keepDuplicate: boolean, unattended = false): Promise<SaveResult> {
     try {
@@ -359,9 +383,12 @@ export function App() {
       <main id="main-content" className="main-content" ref={main} tabIndex={-1}>
         {page === 'inbox' && <>
           {compact ? <CompactInbox onWelcome={() => commit(state => ({ ...state, welcomeCollapsed: false }))} onReview={() => navigate('review')}/> :
-            <Welcome onCapture={openCapture} onTour={openTour} onCollapse={() => commit(state => ({ ...state, welcomeCollapsed: true }))}/>}
+            <Welcome onCapture={openCapture} onTour={openTour} onCollapse={() => commit(state => ({ ...state, welcomeCollapsed: true }))}
+              firstRun={firstRun} demoLoading={demoLoading} onDemo={loadDemo} onEmpty={async () => {
+                if (await commit(state => ({ ...state, welcomeCollapsed: true, showcaseChoice: 'empty' }))) main.current?.focus({ preventScroll: true })
+              }}/>}
           {!!pinned.length && <PinnedCards clips={pinned.slice(0, 2)} onOpen={openClip} onViewAll={() => navigate('pinned')} compact={compact}/>}
-          <Timeline key={page} clips={inbox} onOpen={openClip} onCapture={openCapture} onBulk={bulk}/>
+          {(!firstRun || compact) && <Timeline key={page} clips={inbox} onOpen={openClip} onCapture={openCapture} onBulk={bulk}/>}
         </>}
         {page === 'pinned' && <><PageTitle eyebrow="Your library" title="Pinned" description="Keep the important things close at hand."/>
           {pinned.length ? <PinnedCards clips={pinned} onOpen={openClip}/> : <Empty icon="pin" title="Nothing pinned yet" text="Open any capture and choose Pin to keep it here." action="Go to inbox" onAction={() => navigate('inbox')}/>}</>}
@@ -380,7 +407,7 @@ export function App() {
           onComplete={(id, task, complete) => void changeClip(id, clip => ({ ...clip, tasks: clip.tasks?.map(value => value.id === task ? { ...value, complete } : value) }), complete ? 'Task completed' : 'Task reopened')}/>}
         {page === 'settings' && <Settings library={library} desktop={!!desktop} setTheme={theme => commit(state => ({ ...state, theme }))} setReduced={reduced => commit(state => ({ ...state, reduced }))}
           onExport={async () => { try { await exportLibrary(library); notify('Library exported') } catch (error) { notify(error instanceof Error ? error.message : 'Couldn’t export the library.') } }}
-          onRemoveDemo={() => show({ type: 'remove-demo' })} onTour={openTour}>
+          onRemoveDemo={() => show({ type: 'remove-demo' })} onLoadDemo={loadDemo} demoLoading={demoLoading} onTour={openTour}>
           <DataSettings library={library} desktop={!!desktop} setPreferences={setPreferences} onImport={() => show({ type: 'import' })} onClear={() => show({ type: 'clear' })}/>
           <ModelSettings models={models} enabled={ocrEnabled} setOcr={ocr => void setPreferences({ ocr })}
             semantic={canClassify} setSemantic={enabled => void setPreferences({ semanticDisabled: !enabled })}

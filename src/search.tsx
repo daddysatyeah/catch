@@ -5,6 +5,7 @@ import { embed, indexClips } from './inference'
 import { kinds, type Library } from './model'
 import { defaultHybridRanking, eligible, keywordRanking, semanticRanking, type FilterSet, type Hit, type SearchMode } from './retrieval'
 import { TypeMark } from './views'
+import { exampleQueries, isShowcase } from './showcase'
 
 const modeLabels = { keyword: 'Keyword', semantic: 'Semantic', hybrid: 'Hybrid' }
 
@@ -86,6 +87,9 @@ export function SearchDialog({ library, available, onClose, onOpen }: { library:
       <label className="check-label"><input type="checkbox" checked={!!filters.includeArchived} onChange={event => updateFilter('includeArchived', event.target.checked)}/> Include archive</label>
     </div>}
     {!query && !!library.preferences?.recentSearches?.length && <div className="search-history"><span className="micro">Recent searches</span>{library.preferences.recentSearches.slice(0, 4).map(item => <button className="button outline" key={item} onClick={() => changeQuery(item)}>{item}</button>)}</div>}
+    {!query && library.clips.some(clip => isShowcase(clip) && !clip.trashed && !clip.archived) && <div className="search-history demo-queries">
+      <span className="micro">Try a demo search</span>{exampleQueries.map(example => <button className="button outline" key={example} onClick={() => changeQuery(example)}>{example}</button>)}
+    </div>}
     <div className="search-content" ref={storage}>
       <div className="micro search-label" aria-live="polite">{status || (query.trim() ? (results.length ? (activeMode !== 'keyword' && !semantic ? 'Keyword matches while local search prepares' : results.length + ' matches') : 'No matches') : 'Recent captures')}</div>
       <span className="visually-hidden" aria-live="polite">{results[selected]?.clip.title}</span>

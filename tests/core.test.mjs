@@ -9,11 +9,31 @@ import { cosine, defaultHybridRanking, hybridRanking, keywordRanking, semanticRa
 import { categories, decideCategory, linearCategoryScores } from '../src/classification.ts'
 import { decide, suggestionsFor } from '../src/review.ts'
 import { sensitiveReason, validCard } from '../src/sensitive.ts'
+import { mergeShowcase } from '../src/showcase.ts'
 import boundary from '../desktop/boundaries.cjs'
 import path from 'node:path'
 
 const make = (id, body, fields = {}) => ({ id, title: id, body, kind: 'text', created: 123, ...fields })
 const library = (...clips) => ({ ...starterLibrary(), collections: [], clips })
+
+test('showcase loading preserves personal records and legacy edits across retries', () => {
+  const oldExample = make('d1', 'Old sample', { demo: true })
+  const editedLegacy = make('d2', 'A personal edit to an old sample')
+  const editedShowcase = make('showcase-v1-note-attention', 'I annotated this')
+  const original = make('showcase-v1-doc-ocr', 'Original example', { demo: true, collection: 'showcase-v1-ai' })
+  const collection = { id: 'mine', name: 'AI & Machine Learning', color: '#333333' }
+  const current = { ...library(oldExample, editedLegacy, editedShowcase), collections: [collection] }
+  const seeded = mergeShowcase(current, [original, { ...editedShowcase, body: 'Vendor original', demo: true }], 500)
+  assert.equal(seeded.clips.find(clip => clip.id === 'd1').trashed, 500)
+  assert.equal(seeded.clips.find(clip => clip.id === 'd2'), editedLegacy)
+  assert.equal(seeded.clips.find(clip => clip.id === editedShowcase.id), editedShowcase)
+  assert.equal(seeded.clips.find(clip => clip.id === original.id).collection, 'mine')
+  assert.equal(seeded.collections.find(item => item.id === 'mine'), collection)
+  assert.equal(mergeShowcase(seeded, [original]).clips.length, 4)
+  assert.equal(mergeLibrary(seeded, library({ ...original, modified: 800 })).clips.length, 4)
+  const trashed = { ...seeded, clips: seeded.clips.map(clip => clip.id === original.id ? { ...clip, trashed: 600 } : clip) }
+  assert.equal(mergeShowcase(trashed, []).clips.find(clip => clip.id === original.id).trashed, undefined)
+})
 
 test('normalization preserves original text while hashing equivalent captures', async () => {
   assert.equal(normalizeText('  e\u0301   archive\r\n note '), 'é archive note')

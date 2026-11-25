@@ -2,9 +2,22 @@
 
 **Copy anything. Forget nothing.**
 
-Catch 0.2.1 keeps copied notes, screenshots, links and documents in a local library. It preserves original files and lets you search their words, concepts and supporting passages. Browser capture is manual. The Windows edition adds an opt-in clipboard monitor and a tray.
+Catch keeps copied notes, screenshots, links and documents in a local library. It preserves original files and lets you search their words, concepts and supporting passages. The live browser edition is **0.2.2**. The published Windows portable build remains **0.2.1**, with opt-in clipboard monitoring and a tray.
 
-![Catch compact inbox](docs/screenshots/inbox-light.png)
+[Open Catch](https://daddysatyeah.github.io/catch/) · [Windows 0.2.1 release](https://github.com/daddysatyeah/catch/releases/tag/v0.2.1)
+
+![Catch inbox with the professional showcase library](docs/showcase/showcase-inbox.png)
+
+## Explore the showcase
+
+Choose **Explore demo library** for 45 captures or **Start with an empty library** to add your own. The demo has readable PDFs, fictional receipts and travel records, original sample screenshots, work notes and links to their publishers.
+
+- Search **NBS-4821** to retrieve the studio receipt or **graded rubric** to find the retrieval guide's second page.
+- Install the optional MiniLM model in Settings to try **how can I make a model smaller?** in Semantic mode, see related captures, or suggest categories.
+- Install English OCR and enable **Read image attachments** to read a sample screenshot. Open **Review** to see extracted amounts, dates, tasks and the near-duplicate meeting draft. Text PDFs are read locally without a model download.
+- Manage the examples under **Settings → Demo library**. Removal sends examples to Trash. Restoration uses the same capture IDs. Notes you edit become personal captures and stay in place.
+
+[Full demo inventory and provenance](SHOWCASE.md)
 
 ## Run locally
 
@@ -35,7 +48,7 @@ npm run desktop
 npm run package:windows
 ~~~
 
-The packaging command writes the Windows x64 folder, a ZIP and SHA-256 checksums under `release/0.2.1`. The application is unsigned, and Windows may display a SmartScreen warning. Exit Catch from the tray when done. Deleting the extracted portable folder removes the program. The local Electron library remains in the Windows user profile until separately removed.
+The packaging command writes the Windows x64 folder, a ZIP and SHA-256 checksums under a versioned `release` directory. The published 0.2.1 executable is unsigned and Windows may display a SmartScreen warning. Exit Catch from the tray when done. Deleting the extracted portable folder removes the program. The local Electron library remains in the Windows user profile until separately removed.
 
 ## Capture and retrieve
 

@@ -31,10 +31,8 @@ function open() {
         const { clips: originals, ...settings } = value
         metadata.put(settings, 'current')
         const now = Date.now()
-        const samples = originals.some(clip => clip.demo && clip.created > now) ? starterLibrary().clips : []
         for (const clip of originals) {
-          const date = samples.find(sample => sample.id === clip.id)?.created ?? now - 1
-          clips.put(migrateClip(clip.demo && clip.created > now ? { ...clip, created: date } : clip))
+          clips.put(migrateClip(clip.demo && clip.created > now ? { ...clip, created: now - 1 } : clip))
         }
       }
       if (db.objectStoreNames.contains('library')) {

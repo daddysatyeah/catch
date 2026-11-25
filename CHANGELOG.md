@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.2
+
+- Added an optional 45-capture showcase with original PDFs, labeled fictional records, readable screenshots, notes and publisher links.
+- Added first-visit choices to explore the demo or start empty, plus demo search examples and Settings controls for removal and restoration.
+- Connected demo files to existing local PDF extraction, optional OCR and classification, semantic and hybrid search, and evidence-linked review.
+- Published the browser update under /catch/. The existing Windows 0.2.1 portable build remains the current desktop download.
+
 ## 0.2.1
 
 - Improved local classification with a compact supervised head and fresh held-out validation.

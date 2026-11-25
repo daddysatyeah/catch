@@ -40,6 +40,7 @@ export type Library = {
   reduced: boolean
   tourDone: boolean
   welcomeCollapsed?: boolean
+  showcaseChoice?: 'demo' | 'empty'
   preferences?: {
     recentSearches?: string[]
     rememberSearches?: boolean
@@ -54,31 +55,8 @@ export type Library = {
 export const kinds: Record<Kind, string> = { text: 'Text', link: 'Link', image: 'Image', file: 'File' }
 export const collectionColors = ['#ee552e', '#838570', '#a27953', '#737989', '#ad6f73']
 
-function demoDate(day: number, hour: number, minute: number) {
-  const date = new Date()
-  date.setDate(date.getDate() - day)
-  return date.setHours(hour, minute, 0, 0)
-}
-
 export function starterLibrary(): Library {
-  const now = Date.now()
-  return {
-    theme: 'light', reduced: false, tourDone: false,
-    collections: [
-      { id: 'design', name: 'Design references', color: collectionColors[0], demo: true },
-      { id: 'reading', name: 'Reading list', color: collectionColors[1], demo: true },
-      { id: 'personal', name: 'Personal', color: collectionColors[2], demo: true },
-    ],
-    clips: [
-      { id: 'd1', title: 'A field guide to dot matrices', body: 'A reference for making icons from a regular grid. Start with the silhouette, leave room for negative space, and test it at the smallest size first.', kind: 'image', artwork: 'dots', created: demoDate(1, 15, 20), collection: 'design', pinned: true, demo: true },
-      { id: 'd2', title: 'A note on paying attention', body: 'The things we notice are the things we get to keep.', kind: 'text', artwork: 'quote', created: demoDate(1, 11, 40), collection: 'personal', pinned: true, demo: true },
-      { id: 'd3', title: 'The shape of a useful note', body: 'A good note is a small container for a good thought. Keep the source, write down what made it interesting, and give it a title you can find later.', kind: 'text', created: now - 12 * 60_000, collection: 'personal', demo: true },
-      { id: 'd4', title: 'Materials — Apple Human Interface Guidelines', body: 'https://developer.apple.com/design/human-interface-guidelines/materials', kind: 'link', created: now - 56 * 60_000, collection: 'design', demo: true },
-      { id: 'd5', title: 'Studio receipt', body: 'Demo receipt\nFieldwork Studio\n1 × Archival print\nTotal: $24.00', kind: 'file', filename: 'studio-receipt.txt', attachment: new Blob(['Demo receipt\nFieldwork Studio\n1 × Archival print\nTotal: $24.00'], { type: 'text/plain' }), created: now - 112 * 60_000, demo: true },
-      { id: 'd6', title: 'A reconsideration of the everyday', body: 'https://www.designmuseum.org/', kind: 'link', created: demoDate(1, 13, 4), collection: 'reading', demo: true },
-      { id: 'd7', title: 'Weekend list', body: 'Return the library books\nPick up a new sketchbook\nTake the long way home', kind: 'text', created: demoDate(2, 16, 14), collection: 'personal', demo: true },
-    ],
-  }
+  return { theme: 'light', reduced: false, tourDone: false, collections: [], clips: [] }
 }
 
 export function safeUrl(value: string) {

@@ -1,5 +1,6 @@
 import { maxAttachmentBytes, normalizeText, sha256 } from './content.ts'
 import { attachmentsOf, type Attachment, type Clip, type Collection, type Library, type Passage, type ReviewState } from './model.ts'
+import { isShowcase } from './showcase.ts'
 
 const maxBackupBytes = 150 * 1024 ** 2
 const maxBinaryBytes = 100 * 1024 ** 2
@@ -189,6 +190,7 @@ export function mergeLibrary(current: Library, imported: Library, includePrefere
   const byId = new Map(clips.map(clip => [clip.id, clip]))
   for (const clip of imported.clips) {
     const existing = byId.get(clip.id)
+    if (existing && isShowcase(clip)) continue
     const sameContent = existing && (existing.hash ? existing.hash === clip.hash : !attachmentsOf(existing).length && !attachmentsOf(clip).length && existing.body === clip.body)
     if (sameContent && existing.title === clip.title && (existing.modified ?? existing.created) === clip.modified) continue
     const copy = { ...clip, id: existing ? crypto.randomUUID() : clip.id, collection: clip.collection ? collectionMap.get(clip.collection) : undefined }

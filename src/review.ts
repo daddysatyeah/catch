@@ -12,7 +12,7 @@ export function suggestionsFor(clip: Clip, clips: Clip[]): Suggestion[] {
   if (prediction?.category) suggestions.unshift({
     id: 'category:' + prediction.category + ':' + prediction.version, clip, type: 'category', value: prediction.category,
     evidence: (clip.body.trim() || clip.processing?.passages[0]?.text || clip.title).slice(0, 205),
-    method: 'Local ML · cosine ' + prediction.similarity?.toFixed(2),
+    method: 'Local ML',
   })
   if (prediction?.category) suggestions.push({
     id: 'tag:' + prediction.category, clip, type: 'tag', value: prediction.category.toLowerCase(),

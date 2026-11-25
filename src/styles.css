@@ -206,6 +206,7 @@
   .search-filters .check-label { flex-direction: row; grid-column: 1 / -1; align-items: center; }
   .search-history { padding: 8px 13px; display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
   .search-history .button { min-height: 28px; max-width: 100%; overflow-wrap: anywhere; white-space: normal; }
+  .demo-queries .button { text-align: left; }
   .search-result mark { background: var(--accent-wash); color: var(--accent-ink); border-radius: 3px; font-weight: 650; }
   .intelligent-search .search-content { max-height: min(48dvh, 460px); }
   .search-footer > span:first-child { min-width: 0; }
@@ -261,7 +262,8 @@
   .hero h1 { margin: 13px 0 10px; font-size: clamp(41px, 4.65vw, 69px); line-height: .99; font-weight: 680; letter-spacing: -.075em; }
   .hero h1 span { color: var(--hero-ink); }
   .hero p { color: var(--hero-muted); font-size: 15px; letter-spacing: -.012em; }
-  .hero-actions { display: flex; align-items: center; gap: 9px; margin-top: 23px; }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 23px; }
+  .hero-copy p { max-width: 38ch; }
   .tour-button { color: var(--hero-ink); background: color-mix(in srgb, var(--surface), transparent 39%); border-color: color-mix(in srgb, var(--line-strong), transparent 10%); box-shadow: inset 0 1px 0 #ffffff45; }
   .tour-button:hover { background: var(--surface); }
   .aperture { position: absolute; inset: 0 0 0 47%; overflow: hidden; pointer-events: none; }
@@ -286,6 +288,10 @@
   .clip-card:active { transform: translateY(0) scale(.992); }
   .card-art { height: clamp(104px, 11vw, 151px); position: relative; overflow: hidden; }
   .card-art.dots { background: #20201f; }
+  .card-art.showcase-art { background: #e6e9e2; }
+  .showcase-art > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 16%; }
+  .showcase-art.document-preview > img { object-position: center 8%; }
+  .compact-pins .showcase-art { height: clamp(92px, 12vw, 142px); }
   .matrix-art { width: 100%; height: 100%; }
   .card-art.quote { display: flex; align-items: center; gap: 14px; padding: 13px 48px 16px 28px; background: #eee9df; color: #29251d; }
   .card-art.quote::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, #5147340b 0 1px, transparent 1px 6px); mask-image: linear-gradient(90deg, transparent 40%, #000); pointer-events: none; }
@@ -432,6 +438,8 @@
   .inspect-body { white-space: pre-wrap; display: block; line-height: 1.55; }
   .inspection-art { height: 134px; margin-bottom: 11px; overflow: hidden; border-radius: 8px; }
   .inspection-image { max-width: 100%; max-height: 50dvh; object-fit: contain; border-radius: 8px; margin: 0 auto 10px; }
+  .inspection-image.pdf-preview { display: block; border: 1px solid var(--line); background: var(--surface); }
+  .demo-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
   .download-button { margin-top: 9px; max-width: 100%; }
   .download-button span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
   .inspection-meta { margin: 20px 0 14px; }
@@ -518,6 +526,7 @@
     .hero p { margin-top: 9px; }
     .hero-actions { margin-top: 14px; gap: 6px; }
     .hero-actions .button { min-height: 37px; padding-inline: 8px; font-size: 13px; }
+  .hero-copy { padding-right: 16px; }
     .hero .aperture { inset: 58% 0 0 0; overflow: visible; }
     .hero .aperture img { left: 59%; top: 54%; width: min(61%, 201px); transform: translate(-50%, -51%) rotate(4deg); }
     .hero .aperture::before { mask-image: linear-gradient(180deg, transparent, #000 35%); }
