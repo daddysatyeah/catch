@@ -1,0 +1,585 @@
+{
+  "ocr": {
+    "count": 19,
+    "cer": 0.06147489284416109,
+    "wer": 0.09673864147548358,
+    "rows": [
+      {
+        "id": "scanned-invoice",
+        "kind": "scanned PDF",
+        "expected": "TIDELINE SERVICES Invoice: TD-6512 Payment due 21/11/2026 Total INR 1,23,456.00",
+        "observed": "TIDELINE SERVICES Invoice: TD-6512 Payment due 21/11/2026 Total INR 1,23,456.00",
+        "ms": 793.3924000000006,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "corner-market",
+        "kind": "receipt",
+        "expected": "CORNER MARKET Order: LT-7340 Rice 435.00 Tea 166.50 Total INR 601.50",
+        "observed": "CORNER MARKET Order: LT-7340 Rice 435.00 Tea 166.50 Total INR 601.50",
+        "ms": 374.7523000000001,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "station-kiosk",
+        "kind": "receipt",
+        "expected": "STATION KIOSK Filter coffee 90.00 Snack box 125.00 Paid Rs. 215.00",
+        "observed": "STATION KIOSK Filter coffee 90.00 Snack box 125.00 Paid Rs. 215.00",
+        "ms": 373.3761000000004,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "furniture-deposit",
+        "kind": "receipt",
+        "expected": "MAKER COLLECTIVE Payment received Deposit ₹ 1,25,750.00 Reference: MC-8263",
+        "observed": "MAKER COLLECTIVE Payment received Deposit % 1,25,750.00 Reference: MC-8263",
+        "ms": 360.33870000000024,
+        "cer": 0.013513513513513514,
+        "wer": 0.1111111111111111
+      },
+      {
+        "id": "warehouse-slip",
+        "kind": "receipt",
+        "expected": "WAREHOUSE 04 Invoice: WX-3378 Net amount INR 2,314.91 Balance due 17/12/2026",
+        "observed": "WAREHOUSE 04 Invoice: WX-3378 Net amount INR 2,314.91 Balance due 17/12/2026",
+        "ms": 236.05429999999978,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "light-thermal",
+        "kind": "receipt",
+        "expected": "RIVERSIDE BOOKSHOP One handmade notebook Rs 385.00 Reference: RS-5541",
+        "observed": "RIVERSIDE BOOKSHOP One handmade notebook Rs 385.00 Reference: RS-5541",
+        "ms": 140.7386000000006,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "library-chat",
+        "kind": "screenshot",
+        "expected": "Library desk The requested atlas is ready. Collect before 18:45. library@example.test",
+        "observed": "Library desk The requested atlas is ready. Collect before 18:45. library@example.test",
+        "ms": 462.6088,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "weather-banner",
+        "kind": "screenshot",
+        "expected": "Weather alert A strong crosswind may delay ferries. Check again after 7:25 am.",
+        "observed": "Weather alert A strong crosswind may delay ferries. Check again after 7:25 am.",
+        "ms": 306.3567000000003,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "repair-window",
+        "kind": "screenshot",
+        "expected": "Repair appointment Technician expected 05/06/2027. Reference: JOB-1072",
+        "observed": "Repair appointment Technician expected 05/06/2027. Reference: JOB-1072",
+        "ms": 259.16259999999966,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "small-calendar",
+        "kind": "screenshot",
+        "expected": "SERVICE CALENDAR Check-in 14:55 Registration closes 30/11/2026",
+        "observed": "SERVICE CALENDAR Check-in 14:55 Registration closes 30/11/2026",
+        "ms": 187.92129999999997,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "device-notice",
+        "kind": "screenshot",
+        "expected": "UPDATE COMPLETE Build 9.14.2 Restart now to apply security changes.",
+        "observed": "UPDATE COMPLETE Build 9.14.2 Restart now to apply security changes.",
+        "ms": 420.0483000000004,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "permit-letter",
+        "kind": "print",
+        "expected": "COMMUNITY HALL PERMIT Return the signed form by 22 November 2026. Booking: PK-2077",
+        "observed": "COMMUNITY HALL PERMIT Return the signed form by 22 November 2026. Booking: PK-2077",
+        "ms": 320.4323000000004,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "assessment",
+        "kind": "print",
+        "expected": "EVENING ASSESSMENT Bring a ruler and HB pencil. Room H4 opens at 17:20.",
+        "observed": "EVENING ASSESSMENT Bring a ruler and HB pencil. Room H4 opens at Lpe20.",
+        "ms": 208.9277000000002,
+        "cer": 0.04225352112676056,
+        "wer": 0.07692307692307693
+      },
+      {
+        "id": "supply-form",
+        "kind": "print",
+        "expected": "SUPPLY REQUEST Submit by 03/04/2027. Budget limit INR 14,000.00 Send to stores@example.test",
+        "observed": "SUPPLY REQUEST Submit by 03/04/2027. Budget limit INR 14,000.00 Send to stores@example.test",
+        "ms": 269.8711999999996,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "courier-label",
+        "kind": "print",
+        "expected": "RETURN LABEL Item 50-8801 / Batch XX-F9 Scan the code at the drop point.",
+        "observed": "RETURN LABEL Item 50-8801 / Batch XX-F9 Scan the code at the drop point.",
+        "ms": 165.35879999999997,
+        "cer": 0,
+        "wer": 0
+      },
+      {
+        "id": "public-meeting",
+        "kind": "print",
+        "expected": "PUBLIC MEETING Wednesday 11 August 2027 Doors open 19:00 Main gallery foyer",
+        "observed": "PUBLIC MEETING Wednesday 1] August 2027 Doors pen 19:09 Main gallery foyer",
+        "ms": 343.273799999999,
+        "cer": 0.04,
+        "wer": 0.25
+      },
+      {
+        "id": "dotted-till",
+        "kind": "receipt",
+        "expected": "MARKET TILL 02 Invoice: TL-4453 Total Rs 1,884.30",
+        "observed": "uae THU Ignis TAS ‘Total Be 5.5428",
+        "ms": 203.5077000000001,
+        "cer": 0.6938775510204082,
+        "wer": 1
+      },
+      {
+        "id": "columns-statement",
+        "kind": "print",
+        "expected": "COOPERATIVE SUMMARY Savings INR 5,000.00 Shares INR 12,100.25 July balance confirmed. Contact desk for queries.",
+        "observed": "COOPERATIVE SUMMARY Savings INR 5,000.00 July balance confirmed. Shares INR 12,100.25 Contact desk for queries.",
+        "ms": 353.3739999999998,
+        "cer": 0.3783783783783784,
+        "wer": 0.4
+      },
+      {
+        "id": "subway-notice",
+        "kind": "screenshot",
+        "expected": "SOUTHBOUND PLATFORM The next train runs from track four. Last service 23:55.",
+        "observed": "SOUTHBOUND PLATFORM The next train runs from track four. Last service 23:55.",
+        "ms": 204.40060000000085,
+        "cer": 0,
+        "wer": 0
+      }
+    ]
+  },
+  "extraction": {
+    "count": 30,
+    "tp": 47,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1,
+    "f1": 1,
+    "byType": {
+      "amount": {
+        "tp": 14,
+        "fp": 0,
+        "fn": 0
+      },
+      "reference": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0
+      },
+      "deadline": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0
+      },
+      "date": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0
+      },
+      "time": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0
+      },
+      "email": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "url": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0
+      },
+      "action": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "rows": [
+      {
+        "text": "Total ₹ 1,25,750.00. Reference: MC-8263.",
+        "expected": [
+          "amount:INR 125750.00",
+          "reference:MC-8263"
+        ],
+        "observed": [
+          "amount:INR 125750.00",
+          "reference:MC-8263"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Paid Rs. 215.00. Tip INR 50.",
+        "expected": [
+          "amount:INR 215.00",
+          "amount:INR 50"
+        ],
+        "observed": [
+          "amount:INR 215.00",
+          "amount:INR 50"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Total INR 1,23,45,678.50. Balance $ 30.00.",
+        "expected": [
+          "amount:INR 12345678.50",
+          "amount:$ 30.00"
+        ],
+        "observed": [
+          "amount:INR 12345678.50",
+          "amount:$ 30.00"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Subtotal INR 14,9.00 and incorrect ₹ 45.999.",
+        "expected": [],
+        "observed": [],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Money symbols in test string: XINR 18.00, INR 1,,250, and INR 2,500.",
+        "expected": [
+          "amount:INR 2500"
+        ],
+        "observed": [
+          "amount:INR 2500"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Refund: -₹ 1,200.00. Replacement quoted at Rs 2,400.50.",
+        "expected": [
+          "amount:INR -1200.00",
+          "amount:INR 2400.50"
+        ],
+        "observed": [
+          "amount:INR -1200.00",
+          "amount:INR 2400.50"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Amounts: EUR 315.30, £8.50 and US$18.",
+        "expected": [
+          "amount:EUR 315.30",
+          "amount:GBP 8.50",
+          "amount:USD 18"
+        ],
+        "observed": [
+          "amount:EUR 315.30",
+          "amount:GBP 8.50",
+          "amount:USD 18"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "USD 1 234.50 is printed with a space grouping.",
+        "expected": [
+          "amount:USD 1234.50"
+        ],
+        "observed": [
+          "amount:USD 1234.50"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Return the signed form by 22 November 2026.",
+        "expected": [
+          "deadline:2026-11-22"
+        ],
+        "observed": [
+          "deadline:2026-11-22"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Submit by 03/04/2027.",
+        "expected": [
+          "deadline:03/04/2027"
+        ],
+        "observed": [
+          "deadline:03/04/2027"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Appointment 05/06/2027 and 2027-06-05.",
+        "expected": [
+          "date:05/06/2027",
+          "date:2027-06-05"
+        ],
+        "observed": [
+          "date:05/06/2027",
+          "date:2027-06-05"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Avoid invalid dates 2027-02-29, 31/11/2027 and 00/07/2027.",
+        "expected": [],
+        "observed": [],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Leap date 29 February 2028, Feb 29, 2027 and 18.1.2027.",
+        "expected": [
+          "date:2028-02-29",
+          "date:2027-01-18"
+        ],
+        "observed": [
+          "date:2028-02-29",
+          "date:2027-01-18"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Deadline 15 June. Check possible alternate 07/07/27.",
+        "expected": [
+          "deadline:15 June",
+          "date:07/07/27"
+        ],
+        "observed": [
+          "deadline:15 June",
+          "date:07/07/27"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Meet next Friday after dinner or on the first Monday in June.",
+        "expected": [],
+        "observed": [],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Valid 23:59 and 7:25 am. Invalid 24:00 and 00:45 am.",
+        "expected": [
+          "time:23:59",
+          "time:7:25 am"
+        ],
+        "observed": [
+          "time:23:59",
+          "time:7:25 am"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Start 6:30 p.m. then call library@example.test.",
+        "expected": [
+          "time:6:30 p.m.",
+          "email:library@example.test"
+        ],
+        "observed": [
+          "time:6:30 p.m.",
+          "email:library@example.test"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Use https://example.test/lookup?quarter=3 and ex@example.test.",
+        "expected": [
+          "url:https://example.test/lookup?quarter=3",
+          "email:ex@example.test"
+        ],
+        "observed": [
+          "url:https://example.test/lookup?quarter=3",
+          "email:ex@example.test"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Archive link https://example.test/02/03/2027 and meeting 18:45.",
+        "expected": [
+          "url:https://example.test/02/03/2027",
+          "time:18:45"
+        ],
+        "observed": [
+          "time:18:45",
+          "url:https://example.test/02/03/2027"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Look up (https://example.test/wiki/Scale_(ratio)).",
+        "expected": [
+          "url:https://example.test/wiki/Scale_(ratio)"
+        ],
+        "observed": [
+          "url:https://example.test/wiki/Scale_(ratio)"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Broken addresses user@example..test and https://.",
+        "expected": [],
+        "observed": [],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Booking: PK-2077. Ref: 719034. Order #WU-0432.",
+        "expected": [
+          "reference:PK-2077",
+          "reference:719034",
+          "reference:WU-0432"
+        ],
+        "observed": [
+          "reference:PK-2077",
+          "reference:719034",
+          "reference:WU-0432"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Invoice number: A. Damaged reference: --- and ref: 21.",
+        "expected": [],
+        "observed": [],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "- [ ] call the caretaker\n[x] file the old note\nAction item: return the sample",
+        "expected": [
+          "action:call the caretaker",
+          "action:return the sample"
+        ],
+        "observed": [
+          "action:call the caretaker",
+          "action:return the sample"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "No structured action is expected for prose: I could call next week.",
+        "expected": [],
+        "observed": [],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Pay by 27.12.2026. Invoice: WX-3378. INR 2,314.91.",
+        "expected": [
+          "deadline:2026-12-27",
+          "reference:WX-3378",
+          "amount:INR 2314.91"
+        ],
+        "observed": [
+          "deadline:2026-12-27",
+          "amount:INR 2314.91",
+          "reference:WX-3378"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Ref: RS-5541. A stray 55:90 appears beside INR 3,10.",
+        "expected": [
+          "reference:RS-5541"
+        ],
+        "observed": [
+          "reference:RS-5541"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Question: does https://example.test/help get a response? Reply to desk@example.test.",
+        "expected": [
+          "url:https://example.test/help",
+          "email:desk@example.test"
+        ],
+        "observed": [
+          "url:https://example.test/help",
+          "email:desk@example.test"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "Totals actual Rs. 1,884.30, but ref: TL-4453 and time 04:50.",
+        "expected": [
+          "amount:INR 1884.30",
+          "reference:TL-4453",
+          "time:04:50"
+        ],
+        "observed": [
+          "amount:INR 1884.30",
+          "time:04:50",
+          "reference:TL-4453"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      {
+        "text": "due 30/11/2026\nTODO: call venue by 18:05",
+        "expected": [
+          "deadline:2026-11-30",
+          "time:18:05",
+          "action:call venue by 18:05"
+        ],
+        "observed": [
+          "deadline:2026-11-30",
+          "time:18:05",
+          "action:call venue by 18:05"
+        ],
+        "missing": [],
+        "extra": []
+      }
+    ]
+  }
+}

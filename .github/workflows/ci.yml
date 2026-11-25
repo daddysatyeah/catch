@@ -1,0 +1,45 @@
+name: Browser checks and approved deployment
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Publish this verified build to GitHub Pages
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/fetch-models.mjs
+      - run: npm run test:e2e
+      - if: github.event_name == 'workflow_dispatch' && inputs.deploy
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: dist
+  publish:
+    if: github.event_name == 'workflow_dispatch' && inputs.deploy
+    needs: browser
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment: github-pages
+    steps:
+      - name: Deploy approved build
+        uses: actions/deploy-pages@v5.0.1

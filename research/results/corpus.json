@@ -1,0 +1,2008 @@
+{
+  "clips": [
+    {
+      "kind": "text",
+      "created": 1750000000000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s01-main",
+      "title": "Discrete maths exam",
+      "body": "The combinatorics midterm covers pigeonhole principle, graph coloring and induction. Bring a ruler."
+    },
+    {
+      "kind": "text",
+      "created": 1750000000000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s01-working",
+      "title": "Working copy · Discrete maths exam",
+      "body": "Draft reference for discrete maths exam. The combinatorics midterm covers pigeonhole principle, graph coloring and induction. Bring a ruler."
+    },
+    {
+      "kind": "link",
+      "created": 1750000000000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s01-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s01\nA reference list for education and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000000000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s01-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general education queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750000000000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s01-record",
+      "title": "Archived memo · s01",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750000070000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s02-main",
+      "title": "Chemistry lab report",
+      "body": "Finish the titration writeup. The endpoint was pale pink; the sodium hydroxide concentration was 0.10 molar."
+    },
+    {
+      "kind": "text",
+      "created": 1750000070000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s02-working",
+      "title": "Working copy · Chemistry lab report",
+      "body": "Draft reference for chemistry lab report. Finish the titration writeup. The endpoint was pale pink; the sodium hydroxide concentration was 0.10 molar."
+    },
+    {
+      "kind": "link",
+      "created": 1750000070000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s02-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s02\nA reference list for education and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000070000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s02-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general education queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000070000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s02-record",
+      "title": "Archived memo · s02",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "image",
+      "created": 1750000140000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s03-main",
+      "title": "Night lab notice",
+      "body": "The notice image has the orientation room and the report submission date.",
+      "fixture": "university-notice"
+    },
+    {
+      "kind": "text",
+      "created": 1750000140000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s03-working",
+      "title": "Working copy · Night lab notice",
+      "body": "Draft reference for night lab notice. The notice image has the orientation room and the report submission date."
+    },
+    {
+      "kind": "link",
+      "created": 1750000140000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s03-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s03\nA reference list for education and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000140000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s03-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general education queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000140000,
+      "collection": "Education",
+      "category": "Education",
+      "id": "s03-record",
+      "title": "Archived memo · s03",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "text",
+      "created": 1750000210000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s04-main",
+      "title": "Studio handoff",
+      "body": "Handoff checklist for the client. Send wireframes to the production designer after typography approval."
+    },
+    {
+      "kind": "text",
+      "created": 1750000210000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s04-working",
+      "title": "Working copy · Studio handoff",
+      "body": "Draft reference for studio handoff. Handoff checklist for the client. Send wireframes to the production designer after typography approval."
+    },
+    {
+      "kind": "link",
+      "created": 1750000210000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s04-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s04\nA reference list for work and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000210000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s04-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general work queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000210000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s04-record",
+      "title": "Archived memo · s04",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750000280000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s05-main",
+      "title": "Interview debrief",
+      "body": "The panel asked about postmortems, cache invalidation and explaining a difficult trade-off to stakeholders."
+    },
+    {
+      "kind": "text",
+      "created": 1750000280000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s05-working",
+      "title": "Working copy · Interview debrief",
+      "body": "Draft reference for interview debrief. The panel asked about postmortems, cache invalidation and explaining a difficult trade-off to stakeholders."
+    },
+    {
+      "kind": "link",
+      "created": 1750000280000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s05-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s05\nA reference list for work and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000280000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s05-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general work queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750000280000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s05-record",
+      "title": "Archived memo · s05",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "file",
+      "created": 1750000350000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s06-main",
+      "title": "Coastal research PDF",
+      "body": "Field notes from the equipment survey. The deadline and inventory reference are on page two.",
+      "fixture": "two-pages"
+    },
+    {
+      "kind": "text",
+      "created": 1750000350000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s06-working",
+      "title": "Working copy · Coastal research PDF",
+      "body": "Draft reference for coastal research pdf. Field notes from the equipment survey. The deadline and inventory reference are on page two."
+    },
+    {
+      "kind": "link",
+      "created": 1750000350000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s06-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s06\nA reference list for work and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000350000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s06-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general work queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000350000,
+      "collection": "Work",
+      "category": "Work",
+      "id": "s06-record",
+      "title": "Archived memo · s06",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "text",
+      "created": 1750000420000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s07-main",
+      "title": "Bank transfer record",
+      "body": "Moved INR 14,500.00 into the household sinking fund. Transfer reference: TX-48217."
+    },
+    {
+      "kind": "text",
+      "created": 1750000420000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s07-working",
+      "title": "Working copy · Bank transfer record",
+      "body": "Draft reference for bank transfer record. Moved INR 14,500.00 into the household sinking fund. Transfer reference: TX-48217."
+    },
+    {
+      "kind": "link",
+      "created": 1750000420000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s07-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s07\nA reference list for finance and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000420000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s07-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general finance queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000420000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s07-record",
+      "title": "Archived memo · s07",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "link",
+      "created": 1750000490000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s08-main",
+      "title": "Quarterly tax worksheet",
+      "body": "Tax estimate for November: separate taxable consulting income and reimbursable travel before paying the quarterly installment."
+    },
+    {
+      "kind": "text",
+      "created": 1750000490000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s08-working",
+      "title": "Working copy · Quarterly tax worksheet",
+      "body": "Draft reference for quarterly tax worksheet. Tax estimate for November: separate taxable consulting income and reimbursable travel before paying the quarterly installment."
+    },
+    {
+      "kind": "link",
+      "created": 1750000490000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s08-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s08\nA reference list for finance and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000490000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s08-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general finance queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000490000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s08-record",
+      "title": "Archived memo · s08",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "file",
+      "created": 1750000560000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s09-main",
+      "title": "Scanned services invoice",
+      "body": "A scanned invoice contains the provider reference and currency total from the service contract.",
+      "fixture": "scanned-invoice"
+    },
+    {
+      "kind": "text",
+      "created": 1750000560000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s09-working",
+      "title": "Working copy · Scanned services invoice",
+      "body": "Draft reference for scanned services invoice. A scanned invoice contains the provider reference and currency total from the service contract."
+    },
+    {
+      "kind": "link",
+      "created": 1750000560000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s09-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s09\nA reference list for finance and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000560000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s09-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general finance queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750000560000,
+      "collection": "Finance",
+      "category": "Finance",
+      "id": "s09-record",
+      "title": "Archived memo · s09",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "image",
+      "created": 1750000630000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s10-main",
+      "title": "Studio print receipt",
+      "body": "Store receipt screenshot for art prints. See the image for collection date and total.",
+      "fixture": "studio-order"
+    },
+    {
+      "kind": "text",
+      "created": 1750000630000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s10-working",
+      "title": "Working copy · Studio print receipt",
+      "body": "Draft reference for studio print receipt. Store receipt screenshot for art prints. See the image for collection date and total."
+    },
+    {
+      "kind": "link",
+      "created": 1750000630000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s10-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s10\nA reference list for shopping and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000630000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s10-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general shopping queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000630000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s10-record",
+      "title": "Archived memo · s10",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750000700000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s11-main",
+      "title": "Headphone return",
+      "body": "Return unopened headphones in the original carton. Refund arrives five working days after warehouse inspection."
+    },
+    {
+      "kind": "text",
+      "created": 1750000700000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s11-working",
+      "title": "Working copy · Headphone return",
+      "body": "Draft reference for headphone return. Return unopened headphones in the original carton. Refund arrives five working days after warehouse inspection."
+    },
+    {
+      "kind": "link",
+      "created": 1750000700000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s11-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s11\nA reference list for shopping and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000700000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s11-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general shopping queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000700000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s11-record",
+      "title": "Archived memo · s11",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "text",
+      "created": 1750000770000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s12-main",
+      "title": "Restaurant lunch bill",
+      "body": "Juniper Kitchen table receipt. Shared thali and masala chai. Total INR 875.50 including tax."
+    },
+    {
+      "kind": "text",
+      "created": 1750000770000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s12-working",
+      "title": "Working copy · Restaurant lunch bill",
+      "body": "Draft reference for restaurant lunch bill. Juniper Kitchen table receipt. Shared thali and masala chai. Total INR 875.50 including tax."
+    },
+    {
+      "kind": "link",
+      "created": 1750000770000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s12-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s12\nA reference list for shopping and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000770000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s12-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general shopping queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000770000,
+      "collection": "Shopping",
+      "category": "Shopping",
+      "id": "s12-record",
+      "title": "Archived memo · s12",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "link",
+      "created": 1750000840000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s13-main",
+      "title": "Sourdough notes",
+      "body": "Fold the dough four times during bulk fermentation. Bake with steam in a covered Dutch oven."
+    },
+    {
+      "kind": "text",
+      "created": 1750000840000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s13-working",
+      "title": "Working copy · Sourdough notes",
+      "body": "Draft reference for sourdough notes. Fold the dough four times during bulk fermentation. Bake with steam in a covered Dutch oven."
+    },
+    {
+      "kind": "link",
+      "created": 1750000840000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s13-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s13\nA reference list for personal and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000840000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s13-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general personal queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750000840000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s13-record",
+      "title": "Archived memo · s13",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750000910000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s14-main",
+      "title": "Balcony plants",
+      "body": "The north-facing railing gets indirect light. Put mint and pothos near the window and leave basil on the bright ledge."
+    },
+    {
+      "kind": "text",
+      "created": 1750000910000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s14-working",
+      "title": "Working copy · Balcony plants",
+      "body": "Draft reference for balcony plants. The north-facing railing gets indirect light. Put mint and pothos near the window and leave basil on the bright ledge."
+    },
+    {
+      "kind": "link",
+      "created": 1750000910000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s14-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s14\nA reference list for personal and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000910000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s14-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general personal queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000910000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s14-record",
+      "title": "Archived memo · s14",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "image",
+      "created": 1750000980000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s15-main",
+      "title": "Library archive print",
+      "body": "Photograph of the archive slip for a print box and its viewing time.",
+      "fixture": "subtle-print"
+    },
+    {
+      "kind": "text",
+      "created": 1750000980000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s15-working",
+      "title": "Working copy · Library archive print",
+      "body": "Draft reference for library archive print. Photograph of the archive slip for a print box and its viewing time."
+    },
+    {
+      "kind": "link",
+      "created": 1750000980000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s15-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s15\nA reference list for personal and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750000980000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s15-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general personal queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750000980000,
+      "collection": "Personal",
+      "category": "Personal",
+      "id": "s15-record",
+      "title": "Archived memo · s15",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "image",
+      "created": 1750001050000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s16-main",
+      "title": "River terminal ticket",
+      "body": "Boarding card screenshot for a rail departure. The train reservation code is stored in the image.",
+      "fixture": "travel-board"
+    },
+    {
+      "kind": "text",
+      "created": 1750001050000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s16-working",
+      "title": "Working copy · River terminal ticket",
+      "body": "Draft reference for river terminal ticket. Boarding card screenshot for a rail departure. The train reservation code is stored in the image."
+    },
+    {
+      "kind": "link",
+      "created": 1750001050000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s16-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s16\nA reference list for travel and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001050000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s16-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general travel queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001050000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s16-record",
+      "title": "Archived memo · s16",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750001120000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s17-main",
+      "title": "Guesthouse reservation",
+      "body": "Two nights at Amber Court Guesthouse in Kochi. Late check-in accepted until 22:00. Booking #KO-2816."
+    },
+    {
+      "kind": "text",
+      "created": 1750001120000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s17-working",
+      "title": "Working copy · Guesthouse reservation",
+      "body": "Draft reference for guesthouse reservation. Two nights at Amber Court Guesthouse in Kochi. Late check-in accepted until 22:00. Booking #KO-2816."
+    },
+    {
+      "kind": "link",
+      "created": 1750001120000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s17-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s17\nA reference list for travel and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001120000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s17-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general travel queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750001120000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s17-record",
+      "title": "Archived memo · s17",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "link",
+      "created": 1750001190000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s18-main",
+      "title": "Coastal flight itinerary",
+      "body": "The outbound flight uses Terminal 2. Check in online and pack the power bank in carry-on."
+    },
+    {
+      "kind": "text",
+      "created": 1750001190000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s18-working",
+      "title": "Working copy · Coastal flight itinerary",
+      "body": "Draft reference for coastal flight itinerary. The outbound flight uses Terminal 2. Check in online and pack the power bank in carry-on."
+    },
+    {
+      "kind": "link",
+      "created": 1750001190000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s18-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s18\nA reference list for travel and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001190000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s18-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general travel queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001190000,
+      "collection": "Travel",
+      "category": "Travel",
+      "id": "s18-record",
+      "title": "Archived memo · s18",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "text",
+      "created": 1750001260000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s19-main",
+      "title": "Physiotherapy booking",
+      "body": "Clinic confirmed a physiotherapy intake appointment at 16:15. Bring previous referral note."
+    },
+    {
+      "kind": "text",
+      "created": 1750001260000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s19-working",
+      "title": "Working copy · Physiotherapy booking",
+      "body": "Draft reference for physiotherapy booking. Clinic confirmed a physiotherapy intake appointment at 16:15. Bring previous referral note."
+    },
+    {
+      "kind": "link",
+      "created": 1750001260000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s19-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s19\nA reference list for health and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001260000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s19-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general health queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001260000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s19-record",
+      "title": "Archived memo · s19",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750001330000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s20-main",
+      "title": "Wellness walk journal",
+      "body": "Track morning walks, rest, and how the ankle feels. Record observations to discuss at the next check-in."
+    },
+    {
+      "kind": "text",
+      "created": 1750001330000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s20-working",
+      "title": "Working copy · Wellness walk journal",
+      "body": "Draft reference for wellness walk journal. Track morning walks, rest, and how the ankle feels. Record observations to discuss at the next check-in."
+    },
+    {
+      "kind": "link",
+      "created": 1750001330000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s20-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s20\nA reference list for health and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001330000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s20-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general health queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001330000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s20-record",
+      "title": "Archived memo · s20",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "text",
+      "created": 1750001400000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s21-main",
+      "title": "Clinic admin notes",
+      "body": "Clinic desk asked for an identification card, appointment email, and a list of current medicines."
+    },
+    {
+      "kind": "text",
+      "created": 1750001400000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s21-working",
+      "title": "Working copy · Clinic admin notes",
+      "body": "Draft reference for clinic admin notes. Clinic desk asked for an identification card, appointment email, and a list of current medicines."
+    },
+    {
+      "kind": "link",
+      "created": 1750001400000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s21-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s21\nA reference list for health and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001400000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s21-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general health queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750001400000,
+      "collection": "Health",
+      "category": "Health",
+      "id": "s21-record",
+      "title": "Archived memo · s21",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "text",
+      "created": 1750001470000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s22-main",
+      "title": "Museum errands",
+      "body": "TODO: return borrowed museum catalog\nPick up framers tape near the station after lunch."
+    },
+    {
+      "kind": "text",
+      "created": 1750001470000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s22-working",
+      "title": "Working copy · Museum errands",
+      "body": "Draft reference for museum errands. TODO: return borrowed museum catalog\nPick up framers tape near the station after lunch."
+    },
+    {
+      "kind": "link",
+      "created": 1750001470000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s22-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s22\nA reference list for tasks and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001470000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s22-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general tasks queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001470000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s22-record",
+      "title": "Archived memo · s22",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "link",
+      "created": 1750001540000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s23-main",
+      "title": "Water meter reminder",
+      "body": "Action: photograph the water meter reading. Submit by 28/11/2026 to the building office."
+    },
+    {
+      "kind": "text",
+      "created": 1750001540000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s23-working",
+      "title": "Working copy · Water meter reminder",
+      "body": "Draft reference for water meter reminder. Action: photograph the water meter reading. Submit by 28/11/2026 to the building office."
+    },
+    {
+      "kind": "link",
+      "created": 1750001540000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s23-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s23\nA reference list for tasks and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001540000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s23-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general tasks queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001540000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s23-record",
+      "title": "Archived memo · s23",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "text",
+      "created": 1750001610000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s24-main",
+      "title": "Capstone upload checklist",
+      "body": "TODO: upload the final capstone PDF\nSubmit by 30/11/2026 after checking page numbering."
+    },
+    {
+      "kind": "text",
+      "created": 1750001610000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s24-working",
+      "title": "Working copy · Capstone upload checklist",
+      "body": "Draft reference for capstone upload checklist. TODO: upload the final capstone PDF\nSubmit by 30/11/2026 after checking page numbering."
+    },
+    {
+      "kind": "link",
+      "created": 1750001610000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s24-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s24\nA reference list for tasks and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001610000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s24-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general tasks queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001610000,
+      "collection": "Tasks",
+      "category": "Tasks",
+      "id": "s24-record",
+      "title": "Archived memo · s24",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "text",
+      "created": 1750001680000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s25-main",
+      "title": "Monorepo build notes",
+      "body": "Vite resolves import aliases for the browser package. Clear the dependency cache after changing the shared TypeScript config."
+    },
+    {
+      "kind": "text",
+      "created": 1750001680000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s25-working",
+      "title": "Working copy · Monorepo build notes",
+      "body": "Draft reference for monorepo build notes. Vite resolves import aliases for the browser package. Clear the dependency cache after changing the shared TypeScript config."
+    },
+    {
+      "kind": "link",
+      "created": 1750001680000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s25-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s25\nA reference list for technology and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001680000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s25-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general technology queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750001680000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s25-record",
+      "title": "Archived memo · s25",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750001750000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s26-main",
+      "title": "Machine learning notes",
+      "body": "Sparse retrieval compares lexical token counts. Sentence embeddings map similar concepts together even with different wording."
+    },
+    {
+      "kind": "text",
+      "created": 1750001750000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s26-working",
+      "title": "Working copy · Machine learning notes",
+      "body": "Draft reference for machine learning notes. Sparse retrieval compares lexical token counts. Sentence embeddings map similar concepts together even with different wording."
+    },
+    {
+      "kind": "link",
+      "created": 1750001750000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s26-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s26\nA reference list for technology and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001750000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s26-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general technology queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001750000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s26-record",
+      "title": "Archived memo · s26",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "text",
+      "created": 1750001820000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s27-main",
+      "title": "Container networking link",
+      "body": "Docker bridge networks assign private addresses and publish selected ports to the host."
+    },
+    {
+      "kind": "text",
+      "created": 1750001820000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s27-working",
+      "title": "Working copy · Container networking link",
+      "body": "Draft reference for container networking link. Docker bridge networks assign private addresses and publish selected ports to the host."
+    },
+    {
+      "kind": "link",
+      "created": 1750001820000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s27-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s27\nA reference list for technology and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001820000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s27-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general technology queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001820000,
+      "collection": "Technology",
+      "category": "Technology",
+      "id": "s27-record",
+      "title": "Archived memo · s27",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    },
+    {
+      "kind": "link",
+      "created": 1750001890000,
+      "collection": "References",
+      "category": "References",
+      "id": "s28-main",
+      "title": "Optics field guide",
+      "body": "Reference for glass caustics: a polished solid refracts nearby highlights onto the matte ground."
+    },
+    {
+      "kind": "text",
+      "created": 1750001890000,
+      "collection": "References",
+      "category": "References",
+      "id": "s28-working",
+      "title": "Working copy · Optics field guide",
+      "body": "Draft reference for optics field guide. Reference for glass caustics: a polished solid refracts nearby highlights onto the matte ground."
+    },
+    {
+      "kind": "link",
+      "created": 1750001890000,
+      "collection": "References",
+      "category": "References",
+      "id": "s28-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s28\nA reference list for references and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001890000,
+      "collection": "References",
+      "category": "References",
+      "id": "s28-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general references queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750001890000,
+      "collection": "References",
+      "category": "References",
+      "id": "s28-record",
+      "title": "Archived memo · s28",
+      "body": "Check the address and save a map without changing the account."
+    },
+    {
+      "kind": "text",
+      "created": 1750001960000,
+      "collection": "References",
+      "category": "References",
+      "id": "s29-main",
+      "title": "Museum design catalogue",
+      "body": "Reading list entry about early industrial graphic grids, utilitarian lettering and modular symbols."
+    },
+    {
+      "kind": "text",
+      "created": 1750001960000,
+      "collection": "References",
+      "category": "References",
+      "id": "s29-working",
+      "title": "Working copy · Museum design catalogue",
+      "body": "Draft reference for museum design catalogue. Reading list entry about early industrial graphic grids, utilitarian lettering and modular symbols."
+    },
+    {
+      "kind": "link",
+      "created": 1750001960000,
+      "collection": "References",
+      "category": "References",
+      "id": "s29-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s29\nA reference list for references and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750001960000,
+      "collection": "References",
+      "category": "References",
+      "id": "s29-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general references queue."
+    },
+    {
+      "kind": "file",
+      "created": 1750001960000,
+      "collection": "References",
+      "category": "References",
+      "id": "s29-record",
+      "title": "Archived memo · s29",
+      "body": "The weather looks unsettled. Pack a jacket and print the agenda."
+    },
+    {
+      "kind": "text",
+      "created": 1750002030000,
+      "collection": "References",
+      "category": "References",
+      "id": "s30-main",
+      "title": "Climate data bookshelf",
+      "body": "Bookmark the marine archive methodology for estimating sea surface temperatures from buoy records."
+    },
+    {
+      "kind": "text",
+      "created": 1750002030000,
+      "collection": "References",
+      "category": "References",
+      "id": "s30-working",
+      "title": "Working copy · Climate data bookshelf",
+      "body": "Draft reference for climate data bookshelf. Bookmark the marine archive methodology for estimating sea surface temperatures from buoy records."
+    },
+    {
+      "kind": "link",
+      "created": 1750002030000,
+      "collection": "References",
+      "category": "References",
+      "id": "s30-context",
+      "title": "Reading and research index",
+      "body": "https://example.test/references/s30\nA reference list for references and related planning."
+    },
+    {
+      "kind": "text",
+      "created": 1750002030000,
+      "collection": "References",
+      "category": "References",
+      "id": "s30-schedule",
+      "title": "Organizing note",
+      "body": "Remember to filter old items, review pinned notes, and make a weekly backup. This item was used to plan a general references queue."
+    },
+    {
+      "kind": "text",
+      "created": 1750002030000,
+      "collection": "References",
+      "category": "References",
+      "id": "s30-record",
+      "title": "Archived memo · s30",
+      "body": "Archived file transfer receipts and parcel pickup checklist."
+    }
+  ],
+  "queries": [
+    {
+      "id": "s01-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "pigeonhole exam",
+      "relevant": {
+        "s01-main": 2,
+        "s01-working": 1
+      }
+    },
+    {
+      "id": "s01-concept",
+      "split": "development",
+      "type": "ambiguous",
+      "query": "What topics should I study for the counting and graph theory test?",
+      "relevant": {
+        "s01-main": 2,
+        "s01-working": 1
+      }
+    },
+    {
+      "id": "s02-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "titration endpoint",
+      "relevant": {
+        "s02-main": 2,
+        "s02-working": 1
+      }
+    },
+    {
+      "id": "s02-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where did I record when the acid-base reaction finished?",
+      "relevant": {
+        "s02-main": 2,
+        "s02-working": 1
+      }
+    },
+    {
+      "id": "s03-exact",
+      "split": "held-out",
+      "type": "document-dependent",
+      "query": "B-215 18:30",
+      "relevant": {
+        "s03-main": 2
+      }
+    },
+    {
+      "id": "s03-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where and when is the evening science orientation?",
+      "relevant": {
+        "s03-main": 2,
+        "s03-working": 1
+      }
+    },
+    {
+      "id": "s04-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "handoff wireframes",
+      "relevant": {
+        "s04-main": 2,
+        "s04-working": 1
+      }
+    },
+    {
+      "id": "s04-concept",
+      "split": "development",
+      "type": "paraphrase",
+      "query": "What should the team pass to production after the font decision?",
+      "relevant": {
+        "s04-main": 2,
+        "s04-working": 1
+      }
+    },
+    {
+      "id": "s05-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "interview postmortems",
+      "relevant": {
+        "s05-main": 2,
+        "s05-working": 1
+      }
+    },
+    {
+      "id": "s05-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "What did the hiring panel ask about reliability incidents?",
+      "relevant": {
+        "s05-main": 2,
+        "s05-working": 1
+      }
+    },
+    {
+      "id": "s06-exact",
+      "split": "held-out",
+      "type": "document-dependent",
+      "query": "QZ-9157",
+      "relevant": {
+        "s06-main": 2
+      }
+    },
+    {
+      "id": "s06-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where are the due date and equipment reference for my coastal survey?",
+      "relevant": {
+        "s06-main": 2,
+        "s06-working": 1
+      }
+    },
+    {
+      "id": "s07-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "TX-48217",
+      "relevant": {
+        "s07-main": 2,
+        "s07-working": 1
+      }
+    },
+    {
+      "id": "s07-concept",
+      "split": "development",
+      "type": "ambiguous",
+      "query": "Where is the proof I moved money into the household reserve?",
+      "relevant": {
+        "s07-main": 2,
+        "s07-working": 1
+      }
+    },
+    {
+      "id": "s08-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "tax worksheet",
+      "relevant": {
+        "s08-main": 2,
+        "s08-working": 1
+      }
+    },
+    {
+      "id": "s08-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "How should I separate business reimbursements from the amount I owe?",
+      "relevant": {
+        "s08-main": 2,
+        "s08-working": 1
+      }
+    },
+    {
+      "id": "s09-exact",
+      "split": "held-out",
+      "type": "document-dependent",
+      "query": "TD-6512",
+      "relevant": {
+        "s09-main": 2
+      }
+    },
+    {
+      "id": "s09-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where is the bill for Tideline and how much is due?",
+      "relevant": {
+        "s09-main": 2,
+        "s09-working": 1
+      }
+    },
+    {
+      "id": "s10-exact",
+      "split": "development",
+      "type": "document-dependent",
+      "query": "ZK-4821",
+      "relevant": {
+        "s10-main": 2
+      }
+    },
+    {
+      "id": "s10-concept",
+      "split": "development",
+      "type": "paraphrase",
+      "query": "Where is my bill for the framed artwork order?",
+      "relevant": {
+        "s10-main": 2,
+        "s10-working": 1
+      }
+    },
+    {
+      "id": "s11-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "headphone refund",
+      "relevant": {
+        "s11-main": 2,
+        "s11-working": 1
+      }
+    },
+    {
+      "id": "s11-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "When will the shop put my money back after I send my earphones?",
+      "relevant": {
+        "s11-main": 2,
+        "s11-working": 1
+      }
+    },
+    {
+      "id": "s12-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "Juniper Kitchen receipt",
+      "relevant": {
+        "s12-main": 2,
+        "s12-working": 1
+      }
+    },
+    {
+      "id": "s12-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Find the proof of what I paid for the meal at the cafe.",
+      "relevant": {
+        "s12-main": 2,
+        "s12-working": 1
+      }
+    },
+    {
+      "id": "s13-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "sourdough Dutch oven",
+      "relevant": {
+        "s13-main": 2,
+        "s13-working": 1
+      }
+    },
+    {
+      "id": "s13-concept",
+      "split": "development",
+      "type": "ambiguous",
+      "query": "How did I make that crusty fermented bread at home?",
+      "relevant": {
+        "s13-main": 2,
+        "s13-working": 1
+      }
+    },
+    {
+      "id": "s14-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "balcony pothos",
+      "relevant": {
+        "s14-main": 2,
+        "s14-working": 1
+      }
+    },
+    {
+      "id": "s14-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Which houseplants can grow in the shaded corner of my apartment?",
+      "relevant": {
+        "s14-main": 2,
+        "s14-working": 1
+      }
+    },
+    {
+      "id": "s15-exact",
+      "split": "held-out",
+      "type": "document-dependent",
+      "query": "VELVET-513",
+      "relevant": {
+        "s15-main": 2
+      }
+    },
+    {
+      "id": "s15-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "When can I see the printed material in the library cabinet?",
+      "relevant": {
+        "s15-main": 2,
+        "s15-working": 1
+      }
+    },
+    {
+      "id": "s16-exact",
+      "split": "development",
+      "type": "document-dependent",
+      "query": "TR-9542",
+      "relevant": {
+        "s16-main": 2
+      }
+    },
+    {
+      "id": "s16-concept",
+      "split": "development",
+      "type": "paraphrase",
+      "query": "Where is my train ticket and what time does transport depart?",
+      "relevant": {
+        "s16-main": 2,
+        "s16-working": 1
+      }
+    },
+    {
+      "id": "s17-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "KO-2816",
+      "relevant": {
+        "s17-main": 2,
+        "s17-working": 1
+      }
+    },
+    {
+      "id": "s17-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Find my place to stay in Kochi when I arrive at night.",
+      "relevant": {
+        "s17-main": 2,
+        "s17-working": 1
+      }
+    },
+    {
+      "id": "s18-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "flight Terminal 2",
+      "relevant": {
+        "s18-main": 2,
+        "s18-working": 1
+      }
+    },
+    {
+      "id": "s18-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Which airport gate building should I go to and where does the battery travel?",
+      "relevant": {
+        "s18-main": 2,
+        "s18-working": 1
+      }
+    },
+    {
+      "id": "s19-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "physiotherapy intake",
+      "relevant": {
+        "s19-main": 2,
+        "s19-working": 1
+      }
+    },
+    {
+      "id": "s19-concept",
+      "split": "development",
+      "type": "ambiguous",
+      "query": "Where is the visit I scheduled with the movement therapist?",
+      "relevant": {
+        "s19-main": 2,
+        "s19-working": 1
+      }
+    },
+    {
+      "id": "s20-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "ankle walk journal",
+      "relevant": {
+        "s20-main": 2,
+        "s20-working": 1
+      }
+    },
+    {
+      "id": "s20-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where did I track how my foot felt after walking?",
+      "relevant": {
+        "s20-main": 2,
+        "s20-working": 1
+      }
+    },
+    {
+      "id": "s21-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "clinic medicines list",
+      "relevant": {
+        "s21-main": 2,
+        "s21-working": 1
+      }
+    },
+    {
+      "id": "s21-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "What should I take with me when I meet the doctor?",
+      "relevant": {
+        "s21-main": 2,
+        "s21-working": 1
+      }
+    },
+    {
+      "id": "s22-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "return museum catalog",
+      "relevant": {
+        "s22-main": 2,
+        "s22-working": 1
+      }
+    },
+    {
+      "id": "s22-concept",
+      "split": "development",
+      "type": "paraphrase",
+      "query": "What book errand did I promise to do before going home?",
+      "relevant": {
+        "s22-main": 2,
+        "s22-working": 1
+      }
+    },
+    {
+      "id": "s23-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "water meter submit",
+      "relevant": {
+        "s23-main": 2,
+        "s23-working": 1
+      }
+    },
+    {
+      "id": "s23-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "What household utility proof needs sending to apartment management?",
+      "relevant": {
+        "s23-main": 2,
+        "s23-working": 1
+      }
+    },
+    {
+      "id": "s24-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "capstone upload",
+      "relevant": {
+        "s24-main": 2,
+        "s24-working": 1
+      }
+    },
+    {
+      "id": "s24-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "What do I need to hand in after checking the pagination?",
+      "relevant": {
+        "s24-main": 2,
+        "s24-working": 1
+      }
+    },
+    {
+      "id": "s25-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "Vite alias monorepo",
+      "relevant": {
+        "s25-main": 2,
+        "s25-working": 1
+      }
+    },
+    {
+      "id": "s25-concept",
+      "split": "development",
+      "type": "ambiguous",
+      "query": "How did I fix browser imports across packages that share configuration?",
+      "relevant": {
+        "s25-main": 2,
+        "s25-working": 1
+      }
+    },
+    {
+      "id": "s26-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "sentence embedding lexical",
+      "relevant": {
+        "s26-main": 2,
+        "s26-working": 1
+      }
+    },
+    {
+      "id": "s26-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Find the note explaining how search can match meaning without exact words.",
+      "relevant": {
+        "s26-main": 2,
+        "s26-working": 1
+      }
+    },
+    {
+      "id": "s27-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "Docker bridge port",
+      "relevant": {
+        "s27-main": 2,
+        "s27-working": 1
+      }
+    },
+    {
+      "id": "s27-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where did I save how isolated containers expose services?",
+      "relevant": {
+        "s27-main": 2,
+        "s27-working": 1
+      }
+    },
+    {
+      "id": "s28-exact",
+      "split": "development",
+      "type": "keyword",
+      "query": "optics caustics",
+      "relevant": {
+        "s28-main": 2,
+        "s28-working": 1
+      }
+    },
+    {
+      "id": "s28-concept",
+      "split": "development",
+      "type": "paraphrase",
+      "query": "Find the article on bright light patterns cast through curved glass.",
+      "relevant": {
+        "s28-main": 2,
+        "s28-working": 1
+      }
+    },
+    {
+      "id": "s29-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "graphic grids catalogue",
+      "relevant": {
+        "s29-main": 2,
+        "s29-working": 1
+      }
+    },
+    {
+      "id": "s29-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Where is the catalogue of functional lettering and industrial symbols?",
+      "relevant": {
+        "s29-main": 2,
+        "s29-working": 1
+      }
+    },
+    {
+      "id": "s30-exact",
+      "split": "held-out",
+      "type": "keyword",
+      "query": "marine buoy methodology",
+      "relevant": {
+        "s30-main": 2,
+        "s30-working": 1
+      }
+    },
+    {
+      "id": "s30-concept",
+      "split": "held-out",
+      "type": "paraphrase",
+      "query": "Which reading explains how floating instruments measure ocean warmth?",
+      "relevant": {
+        "s30-main": 2,
+        "s30-working": 1
+      }
+    }
+  ],
+  "collections": [
+    {
+      "id": "Education",
+      "name": "Education",
+      "color": "#888888"
+    },
+    {
+      "id": "Work",
+      "name": "Work",
+      "color": "#888888"
+    },
+    {
+      "id": "Finance",
+      "name": "Finance",
+      "color": "#888888"
+    },
+    {
+      "id": "Shopping",
+      "name": "Shopping",
+      "color": "#888888"
+    },
+    {
+      "id": "Personal",
+      "name": "Personal",
+      "color": "#888888"
+    },
+    {
+      "id": "Travel",
+      "name": "Travel",
+      "color": "#888888"
+    },
+    {
+      "id": "Health",
+      "name": "Health",
+      "color": "#888888"
+    },
+    {
+      "id": "Tasks",
+      "name": "Tasks",
+      "color": "#888888"
+    },
+    {
+      "id": "Technology",
+      "name": "Technology",
+      "color": "#888888"
+    },
+    {
+      "id": "References",
+      "name": "References",
+      "color": "#888888"
+    }
+  ]
+}

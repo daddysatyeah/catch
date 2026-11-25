@@ -1,0 +1,4550 @@
+{
+  "split": "held-out",
+  "fixtureHash": "780d0a7979497aa1d5f5a0dbd45c31edec08f4b481a9fdedd8e4f0e9924450f4",
+  "developmentHash": "0e05290a967d513184c962d2de69f4bf6307fead3f99022fd1891d37104e8c79",
+  "classification": {
+    "baseline": {
+      "selection": {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0.035
+      },
+      "count": 50,
+      "accuracy": 0.24,
+      "macroF1": 0.3464285714285715,
+      "coverage": 0.28,
+      "acceptedAccuracy": 0.8571428571428571,
+      "perCategory": [
+        {
+          "category": "Education",
+          "actual": 5,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.2,
+          "f1": 0.33333333333333337
+        },
+        {
+          "category": "Work",
+          "actual": 5,
+          "predicted": 2,
+          "correct": 2,
+          "precision": 1,
+          "recall": 0.4,
+          "f1": 0.5714285714285715
+        },
+        {
+          "category": "Finance",
+          "actual": 5,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.2,
+          "f1": 0.33333333333333337
+        },
+        {
+          "category": "Shopping",
+          "actual": 5,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 0.6,
+          "f1": 0.7499999999999999
+        },
+        {
+          "category": "Personal",
+          "actual": 5,
+          "predicted": 0,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "Travel",
+          "actual": 5,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.2,
+          "f1": 0.33333333333333337
+        },
+        {
+          "category": "Health",
+          "actual": 5,
+          "predicted": 2,
+          "correct": 2,
+          "precision": 1,
+          "recall": 0.4,
+          "f1": 0.5714285714285715
+        },
+        {
+          "category": "Tasks",
+          "actual": 5,
+          "predicted": 2,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "Technology",
+          "actual": 5,
+          "predicted": 0,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "References",
+          "actual": 5,
+          "predicted": 2,
+          "correct": 2,
+          "precision": 1,
+          "recall": 0.4,
+          "f1": 0.5714285714285715
+        }
+      ],
+      "confusion": {
+        "Education": {
+          "Education": 1,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 1,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 3
+        },
+        "Work": {
+          "Education": 0,
+          "Work": 2,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 1,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Finance": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 1,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 4
+        },
+        "Shopping": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 3,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Personal": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 5
+        },
+        "Travel": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 1,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 4
+        },
+        "Health": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 2,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 3
+        },
+        "Tasks": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 5
+        },
+        "Technology": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 5
+        },
+        "References": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 2,
+          "Abstained": 3
+        }
+      },
+      "predictions": [
+        {
+          "text": "The lecturer posted an example of a literature review for the dissertation module.",
+          "expected": "Education",
+          "similarity": 0.3775899758108265,
+          "margin": 0.007811877209902562
+        },
+        {
+          "text": "Art history: revise how the Utrecht painters used candlelight for Friday’s assessment.",
+          "expected": "Education",
+          "similarity": 0.17256424508772344,
+          "margin": 0.008390618794534593
+        },
+        {
+          "text": "Parent portal says the Year 8 science project is due after half term.",
+          "expected": "Education",
+          "category": "Tasks",
+          "similarity": 0.26561892043749424,
+          "margin": 0.05326924941037439
+        },
+        {
+          "text": "A classmate’s notes on when to reject the null hypothesis in the statistics seminar.",
+          "expected": "Education",
+          "similarity": 0.19973794349966986,
+          "margin": 0.0530297303607411
+        },
+        {
+          "text": "The certificate course accepts a lab notebook instead of a typed report.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.3386322689901636,
+          "margin": 0.09848041139892194
+        },
+        {
+          "text": "The warehouse supervisor asked us to put carrier delays on the weekly operations agenda.",
+          "expected": "Work",
+          "similarity": 0.2191111345137319,
+          "margin": 0.04034267338636735
+        },
+        {
+          "text": "A vendor will present the revised scope to procurement before we sign the contract.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.30224470048172264,
+          "margin": 0.14075410603753927
+        },
+        {
+          "text": "Candidate debrief for the open product role. Two interviewers disagreed about the presentation.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.2736760744111164,
+          "margin": 0.15171591780382457
+        },
+        {
+          "text": "Update the client distribution list before the quarterly service review.",
+          "expected": "Work",
+          "similarity": 0.23584462904718861,
+          "margin": 0.014235576713666626
+        },
+        {
+          "text": "New starter checklist from HR covers desk setup and who can approve leave.",
+          "expected": "Work",
+          "category": "Tasks",
+          "similarity": 0.3558550826688926,
+          "margin": 0.08122860046370795
+        },
+        {
+          "text": "My deposit matured. Check whether the reinvestment rate beats the savings account.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.2879965686865982,
+          "margin": 0.18937810297152502
+        },
+        {
+          "text": "The pension statement counts the one-off employer match under a separate line.",
+          "expected": "Finance",
+          "similarity": 0.16107563948558212,
+          "margin": 0.014432101042278128
+        },
+        {
+          "text": "The registrar says my dividend was sent to the old bank mandate.",
+          "expected": "Finance",
+          "similarity": 0.15260413653231134,
+          "margin": 0.035329300971644564
+        },
+        {
+          "text": "The lender reduced the monthly installment after I made a principal prepayment.",
+          "expected": "Finance",
+          "similarity": 0.2394975151950429,
+          "margin": 0.0954998722305824
+        },
+        {
+          "text": "Save the donation certificate as supporting evidence for my income tax return.",
+          "expected": "Finance",
+          "similarity": 0.22099910134913836,
+          "margin": 0.007810449899589594
+        },
+        {
+          "text": "Received a crushed packet of oat biscuits. The supermarket offered store credit.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.2987025045130414,
+          "margin": 0.16948349120978762
+        },
+        {
+          "text": "Compare a second-hand standing desk with the retailer’s entry model.",
+          "expected": "Shopping",
+          "similarity": 0.2265273058575471,
+          "margin": 0.078470777515874
+        },
+        {
+          "text": "The vendor will swap the left shoe because the sole has started separating.",
+          "expected": "Shopping",
+          "similarity": 0.08982663511085347,
+          "margin": 0.021234053176972162
+        },
+        {
+          "text": "Receipt for seat pads and a lampshade bought at the neighborhood market.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.5041880496843286,
+          "margin": 0.2609172802117788
+        },
+        {
+          "text": "Is free delivery still included if I remove the thermos from the cart?",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.351423398417343,
+          "margin": 0.15789089087062302
+        },
+        {
+          "text": "Record Uncle Arun’s story about teaching music in the old apartment block.",
+          "expected": "Personal",
+          "similarity": 0.17739863314034934,
+          "margin": 0.016778881756875863
+        },
+        {
+          "text": "Try the bread pudding recipe with the leftover rolls and a little nutmeg.",
+          "expected": "Personal",
+          "similarity": 0.13818184302628844,
+          "margin": 0.0024847482094857987
+        },
+        {
+          "text": "Notes for a weekend sketch of the rainwater tank, mostly shadows and roof tiles.",
+          "expected": "Personal",
+          "similarity": 0.2440952360333397,
+          "margin": 0.005634610169063803
+        },
+        {
+          "text": "Leena brought over photographs from when our children were in nursery.",
+          "expected": "Personal",
+          "similarity": 0.19694452839277743,
+          "margin": 0.05217304114086549
+        },
+        {
+          "text": "Tried a sour cherry jam with fewer cloves. The family liked this batch.",
+          "expected": "Personal",
+          "similarity": 0.13852193890535058,
+          "margin": 0.06540609995241828
+        },
+        {
+          "text": "The overnight coach stops for dinner at a service station and reaches Mysuru at dawn.",
+          "expected": "Travel",
+          "similarity": 0.19586398489532128,
+          "margin": 0.09354872952294938
+        },
+        {
+          "text": "Airline moved the return leg to a gate in the domestic concourse.",
+          "expected": "Travel",
+          "similarity": 0.11822963056898633,
+          "margin": 0.02133099445055181
+        },
+        {
+          "text": "The homestay lockbox is next to the blue door, message the host when leaving.",
+          "expected": "Travel",
+          "similarity": 0.19310399066290437,
+          "margin": 0.0749700530653774
+        },
+        {
+          "text": "Check the last tram from the old port before booking an evening tour.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.3221956516203469,
+          "margin": 0.21508353915402462
+        },
+        {
+          "text": "This rail pass covers local lines but excludes the mountain funicular.",
+          "expected": "Travel",
+          "similarity": 0.1809651239533787,
+          "margin": 0.07238193004696152
+        },
+        {
+          "text": "The dentist mentioned a temporary filling could be sensitive for two days.",
+          "expected": "Health",
+          "similarity": 0.030610777527757392,
+          "margin": 0.04753103117648759
+        },
+        {
+          "text": "Nearest lab offers walk-in blood draws on Wednesday before breakfast.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.265059022074584,
+          "margin": 0.1560722189612716
+        },
+        {
+          "text": "The inhaler refill is ready at the chemist. Bring the prescription.",
+          "expected": "Health",
+          "similarity": 0.2460330580717271,
+          "margin": 0.15506298325376733
+        },
+        {
+          "text": "Log lower-back stiffness before and after stretches for the physiotherapist.",
+          "expected": "Health",
+          "similarity": 0.234171395906224,
+          "margin": 0.1596521226910581
+        },
+        {
+          "text": "Clinic message includes preoperative fasting instructions for my procedure.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.38358860084514584,
+          "margin": 0.26142206753746616
+        },
+        {
+          "text": "Before bed: put the bins out, defrost peas, and charge the torch.",
+          "expected": "Tasks",
+          "similarity": 0.1340483921589309,
+          "margin": 0.02368168275455089
+        },
+        {
+          "text": "I promised to call the building manager about the buzzer on Monday.",
+          "expected": "Tasks",
+          "similarity": 0.16852841817451022,
+          "margin": 0.04416197917862398
+        },
+        {
+          "text": "Book the dog walker and collect the parcel before the locker code expires.",
+          "expected": "Tasks",
+          "similarity": 0.2157873524626274,
+          "margin": 0.042728159780695274
+        },
+        {
+          "text": "Return the library board game, then pick up a replacement light bulb.",
+          "expected": "Tasks",
+          "similarity": 0.0617028210887286,
+          "margin": 0.0013875360684214438
+        },
+        {
+          "text": "I need to photograph the broken gate and send the picture to the caretaker.",
+          "expected": "Tasks",
+          "similarity": 0.18157827085133624,
+          "margin": 0.0703565674249389
+        },
+        {
+          "text": "The Kubernetes pod was restarted because its liveness probe timed out after ten seconds.",
+          "expected": "Technology",
+          "similarity": 0.027715661653858144,
+          "margin": 0.00011453061692083197
+        },
+        {
+          "text": "Use an index on the account column so the SQLite query avoids a table scan.",
+          "expected": "Technology",
+          "similarity": 0.1145055124912988,
+          "margin": 0.012898769442055716
+        },
+        {
+          "text": "The webcam driver drops frames when the USB hub shares power with the display.",
+          "expected": "Technology",
+          "similarity": 0.13973608593008344,
+          "margin": 0.08020781711553221
+        },
+        {
+          "text": "The webhook retries on a 503 and signs the payload before each request.",
+          "expected": "Technology",
+          "similarity": 0.1975787829672893,
+          "margin": 0.10254650318696353
+        },
+        {
+          "text": "A firmware upgrade fixed the clock drift on the network switch.",
+          "expected": "Technology",
+          "similarity": 0.0760199246329644,
+          "margin": 0.07191780952124999
+        },
+        {
+          "text": "Save the annotated atlas of prewar streetcar depots for occasional lookup.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.269700170872259,
+          "margin": 0.07766477103927621
+        },
+        {
+          "text": "A link roundup from the library on typeface specimens and digital archives.",
+          "expected": "References",
+          "similarity": 0.21925246041965837,
+          "margin": 0.1091049303130903
+        },
+        {
+          "text": "The tide table handbook cites two surveys I want in my bibliography.",
+          "expected": "References",
+          "similarity": 0.28583034780305894,
+          "margin": 0.02637398627136789
+        },
+        {
+          "text": "Bookmark the online catalogue of women photographers and its source notes.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.4184884212675714,
+          "margin": 0.11136091067438142
+        },
+        {
+          "text": "Keep this illustrated adhesives guide as a resource when restoring picture frames.",
+          "expected": "References",
+          "similarity": 0.16118175829248607,
+          "margin": 0.06684116406298989
+        }
+      ]
+    },
+    "selected": {
+      "selection": {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0.02
+      },
+      "count": 50,
+      "accuracy": 0.84,
+      "macroF1": 0.8742424242424243,
+      "coverage": 0.92,
+      "acceptedAccuracy": 0.9130434782608695,
+      "perCategory": [
+        {
+          "category": "Education",
+          "actual": 5,
+          "predicted": 4,
+          "correct": 4,
+          "precision": 1,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        },
+        {
+          "category": "Work",
+          "actual": 5,
+          "predicted": 5,
+          "correct": 5,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Finance",
+          "actual": 5,
+          "predicted": 6,
+          "correct": 5,
+          "precision": 0.8333333333333334,
+          "recall": 1,
+          "f1": 0.9090909090909091
+        },
+        {
+          "category": "Shopping",
+          "actual": 5,
+          "predicted": 4,
+          "correct": 4,
+          "precision": 1,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        },
+        {
+          "category": "Personal",
+          "actual": 5,
+          "predicted": 7,
+          "correct": 4,
+          "precision": 0.5714285714285714,
+          "recall": 0.8,
+          "f1": 0.6666666666666666
+        },
+        {
+          "category": "Travel",
+          "actual": 5,
+          "predicted": 5,
+          "correct": 5,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Health",
+          "actual": 5,
+          "predicted": 4,
+          "correct": 4,
+          "precision": 1,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        },
+        {
+          "category": "Tasks",
+          "actual": 5,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 0.6,
+          "f1": 0.7499999999999999
+        },
+        {
+          "category": "Technology",
+          "actual": 5,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 0.6,
+          "f1": 0.7499999999999999
+        },
+        {
+          "category": "References",
+          "actual": 5,
+          "predicted": 5,
+          "correct": 5,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      ],
+      "confusion": {
+        "Education": {
+          "Education": 4,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 1,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Work": {
+          "Education": 0,
+          "Work": 5,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Finance": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 5,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Shopping": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 4,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 1
+        },
+        "Personal": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 4,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 1
+        },
+        "Travel": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 5,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Health": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 4,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 1
+        },
+        "Tasks": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 2,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 3,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Technology": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 1,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 3,
+          "References": 0,
+          "Abstained": 1
+        },
+        "References": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 5,
+          "Abstained": 0
+        }
+      },
+      "predictions": [
+        {
+          "text": "The lecturer posted an example of a literature review for the dissertation module.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.22423394815867148,
+          "margin": 0.04425389477247618
+        },
+        {
+          "text": "Art history: revise how the Utrecht painters used candlelight for Friday’s assessment.",
+          "expected": "Education",
+          "category": "Personal",
+          "similarity": 0.47745616204987834,
+          "margin": 0.33154140382401787
+        },
+        {
+          "text": "Parent portal says the Year 8 science project is due after half term.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.2398210313428716,
+          "margin": 0.08962210592558759
+        },
+        {
+          "text": "A classmate’s notes on when to reject the null hypothesis in the statistics seminar.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.29722750937036624,
+          "margin": 0.16244188877428153
+        },
+        {
+          "text": "The certificate course accepts a lab notebook instead of a typed report.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.43523050318416445,
+          "margin": 0.34812299472591557
+        },
+        {
+          "text": "The warehouse supervisor asked us to put carrier delays on the weekly operations agenda.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.2671835925714523,
+          "margin": 0.08142281335717866
+        },
+        {
+          "text": "A vendor will present the revised scope to procurement before we sign the contract.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.494268313278427,
+          "margin": 0.3546668149733746
+        },
+        {
+          "text": "Candidate debrief for the open product role. Two interviewers disagreed about the presentation.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.572754482355638,
+          "margin": 0.46072238644443364
+        },
+        {
+          "text": "Update the client distribution list before the quarterly service review.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.24263045034149866,
+          "margin": 0.08526779865345177
+        },
+        {
+          "text": "New starter checklist from HR covers desk setup and who can approve leave.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.23195068096435978,
+          "margin": 0.08763524820277668
+        },
+        {
+          "text": "My deposit matured. Check whether the reinvestment rate beats the savings account.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.5613320142459919,
+          "margin": 0.4882649467385527
+        },
+        {
+          "text": "The pension statement counts the one-off employer match under a separate line.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.45744617839455665,
+          "margin": 0.362488371261506
+        },
+        {
+          "text": "The registrar says my dividend was sent to the old bank mandate.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.4584054870921684,
+          "margin": 0.3671214926272735
+        },
+        {
+          "text": "The lender reduced the monthly installment after I made a principal prepayment.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.5097711604282601,
+          "margin": 0.4145902106240138
+        },
+        {
+          "text": "Save the donation certificate as supporting evidence for my income tax return.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.2954678912075931,
+          "margin": 0.07383920031865679
+        },
+        {
+          "text": "Received a crushed packet of oat biscuits. The supermarket offered store credit.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.3269336340282949,
+          "margin": 0.18153728849031772
+        },
+        {
+          "text": "Compare a second-hand standing desk with the retailer’s entry model.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.3343740775584955,
+          "margin": 0.21969213452235437
+        },
+        {
+          "text": "The vendor will swap the left shoe because the sole has started separating.",
+          "expected": "Shopping",
+          "similarity": 0.2032814449615567,
+          "margin": 0.011129620586381617
+        },
+        {
+          "text": "Receipt for seat pads and a lampshade bought at the neighborhood market.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.6738159476520157,
+          "margin": 0.6048386558586523
+        },
+        {
+          "text": "Is free delivery still included if I remove the thermos from the cart?",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.2660530767247907,
+          "margin": 0.10430855215816909
+        },
+        {
+          "text": "Record Uncle Arun’s story about teaching music in the old apartment block.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.32025844493549205,
+          "margin": 0.1443268137986769
+        },
+        {
+          "text": "Try the bread pudding recipe with the leftover rolls and a little nutmeg.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.5083684715838627,
+          "margin": 0.39609055507883106
+        },
+        {
+          "text": "Notes for a weekend sketch of the rainwater tank, mostly shadows and roof tiles.",
+          "expected": "Personal",
+          "similarity": 0.19757186944468672,
+          "margin": 0.014042894018270996
+        },
+        {
+          "text": "Leena brought over photographs from when our children were in nursery.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.31208988027080187,
+          "margin": 0.17397425617240916
+        },
+        {
+          "text": "Tried a sour cherry jam with fewer cloves. The family liked this batch.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.560947364803836,
+          "margin": 0.47375732690283967
+        },
+        {
+          "text": "The overnight coach stops for dinner at a service station and reaches Mysuru at dawn.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.3083316065840655,
+          "margin": 0.1798382267809054
+        },
+        {
+          "text": "Airline moved the return leg to a gate in the domestic concourse.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.4646668103621571,
+          "margin": 0.36876456340407404
+        },
+        {
+          "text": "The homestay lockbox is next to the blue door, message the host when leaving.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.34357760861167386,
+          "margin": 0.14518343682280452
+        },
+        {
+          "text": "Check the last tram from the old port before booking an evening tour.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.6061413545148711,
+          "margin": 0.5291122563624953
+        },
+        {
+          "text": "This rail pass covers local lines but excludes the mountain funicular.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.2551783446048346,
+          "margin": 0.10607948358727062
+        },
+        {
+          "text": "The dentist mentioned a temporary filling could be sensitive for two days.",
+          "expected": "Health",
+          "similarity": 0.1673001383443848,
+          "margin": 0.008808762946918292
+        },
+        {
+          "text": "Nearest lab offers walk-in blood draws on Wednesday before breakfast.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.3480228084558503,
+          "margin": 0.19868576942178875
+        },
+        {
+          "text": "The inhaler refill is ready at the chemist. Bring the prescription.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.3224838426404468,
+          "margin": 0.20506453421468845
+        },
+        {
+          "text": "Log lower-back stiffness before and after stretches for the physiotherapist.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.43487018753050244,
+          "margin": 0.27970596568929124
+        },
+        {
+          "text": "Clinic message includes preoperative fasting instructions for my procedure.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.5009747578955982,
+          "margin": 0.4070284424825824
+        },
+        {
+          "text": "Before bed: put the bins out, defrost peas, and charge the torch.",
+          "expected": "Tasks",
+          "category": "Personal",
+          "similarity": 0.39498037024520394,
+          "margin": 0.2044520100750126
+        },
+        {
+          "text": "I promised to call the building manager about the buzzer on Monday.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.36176306334517894,
+          "margin": 0.22643755964935275
+        },
+        {
+          "text": "Book the dog walker and collect the parcel before the locker code expires.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.24885098070974515,
+          "margin": 0.09921572842029788
+        },
+        {
+          "text": "Return the library board game, then pick up a replacement light bulb.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.23419857432436575,
+          "margin": 0.03345231611873975
+        },
+        {
+          "text": "I need to photograph the broken gate and send the picture to the caretaker.",
+          "expected": "Tasks",
+          "category": "Personal",
+          "similarity": 0.27578121761649493,
+          "margin": 0.10419981470038484
+        },
+        {
+          "text": "The Kubernetes pod was restarted because its liveness probe timed out after ten seconds.",
+          "expected": "Technology",
+          "category": "Technology",
+          "similarity": 0.3530867683594557,
+          "margin": 0.23205859991517236
+        },
+        {
+          "text": "Use an index on the account column so the SQLite query avoids a table scan.",
+          "expected": "Technology",
+          "category": "Finance",
+          "similarity": 0.24114569603760896,
+          "margin": 0.10023976827757919
+        },
+        {
+          "text": "The webcam driver drops frames when the USB hub shares power with the display.",
+          "expected": "Technology",
+          "category": "Technology",
+          "similarity": 0.22493176746538474,
+          "margin": 0.1045061433369939
+        },
+        {
+          "text": "The webhook retries on a 503 and signs the payload before each request.",
+          "expected": "Technology",
+          "similarity": 0.19171926900729871,
+          "margin": 0.01324129391599052
+        },
+        {
+          "text": "A firmware upgrade fixed the clock drift on the network switch.",
+          "expected": "Technology",
+          "category": "Technology",
+          "similarity": 0.316650086438024,
+          "margin": 0.2052304978352567
+        },
+        {
+          "text": "Save the annotated atlas of prewar streetcar depots for occasional lookup.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.2700315178373824,
+          "margin": 0.11915608829830893
+        },
+        {
+          "text": "A link roundup from the library on typeface specimens and digital archives.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.49578051613515056,
+          "margin": 0.3877269100854299
+        },
+        {
+          "text": "The tide table handbook cites two surveys I want in my bibliography.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.3007577373336842,
+          "margin": 0.1786103701793245
+        },
+        {
+          "text": "Bookmark the online catalogue of women photographers and its source notes.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.49248183081564567,
+          "margin": 0.37062796842468604
+        },
+        {
+          "text": "Keep this illustrated adhesives guide as a resource when restoring picture frames.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.2589338636180981,
+          "margin": 0.1102364941611009
+        }
+      ]
+    }
+  },
+  "retrieval": {
+    "clips": 175,
+    "chunks": 350,
+    "indexMs": 3761.8688999999995,
+    "count": 50,
+    "overall": {
+      "keyword": {
+        "p5": 0.16400000000000006,
+        "r5": 0.82,
+        "mrr": 0.7765455038788374,
+        "ndcg": 0.7838507213043262,
+        "p95Ms": 8.797500000000582
+      },
+      "semantic": {
+        "p5": 0.14800000000000008,
+        "r5": 0.74,
+        "mrr": 0.6483985945405447,
+        "ndcg": 0.6636855487197891,
+        "p95Ms": 26.1833000000006
+      },
+      "rrf60": {
+        "p5": 0.17200000000000004,
+        "r5": 0.86,
+        "mrr": 0.8351228576491736,
+        "ndcg": 0.8352371901428584,
+        "p95Ms": 33.175600000000486
+      },
+      "reference-gate": {
+        "p5": 0.19999999999999993,
+        "r5": 1,
+        "mrr": 0.955,
+        "ndcg": 0.9664693163757554,
+        "p95Ms": 35.110100000001694
+      }
+    },
+    "selectedHybrid": {
+      "id": "reference-gate",
+      "constant": 20,
+      "weight": 0.15,
+      "depth": 10,
+      "gate": true
+    },
+    "byType": {
+      "reference": {
+        "keyword": {
+          "p5": 0.20000000000000007,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 8.137499999998909
+        },
+        "semantic": {
+          "p5": 0.096,
+          "r5": 0.48,
+          "mrr": 0.38346385574775665,
+          "ndcg": 0.3916595270110033,
+          "p95Ms": 21.305199999998877
+        },
+        "rrf60": {
+          "p5": 0.20000000000000007,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 26.54739999999947
+        },
+        "reference-gate": {
+          "p5": 0.20000000000000007,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 27.99250000000029
+        }
+      },
+      "paraphrase": {
+        "keyword": {
+          "p5": 0.12800000000000003,
+          "r5": 0.64,
+          "mrr": 0.5530910077576744,
+          "ndcg": 0.5677014426086524,
+          "p95Ms": 8.797500000000582
+        },
+        "semantic": {
+          "p5": 0.20000000000000007,
+          "r5": 1,
+          "mrr": 0.9133333333333333,
+          "ndcg": 0.9357115704285749,
+          "p95Ms": 26.1833000000006
+        },
+        "rrf60": {
+          "p5": 0.14400000000000004,
+          "r5": 0.72,
+          "mrr": 0.670245715298347,
+          "ndcg": 0.6704743802857166,
+          "p95Ms": 35.21480000000156
+        },
+        "reference-gate": {
+          "p5": 0.20000000000000007,
+          "r5": 1,
+          "mrr": 0.91,
+          "ndcg": 0.9329386327515107,
+          "p95Ms": 35.110100000001694
+        }
+      }
+    },
+    "queries": [
+      {
+        "id": "held-out-1-exact",
+        "query": "GD-9082",
+        "type": "reference",
+        "relevant": "held-out-1",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.486499999999978,
+            "top": [
+              "held-out-1"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.461999999999534,
+            "top": [
+              "held-out-1",
+              "held-out-13",
+              "s06-main",
+              "held-out-18",
+              "held-out-15"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 19.431099999999788,
+            "top": [
+              "held-out-1",
+              "held-out-13",
+              "s06-main",
+              "held-out-18",
+              "held-out-15"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 22.426699999999073,
+            "top": [
+              "held-out-1",
+              "held-out-13",
+              "s06-main",
+              "held-out-18",
+              "held-out-15"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-1-concept",
+        "query": "where will the delivery driver take back the broken rubber seal",
+        "type": "paraphrase",
+        "relevant": "held-out-1",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.730599999999868,
+            "top": [
+              "held-out-1",
+              "held-out-14",
+              "s03-main",
+              "held-out-2",
+              "held-out-9"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.475999999999658,
+            "top": [
+              "held-out-1",
+              "s11-main",
+              "held-out-13",
+              "held-out-14",
+              "held-out-12"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 22.675199999999677,
+            "top": [
+              "held-out-1",
+              "held-out-14",
+              "held-out-7",
+              "held-out-13",
+              "held-out-9"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.45469999999932,
+            "top": [
+              "held-out-1",
+              "held-out-14",
+              "s11-main",
+              "held-out-7",
+              "held-out-13"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-2-exact",
+        "query": "HR-5417",
+        "type": "reference",
+        "relevant": "held-out-2",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.9052999999994427,
+            "top": [
+              "held-out-2"
+            ]
+          },
+          "semantic": {
+            "rank": 6,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.16666666666666666,
+            "ndcg": 0,
+            "ms": 8.047199999999975,
+            "top": [
+              "held-out-13",
+              "held-out-14",
+              "s07-working",
+              "s12-working",
+              "s23-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.219699999999648,
+            "top": [
+              "held-out-2",
+              "held-out-13",
+              "held-out-14",
+              "s07-working",
+              "s12-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.579899999999725,
+            "top": [
+              "held-out-2",
+              "held-out-13",
+              "held-out-14",
+              "s07-working",
+              "s12-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-2-concept",
+        "query": "how do i enter the outdoor string music performance",
+        "type": "paraphrase",
+        "relevant": "held-out-2",
+        "scored": {
+          "keyword": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 6.4835000000002765,
+            "top": [
+              "held-out-5",
+              "held-out-2",
+              "s20-main",
+              "held-out-16",
+              "s20-working"
+            ]
+          },
+          "semantic": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 9.440599999999904,
+            "top": [
+              "held-out-5",
+              "held-out-2",
+              "held-out-11",
+              "s04-main",
+              "s22-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 16.103799999999865,
+            "top": [
+              "held-out-5",
+              "held-out-2",
+              "s20-main",
+              "held-out-7",
+              "s04-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 16.08349999999973,
+            "top": [
+              "held-out-5",
+              "held-out-2",
+              "held-out-11",
+              "held-out-7",
+              "s04-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-3-exact",
+        "query": "KL-7024",
+        "type": "reference",
+        "relevant": "held-out-3",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.571800000000621,
+            "top": [
+              "held-out-3"
+            ]
+          },
+          "semantic": {
+            "rank": 12,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.08333333333333333,
+            "ndcg": 0,
+            "ms": 6.6284999999998035,
+            "top": [
+              "held-out-13",
+              "s16-working",
+              "s06-main",
+              "s03-working",
+              "held-out-11"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.27690000000075,
+            "top": [
+              "held-out-3",
+              "held-out-13",
+              "s16-working",
+              "s06-main",
+              "s03-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 15.416000000000167,
+            "top": [
+              "held-out-3",
+              "held-out-13",
+              "s16-working",
+              "s06-main",
+              "s03-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-3-concept",
+        "query": "how hot did i bake the experiment with the clear ceramic coating",
+        "type": "paraphrase",
+        "relevant": "held-out-3",
+        "scored": {
+          "keyword": {
+            "rank": 81,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.012345679012345678,
+            "ndcg": 0,
+            "ms": 5.7719999999999345,
+            "top": [
+              "s13-main",
+              "s13-working",
+              "s25-main",
+              "s20-main",
+              "held-out-16"
+            ]
+          },
+          "semantic": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 10.786000000000058,
+            "top": [
+              "s13-main",
+              "s02-main",
+              "held-out-3",
+              "s02-working",
+              "s13-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 14,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.07142857142857142,
+            "ndcg": 0,
+            "ms": 16.70969999999943,
+            "top": [
+              "s13-main",
+              "s13-working",
+              "s02-main",
+              "s03-working",
+              "s02-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 4,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.25,
+            "ndcg": 0.43067655807339306,
+            "ms": 16.65060000000085,
+            "top": [
+              "s13-main",
+              "s13-working",
+              "s02-main",
+              "held-out-3",
+              "s02-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-4-exact",
+        "query": "SG-1308",
+        "type": "reference",
+        "relevant": "held-out-4",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.6017000000001644,
+            "top": [
+              "held-out-4"
+            ]
+          },
+          "semantic": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 6.172899999999572,
+            "top": [
+              "s17-main",
+              "s12-working",
+              "s12-main",
+              "held-out-1",
+              "held-out-4"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.8757999999998,
+            "top": [
+              "held-out-4",
+              "s17-main",
+              "s12-working",
+              "s12-main",
+              "held-out-1"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.361799999999675,
+            "top": [
+              "held-out-4",
+              "s17-main",
+              "s12-working",
+              "s12-main",
+              "held-out-1"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-4-concept",
+        "query": "how early do we need to cancel to get our accommodation payment back",
+        "type": "paraphrase",
+        "relevant": "held-out-4",
+        "scored": {
+          "keyword": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 7.2158999999992375,
+            "top": [
+              "s20-main",
+              "held-out-4",
+              "s20-working",
+              "s29-main",
+              "held-out-17"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.861499999999978,
+            "top": [
+              "held-out-4",
+              "s17-main",
+              "s11-main",
+              "s19-main",
+              "held-out-17"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 16.49829999999929,
+            "top": [
+              "held-out-4",
+              "held-out-17",
+              "s17-schedule",
+              "s16-schedule",
+              "s12-schedule"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 16.18209999999908,
+            "top": [
+              "held-out-4",
+              "held-out-17",
+              "s17-main",
+              "s11-main",
+              "s19-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-5-exact",
+        "query": "SC-5670",
+        "type": "reference",
+        "relevant": "held-out-5",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.460399999999936,
+            "top": [
+              "held-out-5"
+            ]
+          },
+          "semantic": {
+            "rank": 13,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.07692307692307693,
+            "ndcg": 0,
+            "ms": 4.646600000000035,
+            "top": [
+              "held-out-13",
+              "s29-context",
+              "s27-context",
+              "s18-working",
+              "s30-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.181099999999788,
+            "top": [
+              "held-out-5",
+              "held-out-13",
+              "s29-context",
+              "s27-context",
+              "s18-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.292900000000373,
+            "top": [
+              "held-out-5",
+              "held-out-13",
+              "s29-context",
+              "s27-context",
+              "s18-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-5-concept",
+        "query": "how can i remove ripples from digitized printouts of music",
+        "type": "paraphrase",
+        "relevant": "held-out-5",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.068599999999606,
+            "top": [
+              "held-out-5",
+              "s20-main",
+              "held-out-16",
+              "s15-main",
+              "held-out-1"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.363800000000992,
+            "top": [
+              "held-out-5",
+              "s10-main",
+              "s27-schedule",
+              "s26-schedule",
+              "s24-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 15.759500000001935,
+            "top": [
+              "held-out-5",
+              "s09-main",
+              "s15-main",
+              "s09-working",
+              "held-out-13"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 15.572399999999107,
+            "top": [
+              "held-out-5",
+              "s10-main",
+              "s27-schedule",
+              "s26-schedule",
+              "s09-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-6-exact",
+        "query": "NT-9481",
+        "type": "reference",
+        "relevant": "held-out-6",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.082800000000134,
+            "top": [
+              "held-out-6"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.17360000000008,
+            "top": [
+              "held-out-6",
+              "held-out-13",
+              "held-out-14",
+              "s07-working",
+              "s12-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 21.352899999999863,
+            "top": [
+              "held-out-6",
+              "held-out-13",
+              "held-out-14",
+              "s07-working",
+              "s12-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 26.699099999999817,
+            "top": [
+              "held-out-6",
+              "held-out-13",
+              "held-out-14",
+              "s07-working",
+              "s12-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-6-concept",
+        "query": "what water quality reading went up in the fish tank after i fed them",
+        "type": "paraphrase",
+        "relevant": "held-out-6",
+        "scored": {
+          "keyword": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 5.7303999999985535,
+            "top": [
+              "s23-main",
+              "s23-working",
+              "held-out-6",
+              "s22-main",
+              "s22-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 45.347099999999045,
+            "top": [
+              "held-out-6",
+              "s23-main",
+              "held-out-21",
+              "s23-working",
+              "s06-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 51.24989999999707,
+            "top": [
+              "s23-main",
+              "held-out-6",
+              "s23-working",
+              "held-out-19",
+              "held-out-5"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 51.18079999999645,
+            "top": [
+              "held-out-6",
+              "s23-main",
+              "s23-working",
+              "held-out-21",
+              "s06-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-7-exact",
+        "query": "QR-4605",
+        "type": "reference",
+        "relevant": "held-out-7",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.641300000001138,
+            "top": [
+              "held-out-7"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 28.442199999999502,
+            "top": [
+              "held-out-7",
+              "s12-main",
+              "s12-working",
+              "s25-context",
+              "held-out-13"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 33.175600000000486,
+            "top": [
+              "held-out-7",
+              "s12-main",
+              "s12-working",
+              "s25-context",
+              "held-out-13"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 35.24850000000151,
+            "top": [
+              "held-out-7",
+              "s12-main",
+              "s12-working",
+              "s25-context",
+              "held-out-13"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-7-concept",
+        "query": "what cycling path avoids the busy road and crosses the canal",
+        "type": "paraphrase",
+        "relevant": "held-out-7",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.492500000000291,
+            "top": [
+              "held-out-7",
+              "s14-main",
+              "s03-main",
+              "s14-working",
+              "s29-record"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 15.132299999999304,
+            "top": [
+              "held-out-7",
+              "s16-main",
+              "s18-main",
+              "s18-working",
+              "s18-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 27.966599999999744,
+            "top": [
+              "held-out-7",
+              "s18-main",
+              "s18-working",
+              "s14-main",
+              "s29-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 27.806399999999485,
+            "top": [
+              "held-out-7",
+              "s16-main",
+              "s18-main",
+              "s18-working",
+              "s18-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-8-exact",
+        "query": "DF-8062",
+        "type": "reference",
+        "relevant": "held-out-8",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.700800000000527,
+            "top": [
+              "held-out-8"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.202900000000227,
+            "top": [
+              "held-out-8",
+              "held-out-13",
+              "s07-working",
+              "s07-main",
+              "s12-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.985200000000987,
+            "top": [
+              "held-out-8",
+              "held-out-13",
+              "s07-working",
+              "s07-main",
+              "s12-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 18.889900000000125,
+            "top": [
+              "held-out-8",
+              "held-out-13",
+              "s07-working",
+              "s07-main",
+              "s12-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-8-concept",
+        "query": "where is the proof the charity received my contribution",
+        "type": "paraphrase",
+        "relevant": "held-out-8",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.611000000000786,
+            "top": [
+              "held-out-8",
+              "s16-main",
+              "held-out-12",
+              "s16-working",
+              "s03-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.699399999999514,
+            "top": [
+              "held-out-8",
+              "s07-working",
+              "held-out-17",
+              "s07-main",
+              "held-out-4"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.458800000000338,
+            "top": [
+              "held-out-8",
+              "held-out-17",
+              "s03-main",
+              "s03-working",
+              "s25-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.381799999999203,
+            "top": [
+              "held-out-8",
+              "held-out-17",
+              "s07-working",
+              "s07-main",
+              "s03-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-9-exact",
+        "query": "PT-3604",
+        "type": "reference",
+        "relevant": "held-out-9",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.362099999998463,
+            "top": [
+              "held-out-9"
+            ]
+          },
+          "semantic": {
+            "rank": 24,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.041666666666666664,
+            "ndcg": 0,
+            "ms": 8.234699999999066,
+            "top": [
+              "held-out-15",
+              "s28-main",
+              "s28-working",
+              "s23-context",
+              "s02-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 15.672499999996944,
+            "top": [
+              "held-out-9",
+              "held-out-15",
+              "s28-main",
+              "s28-working",
+              "s23-context"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.308099999996557,
+            "top": [
+              "held-out-9",
+              "held-out-15",
+              "s28-main",
+              "s28-working",
+              "s23-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-9-concept",
+        "query": "what should i take to the foot specialist who checks how i run",
+        "type": "paraphrase",
+        "relevant": "held-out-9",
+        "scored": {
+          "keyword": {
+            "rank": 6,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.16666666666666666,
+            "ndcg": 0,
+            "ms": 5.751200000000608,
+            "top": [
+              "s20-main",
+              "held-out-19",
+              "s20-working",
+              "held-out-16",
+              "s04-main"
+            ]
+          },
+          "semantic": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 8.143199999998615,
+            "top": [
+              "s20-main",
+              "held-out-9",
+              "s20-working",
+              "s19-main",
+              "s21-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 14.068099999998594,
+            "top": [
+              "s20-main",
+              "s20-working",
+              "held-out-9",
+              "held-out-19",
+              "s04-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 13.969199999999546,
+            "top": [
+              "s20-main",
+              "held-out-9",
+              "s20-working",
+              "s19-main",
+              "held-out-19"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-10-exact",
+        "query": "MG-4219",
+        "type": "reference",
+        "relevant": "held-out-10",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.67279999999846,
+            "top": [
+              "held-out-10"
+            ]
+          },
+          "semantic": {
+            "rank": 83,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.012048192771084338,
+            "ndcg": 0,
+            "ms": 6.325600000000122,
+            "top": [
+              "held-out-13",
+              "held-out-1",
+              "s12-working",
+              "s07-working",
+              "s23-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.079099999999016,
+            "top": [
+              "held-out-10",
+              "held-out-13",
+              "held-out-1",
+              "s12-working",
+              "s07-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.732599999999366,
+            "top": [
+              "held-out-10",
+              "held-out-13",
+              "held-out-1",
+              "s12-working",
+              "s07-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-10-concept",
+        "query": "what does the magazine need from me apart from the story",
+        "type": "paraphrase",
+        "relevant": "held-out-10",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.381199999999808,
+            "top": [
+              "held-out-10",
+              "held-out-1",
+              "s09-main",
+              "s06-main",
+              "s30-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.78230000000076,
+            "top": [
+              "held-out-10",
+              "s20-working",
+              "s20-main",
+              "s20-context",
+              "s11-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.36460000000079,
+            "top": [
+              "held-out-10",
+              "s20-main",
+              "s20-working",
+              "s06-main",
+              "s03-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.26930000000175,
+            "top": [
+              "held-out-10",
+              "s20-working",
+              "s20-main",
+              "s20-context",
+              "s11-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-11-exact",
+        "query": "SB-2587",
+        "type": "reference",
+        "relevant": "held-out-11",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.137499999998909,
+            "top": [
+              "held-out-11"
+            ]
+          },
+          "semantic": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 8.341099999999642,
+            "top": [
+              "s12-working",
+              "s12-main",
+              "s07-working",
+              "held-out-14",
+              "held-out-11"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 16.572699999996985,
+            "top": [
+              "held-out-11",
+              "s12-working",
+              "s12-main",
+              "s07-working",
+              "held-out-14"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 18.20839999999953,
+            "top": [
+              "held-out-11",
+              "s12-working",
+              "s12-main",
+              "s07-working",
+              "held-out-14"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-11-concept",
+        "query": "where do we learn to tie ropes and what should i take",
+        "type": "paraphrase",
+        "relevant": "held-out-11",
+        "scored": {
+          "keyword": {
+            "rank": 0,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0,
+            "ndcg": 0,
+            "ms": 8.797500000000582,
+            "top": [
+              "held-out-4",
+              "s30-schedule",
+              "s29-schedule",
+              "s28-schedule",
+              "s27-schedule"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 26.1833000000006,
+            "top": [
+              "held-out-11",
+              "s19-main",
+              "held-out-25",
+              "s19-working",
+              "held-out-7"
+            ]
+          },
+          "rrf60": {
+            "rank": 66,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.015151515151515152,
+            "ndcg": 0,
+            "ms": 35.21480000000156,
+            "top": [
+              "s30-schedule",
+              "s20-main",
+              "held-out-7",
+              "s24-schedule",
+              "s20-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 35.110100000001694,
+            "top": [
+              "held-out-11",
+              "s19-main",
+              "held-out-25",
+              "s19-working",
+              "held-out-7"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-12-exact",
+        "query": "WH-7455",
+        "type": "reference",
+        "relevant": "held-out-12",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.169300000001385,
+            "top": [
+              "held-out-12"
+            ]
+          },
+          "semantic": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 3.91859999999906,
+            "top": [
+              "held-out-13",
+              "held-out-15",
+              "held-out-18",
+              "held-out-2",
+              "held-out-12"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.15860000000066,
+            "top": [
+              "held-out-12",
+              "held-out-13",
+              "held-out-15",
+              "held-out-18",
+              "held-out-2"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.116099999999278,
+            "top": [
+              "held-out-12",
+              "held-out-13",
+              "held-out-15",
+              "held-out-18",
+              "held-out-2"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-12-concept",
+        "query": "how can i stop the cupboard door from rubbing",
+        "type": "paraphrase",
+        "relevant": "held-out-12",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.200200000001132,
+            "top": [
+              "held-out-12",
+              "s20-main",
+              "held-out-16",
+              "held-out-1",
+              "s09-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.620600000000195,
+            "top": [
+              "held-out-12",
+              "held-out-19",
+              "s14-main",
+              "held-out-25",
+              "s28-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.014100000000326,
+            "top": [
+              "held-out-12",
+              "s14-main",
+              "held-out-1",
+              "held-out-19",
+              "held-out-25"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.944400000002133,
+            "top": [
+              "held-out-12",
+              "held-out-19",
+              "s14-main",
+              "held-out-25",
+              "s28-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-13-exact",
+        "query": "DW-5612",
+        "type": "reference",
+        "relevant": "held-out-13",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.5720000000001164,
+            "top": [
+              "held-out-13"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.414199999999255,
+            "top": [
+              "held-out-13",
+              "s18-working",
+              "s12-working",
+              "s12-main",
+              "s07-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.100099999999657,
+            "top": [
+              "held-out-13",
+              "s18-working",
+              "s12-working",
+              "s12-main",
+              "s07-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.84939999999915,
+            "top": [
+              "held-out-13",
+              "s18-working",
+              "s12-working",
+              "s12-main",
+              "s07-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-13-concept",
+        "query": "what evidence do i need for a warranty claim on an external disk",
+        "type": "paraphrase",
+        "relevant": "held-out-13",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.460900000000038,
+            "top": [
+              "held-out-13",
+              "s21-main",
+              "s21-working",
+              "held-out-25",
+              "held-out-15"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.878999999998996,
+            "top": [
+              "held-out-13",
+              "s12-record",
+              "s18-record",
+              "s15-record",
+              "s30-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.563599999999497,
+            "top": [
+              "held-out-13",
+              "s21-main",
+              "s21-working",
+              "s06-main",
+              "held-out-15"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.465199999998731,
+            "top": [
+              "held-out-13",
+              "s12-record",
+              "s18-record",
+              "s15-record",
+              "s30-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-14-exact",
+        "query": "AW-3107",
+        "type": "reference",
+        "relevant": "held-out-14",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.0892000000003463,
+            "top": [
+              "held-out-14"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.590099999999438,
+            "top": [
+              "held-out-14",
+              "held-out-13",
+              "s06-main",
+              "s27-record",
+              "s12-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.754699999999502,
+            "top": [
+              "held-out-14",
+              "held-out-13",
+              "s06-main",
+              "s27-record",
+              "s12-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.712100000000646,
+            "top": [
+              "held-out-14",
+              "held-out-13",
+              "s06-main",
+              "s27-record",
+              "s12-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-14-concept",
+        "query": "who will help with mobility when we land and where do we meet",
+        "type": "paraphrase",
+        "relevant": "held-out-14",
+        "scored": {
+          "keyword": {
+            "rank": 4,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.25,
+            "ndcg": 0.43067655807339306,
+            "ms": 3.1585999999988417,
+            "top": [
+              "held-out-4",
+              "held-out-11",
+              "held-out-1",
+              "held-out-14",
+              "held-out-23"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.412599999999657,
+            "top": [
+              "held-out-14",
+              "s18-main",
+              "s18-context",
+              "s17-context",
+              "s16-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.844899999998233,
+            "top": [
+              "held-out-14",
+              "s18-context",
+              "s17-context",
+              "s16-context",
+              "held-out-11"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.702899999998408,
+            "top": [
+              "held-out-14",
+              "s18-main",
+              "s18-context",
+              "s17-context",
+              "s16-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-15-exact",
+        "query": "VP-6935",
+        "type": "reference",
+        "relevant": "held-out-15",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.501299999999901,
+            "top": [
+              "held-out-15"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.556500000000597,
+            "top": [
+              "held-out-15",
+              "held-out-1",
+              "held-out-14",
+              "s17-main",
+              "s18-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.129800000000614,
+            "top": [
+              "held-out-15",
+              "held-out-1",
+              "held-out-14",
+              "s17-main",
+              "s18-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.532000000001062,
+            "top": [
+              "held-out-15",
+              "held-out-1",
+              "held-out-14",
+              "s17-main",
+              "s18-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-15-concept",
+        "query": "which place takes compliant travel document photographs upstairs",
+        "type": "paraphrase",
+        "relevant": "held-out-15",
+        "scored": {
+          "keyword": {
+            "rank": 0,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0,
+            "ndcg": 0,
+            "ms": 4.107700000000477,
+            "top": [
+              "s18-context",
+              "s17-context",
+              "s16-context",
+              "s18-schedule",
+              "s17-schedule"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.193900000000212,
+            "top": [
+              "held-out-15",
+              "s15-main",
+              "s15-working",
+              "s29-working",
+              "s09-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 18,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.05555555555555555,
+            "ndcg": 0,
+            "ms": 12.484099999999671,
+            "top": [
+              "s18-record",
+              "s18-context",
+              "s16-context",
+              "s17-context",
+              "s17-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.434400000000096,
+            "top": [
+              "held-out-15",
+              "s15-main",
+              "s15-working",
+              "s29-working",
+              "s18-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-16-exact",
+        "query": "BC-2036",
+        "type": "reference",
+        "relevant": "held-out-16",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.8867000000009284,
+            "top": [
+              "held-out-16"
+            ]
+          },
+          "semantic": {
+            "rank": 113,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.008849557522123894,
+            "ndcg": 0,
+            "ms": 3.9549000000006345,
+            "top": [
+              "s23-record",
+              "s27-record",
+              "s30-record",
+              "s19-record",
+              "s27-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.9553000000014435,
+            "top": [
+              "held-out-16",
+              "s23-record",
+              "s27-record",
+              "s30-record",
+              "s19-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.334100000000035,
+            "top": [
+              "held-out-16",
+              "s23-record",
+              "s27-record",
+              "s30-record",
+              "s19-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-16-concept",
+        "query": "which piece describes tree disease changing the landscape",
+        "type": "paraphrase",
+        "relevant": "held-out-16",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.1854999999995925,
+            "top": [
+              "held-out-16",
+              "s28-record",
+              "s25-record",
+              "s22-record",
+              "s19-record"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.051299999999173,
+            "top": [
+              "held-out-16",
+              "s14-working",
+              "s03-main",
+              "s20-main",
+              "s20-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.526099999997314,
+            "top": [
+              "held-out-16",
+              "s03-main",
+              "s03-working",
+              "s14-working",
+              "s14-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.383399999998801,
+            "top": [
+              "held-out-16",
+              "s14-working",
+              "s03-main",
+              "s20-main",
+              "s20-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-17-exact",
+        "query": "SWT-2245",
+        "type": "reference",
+        "relevant": "held-out-17",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.5137999999988097,
+            "top": [
+              "held-out-17"
+            ]
+          },
+          "semantic": {
+            "rank": 48,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.020833333333333332,
+            "ndcg": 0,
+            "ms": 7.4914000000007945,
+            "top": [
+              "s24-record",
+              "s24-context",
+              "s23-context",
+              "s23-record",
+              "s22-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.093000000000757,
+            "top": [
+              "held-out-17",
+              "s24-record",
+              "s24-context",
+              "s23-context",
+              "s23-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.08600000000115,
+            "top": [
+              "held-out-17",
+              "s24-record",
+              "s24-context",
+              "s23-context",
+              "s23-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-17-concept",
+        "query": "did they remove the charge for taking money out before maturity",
+        "type": "paraphrase",
+        "relevant": "held-out-17",
+        "scored": {
+          "keyword": {
+            "rank": 42,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.023809523809523808,
+            "ndcg": 0,
+            "ms": 5.1314000000002125,
+            "top": [
+              "s08-main",
+              "held-out-10",
+              "held-out-18",
+              "s08-working",
+              "held-out-22"
+            ]
+          },
+          "semantic": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 6.777299999999741,
+            "top": [
+              "held-out-23",
+              "held-out-17",
+              "s08-schedule",
+              "s11-main",
+              "s09-schedule"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.19800000000032,
+            "top": [
+              "held-out-17",
+              "s11-working",
+              "s10-main",
+              "s07-working",
+              "s08-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 12.05029999999897,
+            "top": [
+              "held-out-23",
+              "held-out-17",
+              "s08-schedule",
+              "s11-main",
+              "s09-schedule"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-18-exact",
+        "query": "MO-8643",
+        "type": "reference",
+        "relevant": "held-out-18",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.886699999999109,
+            "top": [
+              "held-out-18"
+            ]
+          },
+          "semantic": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 4.591099999999642,
+            "top": [
+              "held-out-13",
+              "held-out-18",
+              "s12-working",
+              "s07-working",
+              "s12-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.547099999999773,
+            "top": [
+              "held-out-18",
+              "held-out-13",
+              "s12-working",
+              "s07-working",
+              "s12-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.49829999999929,
+            "top": [
+              "held-out-18",
+              "held-out-13",
+              "s12-working",
+              "s07-working",
+              "s12-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-18-concept",
+        "query": "what step comes before swapping the motor in the device",
+        "type": "paraphrase",
+        "relevant": "held-out-18",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.710800000000745,
+            "top": [
+              "held-out-18",
+              "held-out-22",
+              "held-out-13",
+              "s08-main",
+              "held-out-10"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.652399999999034,
+            "top": [
+              "held-out-18",
+              "held-out-13",
+              "held-out-1",
+              "held-out-23",
+              "s29-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.567300000000614,
+            "top": [
+              "held-out-18",
+              "held-out-13",
+              "s18-main",
+              "s18-working",
+              "s13-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.483099999999467,
+            "top": [
+              "held-out-18",
+              "held-out-13",
+              "held-out-1",
+              "held-out-23",
+              "s29-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-19-exact",
+        "query": "HW-8539",
+        "type": "reference",
+        "relevant": "held-out-19",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.5293000000001484,
+            "top": [
+              "held-out-19"
+            ]
+          },
+          "semantic": {
+            "rank": 79,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.012658227848101266,
+            "ndcg": 0,
+            "ms": 4.973399999998946,
+            "top": [
+              "held-out-13",
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s27-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.575199999999313,
+            "top": [
+              "held-out-19",
+              "held-out-13",
+              "s23-record",
+              "s12-working",
+              "s12-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.539099999998143,
+            "top": [
+              "held-out-19",
+              "held-out-13",
+              "s23-record",
+              "s12-working",
+              "s12-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-19-concept",
+        "query": "why is the hands-free faucet only giving cold water",
+        "type": "paraphrase",
+        "relevant": "held-out-19",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.375099999999293,
+            "top": [
+              "held-out-19",
+              "s23-main",
+              "s23-working",
+              "held-out-4",
+              "s16-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.077799999999115,
+            "top": [
+              "held-out-19",
+              "s23-main",
+              "s23-working",
+              "s04-main",
+              "s27-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.64969999999812,
+            "top": [
+              "held-out-19",
+              "s23-main",
+              "s23-working",
+              "s16-main",
+              "held-out-8"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.556899999999587,
+            "top": [
+              "held-out-19",
+              "s23-main",
+              "s23-working",
+              "s16-main",
+              "s04-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-20-exact",
+        "query": "FR-5372",
+        "type": "reference",
+        "relevant": "held-out-20",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.6359000000011292,
+            "top": [
+              "held-out-20"
+            ]
+          },
+          "semantic": {
+            "rank": 75,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.013333333333333334,
+            "ndcg": 0,
+            "ms": 5.79910000000018,
+            "top": [
+              "held-out-13",
+              "s07-working",
+              "s18-working",
+              "s12-working",
+              "s17-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.498600000002625,
+            "top": [
+              "held-out-20",
+              "held-out-13",
+              "s07-working",
+              "s18-working",
+              "s12-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.524600000000646,
+            "top": [
+              "held-out-20",
+              "held-out-13",
+              "s07-working",
+              "s18-working",
+              "s12-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-20-concept",
+        "query": "how long can my audio device power a condenser microphone on battery",
+        "type": "paraphrase",
+        "relevant": "held-out-20",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.2237999999997555,
+            "top": [
+              "held-out-20",
+              "s18-main",
+              "s18-working",
+              "held-out-13",
+              "s20-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.936200000000099,
+            "top": [
+              "held-out-20",
+              "s11-main",
+              "held-out-13",
+              "s11-working",
+              "s18-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.479899999998452,
+            "top": [
+              "held-out-20",
+              "s18-main",
+              "held-out-13",
+              "s06-main",
+              "s18-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.305299999999988,
+            "top": [
+              "held-out-20",
+              "held-out-13",
+              "s18-main",
+              "s11-main",
+              "s11-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-21-exact",
+        "query": "IR-0639",
+        "type": "reference",
+        "relevant": "held-out-21",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.855799999999363,
+            "top": [
+              "held-out-21"
+            ]
+          },
+          "semantic": {
+            "rank": 124,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.008064516129032258,
+            "ndcg": 0,
+            "ms": 5.652200000000448,
+            "top": [
+              "held-out-13",
+              "s03-working",
+              "s12-working",
+              "s23-record",
+              "s03-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.607299999999668,
+            "top": [
+              "held-out-21",
+              "held-out-13",
+              "s03-working",
+              "s12-working",
+              "s23-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.095900000000256,
+            "top": [
+              "held-out-21",
+              "held-out-13",
+              "s03-working",
+              "s12-working",
+              "s23-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-21-concept",
+        "query": "how fast should the automatic watering system feed the tomato plants",
+        "type": "paraphrase",
+        "relevant": "held-out-21",
+        "scored": {
+          "keyword": {
+            "rank": 0,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0,
+            "ndcg": 0,
+            "ms": 4.734400000001187,
+            "top": [
+              "s14-main",
+              "s14-working",
+              "s20-main",
+              "held-out-16",
+              "s20-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.409700000000157,
+            "top": [
+              "held-out-21",
+              "s23-main",
+              "s23-working",
+              "held-out-19",
+              "held-out-6"
+            ]
+          },
+          "rrf60": {
+            "rank": 54,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.018518518518518517,
+            "ndcg": 0,
+            "ms": 13.314400000001115,
+            "top": [
+              "s14-main",
+              "s14-working",
+              "s20-main",
+              "held-out-9",
+              "s23-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.23830000000089,
+            "top": [
+              "held-out-21",
+              "s23-main",
+              "s14-main",
+              "s23-working",
+              "held-out-19"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-22-exact",
+        "query": "LE-5813",
+        "type": "reference",
+        "relevant": "held-out-22",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.6999999999989086,
+            "top": [
+              "held-out-22"
+            ]
+          },
+          "semantic": {
+            "rank": 43,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.023255813953488372,
+            "ndcg": 0,
+            "ms": 4.323800000000119,
+            "top": [
+              "held-out-13",
+              "s12-working",
+              "s13-record",
+              "s07-working",
+              "s23-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.090199999998731,
+            "top": [
+              "held-out-22",
+              "held-out-13",
+              "s12-working",
+              "s13-record",
+              "s07-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.048699999999371,
+            "top": [
+              "held-out-22",
+              "held-out-13",
+              "s12-working",
+              "s13-record",
+              "s07-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-22-concept",
+        "query": "what must staff do with the calculators before the science test",
+        "type": "paraphrase",
+        "relevant": "held-out-22",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.017799999999625,
+            "top": [
+              "held-out-22",
+              "held-out-20",
+              "held-out-18",
+              "s13-main",
+              "s08-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.738499999999476,
+            "top": [
+              "held-out-22",
+              "s23-working",
+              "s01-working",
+              "s23-main",
+              "s03-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.960699999997814,
+            "top": [
+              "held-out-22",
+              "s26-context",
+              "held-out-6",
+              "s08-working",
+              "s23-context"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.91229999999814,
+            "top": [
+              "held-out-22",
+              "s23-working",
+              "s01-working",
+              "s23-main",
+              "s03-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-23-exact",
+        "query": "BT-6095",
+        "type": "reference",
+        "relevant": "held-out-23",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.693599999998696,
+            "top": [
+              "held-out-23"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.1783000000014,
+            "top": [
+              "held-out-23",
+              "held-out-13",
+              "s09-main",
+              "s07-working",
+              "held-out-15"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.005200000001423,
+            "top": [
+              "held-out-23",
+              "held-out-13",
+              "s09-main",
+              "s07-working",
+              "held-out-15"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 12.468700000001263,
+            "top": [
+              "held-out-23",
+              "held-out-13",
+              "s09-main",
+              "s07-working",
+              "held-out-15"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-23-concept",
+        "query": "why was part of the share sale payout taken for exchanging money",
+        "type": "paraphrase",
+        "relevant": "held-out-23",
+        "scored": {
+          "keyword": {
+            "rank": 143,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.006993006993006993,
+            "ndcg": 0,
+            "ms": 5.667200000001685,
+            "top": [
+              "held-out-12",
+              "held-out-13",
+              "s15-main",
+              "held-out-11",
+              "s15-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.497999999999593,
+            "top": [
+              "held-out-23",
+              "s07-main",
+              "s12-main",
+              "s07-working",
+              "held-out-4"
+            ]
+          },
+          "rrf60": {
+            "rank": 19,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.05263157894736842,
+            "ndcg": 0,
+            "ms": 15.3679000000011,
+            "top": [
+              "s10-main",
+              "held-out-13",
+              "s04-working",
+              "s04-main",
+              "s10-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 15.277600000001257,
+            "top": [
+              "held-out-23",
+              "s07-main",
+              "s12-main",
+              "s07-working",
+              "held-out-4"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-24-exact",
+        "query": "GC-4168",
+        "type": "reference",
+        "relevant": "held-out-24",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.135600000001432,
+            "top": [
+              "held-out-24"
+            ]
+          },
+          "semantic": {
+            "rank": 117,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.008547008547008548,
+            "ndcg": 0,
+            "ms": 21.305199999998877,
+            "top": [
+              "held-out-1",
+              "held-out-13",
+              "s12-main",
+              "s12-working",
+              "s16-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 26.54739999999947,
+            "top": [
+              "held-out-24",
+              "held-out-1",
+              "held-out-13",
+              "s12-main",
+              "s12-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 27.99250000000029,
+            "top": [
+              "held-out-24",
+              "held-out-1",
+              "held-out-13",
+              "s12-main",
+              "s12-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-24-concept",
+        "query": "can i cook on a petrol burner at the camping site when it is dry",
+        "type": "paraphrase",
+        "relevant": "held-out-24",
+        "scored": {
+          "keyword": {
+            "rank": 84,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.011904761904761904,
+            "ndcg": 0,
+            "ms": 4.909700000000157,
+            "top": [
+              "held-out-23",
+              "s16-main",
+              "held-out-8",
+              "held-out-4",
+              "held-out-19"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.368000000000393,
+            "top": [
+              "held-out-24",
+              "s13-working",
+              "s13-main",
+              "held-out-25",
+              "held-out-3"
+            ]
+          },
+          "rrf60": {
+            "rank": 15,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.06666666666666667,
+            "ndcg": 0,
+            "ms": 11.47609999999986,
+            "top": [
+              "held-out-4",
+              "held-out-25",
+              "held-out-19",
+              "s17-main",
+              "s17-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.371399999999994,
+            "top": [
+              "held-out-24",
+              "held-out-25",
+              "s13-working",
+              "held-out-4",
+              "s13-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-25-exact",
+        "query": "WL-5702",
+        "type": "reference",
+        "relevant": "held-out-25",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.3181000000004133,
+            "top": [
+              "held-out-25"
+            ]
+          },
+          "semantic": {
+            "rank": 96,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.010416666666666666,
+            "ndcg": 0,
+            "ms": 3.8924000000006345,
+            "top": [
+              "held-out-13",
+              "held-out-18",
+              "s18-working",
+              "s06-main",
+              "s05-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.273700000001554,
+            "top": [
+              "held-out-25",
+              "held-out-13",
+              "held-out-18",
+              "s18-working",
+              "s06-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.270500000002357,
+            "top": [
+              "held-out-25",
+              "held-out-13",
+              "held-out-18",
+              "s18-working",
+              "s06-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "held-out-25-concept",
+        "query": "how should i dry the jumper so it keeps its shape",
+        "type": "paraphrase",
+        "relevant": "held-out-25",
+        "scored": {
+          "keyword": {
+            "rank": 45,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.022222222222222223,
+            "ndcg": 0,
+            "ms": 2.64929999999913,
+            "top": [
+              "s15-main",
+              "held-out-12",
+              "s20-main",
+              "held-out-16",
+              "s15-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.499200000000201,
+            "top": [
+              "held-out-25",
+              "s23-working",
+              "held-out-11",
+              "s13-main",
+              "held-out-3"
+            ]
+          },
+          "rrf60": {
+            "rank": 7,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.14285714285714285,
+            "ndcg": 0,
+            "ms": 7.265699999999924,
+            "top": [
+              "held-out-12",
+              "s15-main",
+              "held-out-9",
+              "s20-main",
+              "held-out-16"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.211100000000442,
+            "top": [
+              "held-out-25",
+              "s23-working",
+              "held-out-12",
+              "held-out-11",
+              "s13-main"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

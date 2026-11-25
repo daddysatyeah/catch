@@ -1,0 +1,16 @@
+{
+  "version": "0.2.1",
+  "source": "Chromium system clipboard",
+  "verdicts": [
+    "Packaged application starts with text and image monitoring off",
+    "Explicit opt-in captures real Chrome text and skips the pre-existing clipboard slot",
+    "Real clipboard repeat is suppressed and a synthetic credential-shaped string is skipped",
+    "Windows receives and preserves a real Chrome PNG clipboard write",
+    "Pause prevents capture and resume accepts the next real clipboard write",
+    "Windows captures copied text from a separate Notepad window",
+    "Global shortcut opens quick capture when sent from the Chrome window",
+    "Window close hides Catch while it remains running in the tray",
+    "Explicit Electron application quit completes with the window hidden",
+    "Restart preserves text and image and resets monitoring to off"
+  ]
+}

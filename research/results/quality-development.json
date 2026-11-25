@@ -1,0 +1,6000 @@
+{
+  "split": "development",
+  "fixtureHash": "780d0a7979497aa1d5f5a0dbd45c31edec08f4b481a9fdedd8e4f0e9924450f4",
+  "classification": {
+    "baseline": {
+      "selection": {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0.035
+      },
+      "count": 30,
+      "accuracy": 0.3,
+      "macroF1": 0.38,
+      "coverage": 0.3,
+      "acceptedAccuracy": 1,
+      "perCategory": [
+        {
+          "category": "Education",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Work",
+          "actual": 3,
+          "predicted": 0,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "Finance",
+          "actual": 3,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "category": "Shopping",
+          "actual": 3,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "category": "Personal",
+          "actual": 3,
+          "predicted": 0,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "Travel",
+          "actual": 3,
+          "predicted": 0,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "Health",
+          "actual": 3,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "category": "Tasks",
+          "actual": 3,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "category": "Technology",
+          "actual": 3,
+          "predicted": 0,
+          "correct": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "category": "References",
+          "actual": 3,
+          "predicted": 2,
+          "correct": 2,
+          "precision": 1,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        }
+      ],
+      "confusion": {
+        "Education": {
+          "Education": 3,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Work": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 3
+        },
+        "Finance": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 1,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Shopping": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 1,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Personal": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 3
+        },
+        "Travel": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 3
+        },
+        "Health": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 1,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Tasks": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 1,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Technology": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 3
+        },
+        "References": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 2,
+          "Abstained": 1
+        }
+      },
+      "predictions": [
+        {
+          "text": "Canvas notice: the instructor moved the lab practical to Thursday.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.2825561344447989,
+          "margin": 0.053165164076672294
+        },
+        {
+          "text": "Need to understand eigenvectors before the next university tutorial.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.3321147848622796,
+          "margin": 0.14500036398099966
+        },
+        {
+          "text": "Registration opens for the community college evening class.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.37654671721952043,
+          "margin": 0.1378668141071917
+        },
+        {
+          "text": "Accounts team accepted the revised campaign handover from the agency.",
+          "expected": "Work",
+          "similarity": 0.1667151254319279,
+          "margin": 0.013272845951453227
+        },
+        {
+          "text": "The hiring panel has sent its interview timetable and scoring sheet.",
+          "expected": "Work",
+          "similarity": 0.272309298522102,
+          "margin": 0.029378052673663668
+        },
+        {
+          "text": "Sam will cover the branch review while the account lead is away.",
+          "expected": "Work",
+          "similarity": 0.21165247648684882,
+          "margin": 0.047896383587756136
+        },
+        {
+          "text": "Moved part of the rainy-day balance into a fixed deposit.",
+          "expected": "Finance",
+          "similarity": 0.20746185093941316,
+          "margin": 0.07312135757723662
+        },
+        {
+          "text": "The interest credit differs from the amount on my quarterly statement.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.26233056654227027,
+          "margin": 0.15606085022782384
+        },
+        {
+          "text": "Work out advance tax after the pension contribution deduction.",
+          "expected": "Finance",
+          "similarity": 0.182072617644327,
+          "margin": 0.005989440526384476
+        },
+        {
+          "text": "The linen duvet arrived in the wrong size. The merchant supplied a return label.",
+          "expected": "Shopping",
+          "similarity": 0.23674008076562,
+          "margin": 0.11700884755328912
+        },
+        {
+          "text": "Compare the two water filters before placing the order.",
+          "expected": "Shopping",
+          "similarity": 0.09606216622129841,
+          "margin": 0.009592050941032298
+        },
+        {
+          "text": "Grocery app says the refund will reach the original payment method.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.4172886076222714,
+          "margin": 0.3009274609514967
+        },
+        {
+          "text": "Our neighbor gave me a cutting. Keep it near the shaded kitchen window.",
+          "expected": "Personal",
+          "similarity": 0.1554616540846377,
+          "margin": 0.014581090328104451
+        },
+        {
+          "text": "Dad told the story about the road outside his childhood home again.",
+          "expected": "Personal",
+          "similarity": 0.24855147320348062,
+          "margin": 0.1590918909291244
+        },
+        {
+          "text": "Add more cardamom next time I make the birthday cake.",
+          "expected": "Personal",
+          "similarity": 0.15659442434187845,
+          "margin": 0.05581428333081062
+        },
+        {
+          "text": "Stay near the bus depot because the intercity service leaves before dawn.",
+          "expected": "Travel",
+          "similarity": 0.20947629676334045,
+          "margin": 0.06449914864526829
+        },
+        {
+          "text": "The apartment host sent self check-in instructions for our trip.",
+          "expected": "Travel",
+          "similarity": 0.25513121978810377,
+          "margin": 0.009176817822973055
+        },
+        {
+          "text": "My transit pass works between the airport and the downtown station.",
+          "expected": "Travel",
+          "similarity": 0.1266681230668552,
+          "margin": 0.006382694248626336
+        },
+        {
+          "text": "The optometrist wants another eye exam after six months.",
+          "expected": "Health",
+          "similarity": 0.2383753272558442,
+          "margin": 0.12327069581001
+        },
+        {
+          "text": "Keep a log of headaches to show the GP at the consultation.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.4616560540957735,
+          "margin": 0.2039751856999028
+        },
+        {
+          "text": "Pharmacy substituted a generic. Check the instructions on the label.",
+          "expected": "Health",
+          "similarity": 0.17333896496822207,
+          "margin": 0.1211638632591732
+        },
+        {
+          "text": "My errands for tomorrow: feed the cat, put out recycling, and call the caretaker.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.40269186969649595,
+          "margin": 0.1950948679628104
+        },
+        {
+          "text": "Check the hallway light and send the reading to the property manager.",
+          "expected": "Tasks",
+          "similarity": 0.19047069408300416,
+          "margin": 0.08172551597190005
+        },
+        {
+          "text": "Reminder to return the borrowed umbrella before I leave.",
+          "expected": "Tasks",
+          "similarity": 0.17629443416151427,
+          "margin": 0.06660907985556577
+        },
+        {
+          "text": "The JWT middleware now rejects an expired identity token.",
+          "expected": "Technology",
+          "similarity": 0.04978601842300674,
+          "margin": 0.0015963245617762745
+        },
+        {
+          "text": "Use git bisect to find the change that broke the lint job.",
+          "expected": "Technology",
+          "similarity": 0.13808137265275855,
+          "margin": 0.08985508556379265
+        },
+        {
+          "text": "The router loses the DHCP lease every time it restarts.",
+          "expected": "Technology",
+          "similarity": 0.09135576229534136,
+          "margin": 0.027907474765136442
+        },
+        {
+          "text": "Save the illustrated field guide for future plant identification.",
+          "expected": "References",
+          "similarity": 0.16679508093245346,
+          "margin": 0.02845795058345124
+        },
+        {
+          "text": "Reading list: archived oral history recordings and design journals.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.4297102939739078,
+          "margin": 0.03629572503834427
+        },
+        {
+          "text": "Bookmark the museum catalogue and its bibliography for later.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.49921973622091154,
+          "margin": 0.2080378570512788
+        }
+      ]
+    },
+    "selected": {
+      "selection": {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0.02
+      },
+      "count": 30,
+      "accuracy": 0.8666666666666667,
+      "macroF1": 0.8957142857142857,
+      "coverage": 0.9,
+      "acceptedAccuracy": 0.9629629629629629,
+      "perCategory": [
+        {
+          "category": "Education",
+          "actual": 3,
+          "predicted": 4,
+          "correct": 3,
+          "precision": 0.75,
+          "recall": 1,
+          "f1": 0.8571428571428571
+        },
+        {
+          "category": "Work",
+          "actual": 3,
+          "predicted": 1,
+          "correct": 1,
+          "precision": 1,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "category": "Finance",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Shopping",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Personal",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Travel",
+          "actual": 3,
+          "predicted": 2,
+          "correct": 2,
+          "precision": 1,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "category": "Health",
+          "actual": 3,
+          "predicted": 2,
+          "correct": 2,
+          "precision": 1,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "category": "Tasks",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "Technology",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        {
+          "category": "References",
+          "actual": 3,
+          "predicted": 3,
+          "correct": 3,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      ],
+      "confusion": {
+        "Education": {
+          "Education": 3,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Work": {
+          "Education": 0,
+          "Work": 1,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 2
+        },
+        "Finance": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 3,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Shopping": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 3,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Personal": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 3,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Travel": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 2,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 1
+        },
+        "Health": {
+          "Education": 1,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 2,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Tasks": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 3,
+          "Technology": 0,
+          "References": 0,
+          "Abstained": 0
+        },
+        "Technology": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 3,
+          "References": 0,
+          "Abstained": 0
+        },
+        "References": {
+          "Education": 0,
+          "Work": 0,
+          "Finance": 0,
+          "Shopping": 0,
+          "Personal": 0,
+          "Travel": 0,
+          "Health": 0,
+          "Tasks": 0,
+          "Technology": 0,
+          "References": 3,
+          "Abstained": 0
+        }
+      },
+      "predictions": [
+        {
+          "text": "Canvas notice: the instructor moved the lab practical to Thursday.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.5536449769262084,
+          "margin": 0.4400814596604292
+        },
+        {
+          "text": "Need to understand eigenvectors before the next university tutorial.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.2612496379194014,
+          "margin": 0.0888167488800562
+        },
+        {
+          "text": "Registration opens for the community college evening class.",
+          "expected": "Education",
+          "category": "Education",
+          "similarity": 0.3706178927532299,
+          "margin": 0.23147029846690095
+        },
+        {
+          "text": "Accounts team accepted the revised campaign handover from the agency.",
+          "expected": "Work",
+          "category": "Work",
+          "similarity": 0.2958110594043972,
+          "margin": 0.032660719856195175
+        },
+        {
+          "text": "The hiring panel has sent its interview timetable and scoring sheet.",
+          "expected": "Work",
+          "similarity": 0.2621281286151762,
+          "margin": 0.006101270300352735
+        },
+        {
+          "text": "Sam will cover the branch review while the account lead is away.",
+          "expected": "Work",
+          "similarity": 0.15271510421828452,
+          "margin": 0.00018560914192153333
+        },
+        {
+          "text": "Moved part of the rainy-day balance into a fixed deposit.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.4272074017766498,
+          "margin": 0.2869101235061391
+        },
+        {
+          "text": "The interest credit differs from the amount on my quarterly statement.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.7134790072552076,
+          "margin": 0.6454963383755503
+        },
+        {
+          "text": "Work out advance tax after the pension contribution deduction.",
+          "expected": "Finance",
+          "category": "Finance",
+          "similarity": 0.39192175202941143,
+          "margin": 0.2865520894169451
+        },
+        {
+          "text": "The linen duvet arrived in the wrong size. The merchant supplied a return label.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.2849223004834573,
+          "margin": 0.13638987602734615
+        },
+        {
+          "text": "Compare the two water filters before placing the order.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.17727162761367565,
+          "margin": 0.02626110810940996
+        },
+        {
+          "text": "Grocery app says the refund will reach the original payment method.",
+          "expected": "Shopping",
+          "category": "Shopping",
+          "similarity": 0.4622965781224999,
+          "margin": 0.25757520087564667
+        },
+        {
+          "text": "Our neighbor gave me a cutting. Keep it near the shaded kitchen window.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.49971251929135785,
+          "margin": 0.34733155232994295
+        },
+        {
+          "text": "Dad told the story about the road outside his childhood home again.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.30005623201369463,
+          "margin": 0.15264075641221742
+        },
+        {
+          "text": "Add more cardamom next time I make the birthday cake.",
+          "expected": "Personal",
+          "category": "Personal",
+          "similarity": 0.4138640153776739,
+          "margin": 0.2852173791450776
+        },
+        {
+          "text": "Stay near the bus depot because the intercity service leaves before dawn.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.5157061665535589,
+          "margin": 0.3748283504939163
+        },
+        {
+          "text": "The apartment host sent self check-in instructions for our trip.",
+          "expected": "Travel",
+          "similarity": 0.2378112949137885,
+          "margin": 0.004479001476280109
+        },
+        {
+          "text": "My transit pass works between the airport and the downtown station.",
+          "expected": "Travel",
+          "category": "Travel",
+          "similarity": 0.416920772096367,
+          "margin": 0.25692669723084377
+        },
+        {
+          "text": "The optometrist wants another eye exam after six months.",
+          "expected": "Health",
+          "category": "Education",
+          "similarity": 0.23246983341049904,
+          "margin": 0.06964364522163677
+        },
+        {
+          "text": "Keep a log of headaches to show the GP at the consultation.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.5271699626862592,
+          "margin": 0.4242916270827904
+        },
+        {
+          "text": "Pharmacy substituted a generic. Check the instructions on the label.",
+          "expected": "Health",
+          "category": "Health",
+          "similarity": 0.27772520760721137,
+          "margin": 0.13000568655774178
+        },
+        {
+          "text": "My errands for tomorrow: feed the cat, put out recycling, and call the caretaker.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.5290182843334299,
+          "margin": 0.33122378073036984
+        },
+        {
+          "text": "Check the hallway light and send the reading to the property manager.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.21064604982826898,
+          "margin": 0.0692428572279156
+        },
+        {
+          "text": "Reminder to return the borrowed umbrella before I leave.",
+          "expected": "Tasks",
+          "category": "Tasks",
+          "similarity": 0.5449100231399914,
+          "margin": 0.397728747747536
+        },
+        {
+          "text": "The JWT middleware now rejects an expired identity token.",
+          "expected": "Technology",
+          "category": "Technology",
+          "similarity": 0.18885849178957345,
+          "margin": 0.04270708517631047
+        },
+        {
+          "text": "Use git bisect to find the change that broke the lint job.",
+          "expected": "Technology",
+          "category": "Technology",
+          "similarity": 0.2921370761429413,
+          "margin": 0.1421194725583995
+        },
+        {
+          "text": "The router loses the DHCP lease every time it restarts.",
+          "expected": "Technology",
+          "category": "Technology",
+          "similarity": 0.2612192410405567,
+          "margin": 0.13444031852162422
+        },
+        {
+          "text": "Save the illustrated field guide for future plant identification.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.29938783211499326,
+          "margin": 0.1089917015706039
+        },
+        {
+          "text": "Reading list: archived oral history recordings and design journals.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.3608688663154949,
+          "margin": 0.1436184673601893
+        },
+        {
+          "text": "Bookmark the museum catalogue and its bibliography for later.",
+          "expected": "References",
+          "category": "References",
+          "similarity": 0.6427812139236716,
+          "margin": 0.5472163050263872
+        }
+      ]
+    },
+    "tuning": [
+      {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0.02,
+        "accuracy": 0.8666666666666667,
+        "macroF1": 0.8957142857142857,
+        "coverage": 0.9,
+        "acceptedAccuracy": 0.9629629629629629
+      },
+      {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0.01,
+        "accuracy": 0.8666666666666667,
+        "macroF1": 0.8957142857142857,
+        "coverage": 0.9,
+        "acceptedAccuracy": 0.9629629629629629
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.2,
+        "separation": 0,
+        "accuracy": 0.8666666666666667,
+        "macroF1": 0.8728571428571428,
+        "coverage": 0.9666666666666667,
+        "acceptedAccuracy": 0.896551724137931
+      },
+      {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0,
+        "accuracy": 0.8666666666666667,
+        "macroF1": 0.86,
+        "coverage": 1,
+        "acceptedAccuracy": 0.8666666666666667
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0,
+        "separation": 0,
+        "accuracy": 0.8666666666666667,
+        "macroF1": 0.8585714285714285,
+        "coverage": 1,
+        "acceptedAccuracy": 0.8666666666666667
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.2,
+        "separation": 0.02,
+        "accuracy": 0.8,
+        "macroF1": 0.8557142857142856,
+        "coverage": 0.8333333333333334,
+        "acceptedAccuracy": 0.96
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.2,
+        "separation": 0.01,
+        "accuracy": 0.8,
+        "macroF1": 0.8557142857142856,
+        "coverage": 0.8333333333333334,
+        "acceptedAccuracy": 0.96
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.2,
+        "separation": 0.01,
+        "accuracy": 0.8333333333333334,
+        "macroF1": 0.8528571428571429,
+        "coverage": 0.9333333333333333,
+        "acceptedAccuracy": 0.8928571428571429
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.2,
+        "separation": 0.035,
+        "accuracy": 0.8,
+        "macroF1": 0.8471428571428572,
+        "coverage": 0.8666666666666667,
+        "acceptedAccuracy": 0.9230769230769231
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0,
+        "separation": 0.035,
+        "accuracy": 0.8,
+        "macroF1": 0.8471428571428572,
+        "coverage": 0.8666666666666667,
+        "acceptedAccuracy": 0.9230769230769231
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.2,
+        "separation": 0.02,
+        "accuracy": 0.8,
+        "macroF1": 0.8471428571428572,
+        "coverage": 0.8666666666666667,
+        "acceptedAccuracy": 0.9230769230769231
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0,
+        "separation": 0.02,
+        "accuracy": 0.8,
+        "macroF1": 0.8471428571428572,
+        "coverage": 0.8666666666666667,
+        "acceptedAccuracy": 0.9230769230769231
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0,
+        "separation": 0.01,
+        "accuracy": 0.8333333333333334,
+        "macroF1": 0.8385714285714286,
+        "coverage": 0.9666666666666667,
+        "acceptedAccuracy": 0.8620689655172413
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.2,
+        "separation": 0,
+        "accuracy": 0.8,
+        "macroF1": 0.8307142857142857,
+        "coverage": 0.9,
+        "acceptedAccuracy": 0.8888888888888888
+      },
+      {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0.035,
+        "accuracy": 0.8,
+        "macroF1": 0.8257142857142856,
+        "coverage": 0.8333333333333334,
+        "acceptedAccuracy": 0.96
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0,
+        "separation": 0,
+        "accuracy": 0.8333333333333334,
+        "macroF1": 0.818095238095238,
+        "coverage": 1,
+        "acceptedAccuracy": 0.8333333333333334
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.26,
+        "separation": 0,
+        "accuracy": 0.8,
+        "macroF1": 0.8057142857142857,
+        "coverage": 0.8666666666666667,
+        "acceptedAccuracy": 0.9230769230769231
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.2,
+        "separation": 0.055,
+        "accuracy": 0.7666666666666667,
+        "macroF1": 0.8057142857142857,
+        "coverage": 0.8,
+        "acceptedAccuracy": 0.9583333333333334
+      },
+      {
+        "method": "supervised",
+        "minimum": 0,
+        "separation": 0.055,
+        "accuracy": 0.7666666666666667,
+        "macroF1": 0.8057142857142857,
+        "coverage": 0.8,
+        "acceptedAccuracy": 0.9583333333333334
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.2,
+        "separation": 0.035,
+        "accuracy": 0.7666666666666667,
+        "macroF1": 0.8057142857142857,
+        "coverage": 0.8,
+        "acceptedAccuracy": 0.9583333333333334
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0,
+        "separation": 0.02,
+        "accuracy": 0.7666666666666667,
+        "macroF1": 0.7966666666666666,
+        "coverage": 0.8,
+        "acceptedAccuracy": 0.9583333333333334
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.26,
+        "separation": 0.01,
+        "accuracy": 0.7666666666666667,
+        "macroF1": 0.7857142857142857,
+        "coverage": 0.8333333333333334,
+        "acceptedAccuracy": 0.92
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.26,
+        "separation": 0.035,
+        "accuracy": 0.7333333333333333,
+        "macroF1": 0.78,
+        "coverage": 0.7666666666666667,
+        "acceptedAccuracy": 0.9565217391304348
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.26,
+        "separation": 0.02,
+        "accuracy": 0.7333333333333333,
+        "macroF1": 0.78,
+        "coverage": 0.7666666666666667,
+        "acceptedAccuracy": 0.9565217391304348
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0,
+        "separation": 0.035,
+        "accuracy": 0.7,
+        "macroF1": 0.7699999999999999,
+        "coverage": 0.7,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0,
+        "separation": 0.01,
+        "accuracy": 0.7666666666666667,
+        "macroF1": 0.7633333333333333,
+        "coverage": 0.9,
+        "acceptedAccuracy": 0.8518518518518519
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.2,
+        "separation": 0.02,
+        "accuracy": 0.7,
+        "macroF1": 0.7566666666666666,
+        "coverage": 0.7333333333333333,
+        "acceptedAccuracy": 0.9545454545454546
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.2,
+        "separation": 0.035,
+        "accuracy": 0.6666666666666666,
+        "macroF1": 0.7499999999999999,
+        "coverage": 0.6666666666666666,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.2,
+        "separation": 0.01,
+        "accuracy": 0.7,
+        "macroF1": 0.7423809523809524,
+        "coverage": 0.7666666666666667,
+        "acceptedAccuracy": 0.9130434782608695
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.2,
+        "separation": 0,
+        "accuracy": 0.7,
+        "macroF1": 0.7423809523809524,
+        "coverage": 0.7666666666666667,
+        "acceptedAccuracy": 0.9130434782608695
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.26,
+        "separation": 0.055,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.71,
+        "coverage": 0.6666666666666666,
+        "acceptedAccuracy": 0.95
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.2,
+        "separation": 0.055,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.71,
+        "coverage": 0.6666666666666666,
+        "acceptedAccuracy": 0.95
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0,
+        "separation": 0.055,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.71,
+        "coverage": 0.6666666666666666,
+        "acceptedAccuracy": 0.95
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.2,
+        "separation": 0.055,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.7,
+        "coverage": 0.6333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0,
+        "separation": 0.055,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.7,
+        "coverage": 0.6333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.32,
+        "separation": 0.01,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.6857142857142857,
+        "coverage": 0.7,
+        "acceptedAccuracy": 0.9047619047619048
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.32,
+        "separation": 0,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.6857142857142857,
+        "coverage": 0.7,
+        "acceptedAccuracy": 0.9047619047619048
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.32,
+        "separation": 0.035,
+        "accuracy": 0.6,
+        "macroF1": 0.67,
+        "coverage": 0.6333333333333333,
+        "acceptedAccuracy": 0.9473684210526315
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.32,
+        "separation": 0.02,
+        "accuracy": 0.6,
+        "macroF1": 0.67,
+        "coverage": 0.6333333333333333,
+        "acceptedAccuracy": 0.9473684210526315
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.3,
+        "separation": 0.055,
+        "accuracy": 0.5333333333333333,
+        "macroF1": 0.6199999999999999,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.3,
+        "separation": 0.035,
+        "accuracy": 0.5333333333333333,
+        "macroF1": 0.6199999999999999,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.3,
+        "separation": 0.02,
+        "accuracy": 0.5333333333333333,
+        "macroF1": 0.6199999999999999,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.3,
+        "separation": 0.01,
+        "accuracy": 0.5333333333333333,
+        "macroF1": 0.6199999999999999,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.3,
+        "separation": 0,
+        "accuracy": 0.5333333333333333,
+        "macroF1": 0.6199999999999999,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0,
+        "separation": 0.01,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.6183333333333334,
+        "coverage": 0.8333333333333334,
+        "acceptedAccuracy": 0.76
+      },
+      {
+        "method": "description",
+        "minimum": 0,
+        "separation": 0,
+        "accuracy": 0.6666666666666666,
+        "macroF1": 0.61,
+        "coverage": 1,
+        "acceptedAccuracy": 0.6666666666666666
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.32,
+        "separation": 0.055,
+        "accuracy": 0.5,
+        "macroF1": 0.5999999999999999,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 0.9375
+      },
+      {
+        "method": "description",
+        "minimum": 0,
+        "separation": 0.035,
+        "accuracy": 0.5666666666666667,
+        "macroF1": 0.5807142857142857,
+        "coverage": 0.6666666666666666,
+        "acceptedAccuracy": 0.85
+      },
+      {
+        "method": "description",
+        "minimum": 0,
+        "separation": 0.02,
+        "accuracy": 0.6,
+        "macroF1": 0.5766666666666667,
+        "coverage": 0.7666666666666667,
+        "acceptedAccuracy": 0.782608695652174
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.26,
+        "separation": 0.02,
+        "accuracy": 0.5,
+        "macroF1": 0.5766666666666667,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 0.9375
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.26,
+        "separation": 0.01,
+        "accuracy": 0.5,
+        "macroF1": 0.5766666666666667,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 0.9375
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.26,
+        "separation": 0,
+        "accuracy": 0.5,
+        "macroF1": 0.5766666666666667,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 0.9375
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.26,
+        "separation": 0.035,
+        "accuracy": 0.4666666666666667,
+        "macroF1": 0.5700000000000001,
+        "coverage": 0.4666666666666667,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0,
+        "separation": 0.055,
+        "accuracy": 0.5,
+        "macroF1": 0.5414285714285714,
+        "coverage": 0.5666666666666667,
+        "acceptedAccuracy": 0.8823529411764706
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.38,
+        "separation": 0.01,
+        "accuracy": 0.4666666666666667,
+        "macroF1": 0.5257142857142857,
+        "coverage": 0.5,
+        "acceptedAccuracy": 0.9333333333333333
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.38,
+        "separation": 0,
+        "accuracy": 0.4666666666666667,
+        "macroF1": 0.5257142857142857,
+        "coverage": 0.5,
+        "acceptedAccuracy": 0.9333333333333333
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.26,
+        "separation": 0.055,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.52,
+        "coverage": 0.43333333333333335,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.4,
+        "separation": 0.055,
+        "accuracy": 0.4,
+        "macroF1": 0.52,
+        "coverage": 0.4,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.4,
+        "separation": 0.035,
+        "accuracy": 0.4,
+        "macroF1": 0.52,
+        "coverage": 0.4,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.4,
+        "separation": 0.02,
+        "accuracy": 0.4,
+        "macroF1": 0.52,
+        "coverage": 0.4,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.4,
+        "separation": 0.01,
+        "accuracy": 0.4,
+        "macroF1": 0.52,
+        "coverage": 0.4,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.4,
+        "separation": 0,
+        "accuracy": 0.4,
+        "macroF1": 0.52,
+        "coverage": 0.4,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.38,
+        "separation": 0.055,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.51,
+        "coverage": 0.43333333333333335,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.38,
+        "separation": 0.035,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.51,
+        "coverage": 0.43333333333333335,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-max",
+        "minimum": 0.38,
+        "separation": 0.02,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.51,
+        "coverage": 0.43333333333333335,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.2,
+        "separation": 0.035,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.4966666666666667,
+        "coverage": 0.5,
+        "acceptedAccuracy": 0.8666666666666667
+      },
+      {
+        "method": "description",
+        "minimum": 0.2,
+        "separation": 0.02,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.4871428571428572,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 0.8125
+      },
+      {
+        "method": "description",
+        "minimum": 0.2,
+        "separation": 0.01,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.4871428571428572,
+        "coverage": 0.5333333333333333,
+        "acceptedAccuracy": 0.8125
+      },
+      {
+        "method": "description",
+        "minimum": 0.2,
+        "separation": 0,
+        "accuracy": 0.43333333333333335,
+        "macroF1": 0.48047619047619045,
+        "coverage": 0.5666666666666667,
+        "acceptedAccuracy": 0.7647058823529411
+      },
+      {
+        "method": "description",
+        "minimum": 0.2,
+        "separation": 0.055,
+        "accuracy": 0.36666666666666664,
+        "macroF1": 0.45666666666666667,
+        "coverage": 0.4,
+        "acceptedAccuracy": 0.9166666666666666
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.32,
+        "separation": 0.055,
+        "accuracy": 0.3333333333333333,
+        "macroF1": 0.43999999999999995,
+        "coverage": 0.3333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.32,
+        "separation": 0.035,
+        "accuracy": 0.3333333333333333,
+        "macroF1": 0.43999999999999995,
+        "coverage": 0.3333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.32,
+        "separation": 0.02,
+        "accuracy": 0.3333333333333333,
+        "macroF1": 0.42666666666666664,
+        "coverage": 0.36666666666666664,
+        "acceptedAccuracy": 0.9090909090909091
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.32,
+        "separation": 0.01,
+        "accuracy": 0.3333333333333333,
+        "macroF1": 0.42666666666666664,
+        "coverage": 0.36666666666666664,
+        "acceptedAccuracy": 0.9090909090909091
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.32,
+        "separation": 0,
+        "accuracy": 0.3333333333333333,
+        "macroF1": 0.42666666666666664,
+        "coverage": 0.36666666666666664,
+        "acceptedAccuracy": 0.9090909090909091
+      },
+      {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0.035,
+        "accuracy": 0.3,
+        "macroF1": 0.38,
+        "coverage": 0.3,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0.02,
+        "accuracy": 0.3,
+        "macroF1": 0.37,
+        "coverage": 0.3333333333333333,
+        "acceptedAccuracy": 0.9
+      },
+      {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0.01,
+        "accuracy": 0.3,
+        "macroF1": 0.37,
+        "coverage": 0.3333333333333333,
+        "acceptedAccuracy": 0.9
+      },
+      {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0,
+        "accuracy": 0.3,
+        "macroF1": 0.37,
+        "coverage": 0.3333333333333333,
+        "acceptedAccuracy": 0.9
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.5,
+        "separation": 0.055,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.32999999999999996,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.26,
+        "separation": 0.055,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.32999999999999996,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.5,
+        "separation": 0.035,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.32999999999999996,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.5,
+        "separation": 0.02,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.32999999999999996,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.5,
+        "separation": 0.01,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.32999999999999996,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "supervised",
+        "minimum": 0.5,
+        "separation": 0,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.32999999999999996,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.32,
+        "separation": 0.035,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.30999999999999994,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.32,
+        "separation": 0.02,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.30999999999999994,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.32,
+        "separation": 0.01,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.30999999999999994,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.32,
+        "separation": 0,
+        "accuracy": 0.23333333333333334,
+        "macroF1": 0.30999999999999994,
+        "coverage": 0.23333333333333334,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.32,
+        "separation": 0.055,
+        "accuracy": 0.2,
+        "macroF1": 0.27999999999999997,
+        "coverage": 0.2,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.38,
+        "separation": 0.035,
+        "accuracy": 0.16666666666666666,
+        "macroF1": 0.22999999999999998,
+        "coverage": 0.16666666666666666,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.38,
+        "separation": 0.02,
+        "accuracy": 0.16666666666666666,
+        "macroF1": 0.22999999999999998,
+        "coverage": 0.16666666666666666,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.38,
+        "separation": 0.01,
+        "accuracy": 0.16666666666666666,
+        "macroF1": 0.22999999999999998,
+        "coverage": 0.16666666666666666,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.38,
+        "separation": 0,
+        "accuracy": 0.16666666666666666,
+        "macroF1": 0.22999999999999998,
+        "coverage": 0.16666666666666666,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "description",
+        "minimum": 0.38,
+        "separation": 0.055,
+        "accuracy": 0.13333333333333333,
+        "macroF1": 0.2,
+        "coverage": 0.13333333333333333,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.38,
+        "separation": 0.055,
+        "accuracy": 0.1,
+        "macroF1": 0.13,
+        "coverage": 0.1,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.38,
+        "separation": 0.035,
+        "accuracy": 0.1,
+        "macroF1": 0.13,
+        "coverage": 0.1,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.38,
+        "separation": 0.02,
+        "accuracy": 0.1,
+        "macroF1": 0.13,
+        "coverage": 0.1,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.38,
+        "separation": 0.01,
+        "accuracy": 0.1,
+        "macroF1": 0.13,
+        "coverage": 0.1,
+        "acceptedAccuracy": 1
+      },
+      {
+        "method": "prototype-mean",
+        "minimum": 0.38,
+        "separation": 0,
+        "accuracy": 0.1,
+        "macroF1": 0.13,
+        "coverage": 0.1,
+        "acceptedAccuracy": 1
+      }
+    ]
+  },
+  "retrieval": {
+    "clips": 166,
+    "chunks": 332,
+    "indexMs": 2398.1992,
+    "count": 32,
+    "overall": {
+      "keyword": {
+        "p5": 0.15000000000000005,
+        "r5": 0.75,
+        "mrr": 0.7544348187913543,
+        "ndcg": 0.75,
+        "p95Ms": 11.440099999999802
+      },
+      "semantic": {
+        "p5": 0.15625000000000006,
+        "r5": 0.78125,
+        "mrr": 0.7361852020676561,
+        "ndcg": 0.7429283004521589,
+        "p95Ms": 7.51969999999983
+      },
+      "rrf60": {
+        "p5": 0.16250000000000006,
+        "r5": 0.8125,
+        "mrr": 0.7793364412700082,
+        "ndcg": 0.78125,
+        "p95Ms": 17.05249999999978
+      },
+      "rrf10": {
+        "p5": 0.18750000000000008,
+        "r5": 0.9375,
+        "mrr": 0.8481770833333333,
+        "ndcg": 0.8653917520380097,
+        "p95Ms": 17.035900000000765
+      },
+      "rrf30": {
+        "p5": 0.16875000000000007,
+        "r5": 0.84375,
+        "mrr": 0.7944808663558662,
+        "ndcg": 0.796875,
+        "p95Ms": 17.03399999999965
+      },
+      "semantic-weighted": {
+        "p5": 0.16250000000000006,
+        "r5": 0.8125,
+        "mrr": 0.7139917214176248,
+        "ndcg": 0.7305979899047745,
+        "p95Ms": 17.038899999999558
+      },
+      "lexical-top10": {
+        "p5": 0.15625000000000006,
+        "r5": 0.78125,
+        "mrr": 0.7343037861973244,
+        "ndcg": 0.7390222598242955,
+        "p95Ms": 17.038899999999558
+      },
+      "reference-gate": {
+        "p5": 0.2000000000000001,
+        "r5": 1,
+        "mrr": 0.959375,
+        "ndcg": 0.9693057050251874,
+        "p95Ms": 17.081500000000233
+      }
+    },
+    "selectedHybrid": {
+      "id": "reference-gate",
+      "constant": 20,
+      "weight": 0.15,
+      "depth": 10,
+      "gate": true
+    },
+    "byType": {
+      "reference": {
+        "keyword": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 24.72310000000016
+        },
+        "semantic": {
+          "p5": 0.11249999999999999,
+          "r5": 0.5625,
+          "mrr": 0.5223704041353122,
+          "ndcg": 0.5241783004521589,
+          "p95Ms": 6.289300000000367
+        },
+        "rrf60": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 30.288300000000163
+        },
+        "rrf10": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 30.47100000000046
+        },
+        "rrf30": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 30.25720000000092
+        },
+        "semantic-weighted": {
+          "p5": 0.12499999999999999,
+          "r5": 0.625,
+          "mrr": 0.6446501095019164,
+          "ndcg": 0.625,
+          "p95Ms": 30.100600000000668
+        },
+        "lexical-top10": {
+          "p5": 0.11249999999999999,
+          "r5": 0.5625,
+          "mrr": 0.5498575723946486,
+          "ndcg": 0.5394331095982161,
+          "p95Ms": 30.225800000000163
+        },
+        "reference-gate": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 1,
+          "ndcg": 1,
+          "p95Ms": 31.109600000000682
+        }
+      },
+      "paraphrase": {
+        "keyword": {
+          "p5": 0.09999999999999999,
+          "r5": 0.5,
+          "mrr": 0.5088696375827085,
+          "ndcg": 0.5,
+          "p95Ms": 7.736299999999574
+        },
+        "semantic": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 0.95,
+          "ndcg": 0.9616783004521589,
+          "p95Ms": 7.956100000000333
+        },
+        "rrf60": {
+          "p5": 0.12499999999999999,
+          "r5": 0.625,
+          "mrr": 0.5586728825400166,
+          "ndcg": 0.5625,
+          "p95Ms": 14.765300000000025
+        },
+        "rrf10": {
+          "p5": 0.17500000000000002,
+          "r5": 0.875,
+          "mrr": 0.6963541666666667,
+          "ndcg": 0.7307835040760193,
+          "p95Ms": 14.74789999999939
+        },
+        "rrf30": {
+          "p5": 0.13749999999999998,
+          "r5": 0.6875,
+          "mrr": 0.5889617327117328,
+          "ndcg": 0.59375,
+          "p95Ms": 14.733099999999467
+        },
+        "semantic-weighted": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 0.7833333333333333,
+          "ndcg": 0.8361959798095491,
+          "p95Ms": 14.736499999999978
+        },
+        "lexical-top10": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 0.91875,
+          "ndcg": 0.938611410050375,
+          "p95Ms": 14.68119999999999
+        },
+        "reference-gate": {
+          "p5": 0.20000000000000004,
+          "r5": 1,
+          "mrr": 0.91875,
+          "ndcg": 0.938611410050375,
+          "p95Ms": 14.674299999999675
+        }
+      }
+    },
+    "queries": [
+      {
+        "id": "development-1-exact",
+        "query": "BK-3586",
+        "type": "reference",
+        "relevant": "development-1",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 24.72310000000016,
+            "top": [
+              "development-1"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.262400000000525,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 30.288300000000163,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 30.47100000000046,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 30.25720000000092,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 30.100600000000668,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 30.225800000000163,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 31.109600000000682,
+            "top": [
+              "development-1",
+              "s23-record",
+              "s17-main",
+              "s28-record",
+              "s07-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-1-concept",
+        "query": "where did i leave my compact bicycle for fixing",
+        "type": "paraphrase",
+        "relevant": "development-1",
+        "scored": {
+          "keyword": {
+            "rank": 0,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0,
+            "ndcg": 0,
+            "ms": 5.657900000000154,
+            "top": [
+              "development-3",
+              "s14-working",
+              "s14-main",
+              "s10-working",
+              "s10-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.8957000000000335,
+            "top": [
+              "development-1",
+              "s22-main",
+              "s11-main",
+              "development-2",
+              "development-9"
+            ]
+          },
+          "rrf60": {
+            "rank": 39,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.02564102564102564,
+            "ndcg": 0,
+            "ms": 12.573500000000422,
+            "top": [
+              "development-13",
+              "development-9",
+              "s15-working",
+              "development-4",
+              "s04-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 8,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.125,
+            "ndcg": 0,
+            "ms": 11.685300000000097,
+            "top": [
+              "development-9",
+              "development-3",
+              "development-13",
+              "development-4",
+              "s15-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 18,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.05555555555555555,
+            "ndcg": 0,
+            "ms": 11.6878999999999,
+            "top": [
+              "development-9",
+              "development-13",
+              "development-4",
+              "s15-working",
+              "s04-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 4,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.25,
+            "ndcg": 0.43067655807339306,
+            "ms": 11.675200000000586,
+            "top": [
+              "development-9",
+              "development-4",
+              "development-13",
+              "development-1",
+              "s22-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.645300000000134,
+            "top": [
+              "development-1",
+              "s22-main",
+              "s11-main",
+              "development-2",
+              "development-9"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.666400000000067,
+            "top": [
+              "development-1",
+              "s22-main",
+              "s11-main",
+              "development-2",
+              "development-9"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-2-exact",
+        "query": "LM-8264",
+        "type": "reference",
+        "relevant": "development-2",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.440099999999802,
+            "top": [
+              "development-2"
+            ]
+          },
+          "semantic": {
+            "rank": 69,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.014492753623188406,
+            "ndcg": 0,
+            "ms": 5.5460000000002765,
+            "top": [
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record",
+              "s25-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.05249999999978,
+            "top": [
+              "development-2",
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.035900000000765,
+            "top": [
+              "development-2",
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.03399999999965,
+            "top": [
+              "development-2",
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 17,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.058823529411764705,
+            "ndcg": 0,
+            "ms": 17.038899999999558,
+            "top": [
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record",
+              "s25-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 35,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.02857142857142857,
+            "ndcg": 0,
+            "ms": 17.038899999999558,
+            "top": [
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record",
+              "s25-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 17.081500000000233,
+            "top": [
+              "development-2",
+              "s23-record",
+              "s28-record",
+              "s22-record",
+              "s27-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-2-concept",
+        "query": "can i get a replacement for the rug that keeps coming apart",
+        "type": "paraphrase",
+        "relevant": "development-2",
+        "scored": {
+          "keyword": {
+            "rank": 120,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.008333333333333333,
+            "ndcg": 0,
+            "ms": 7.736299999999574,
+            "top": [
+              "development-13",
+              "s16-working",
+              "s16-main",
+              "s15-main",
+              "development-9"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.873599999999897,
+            "top": [
+              "development-2",
+              "development-13",
+              "s22-main",
+              "development-16",
+              "s23-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 18,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.05555555555555555,
+            "ndcg": 0,
+            "ms": 14.765300000000025,
+            "top": [
+              "development-13",
+              "s15-main",
+              "development-9",
+              "s15-working",
+              "development-4"
+            ]
+          },
+          "rrf10": {
+            "rank": 4,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.25,
+            "ndcg": 0.43067655807339306,
+            "ms": 14.74789999999939,
+            "top": [
+              "development-13",
+              "s15-main",
+              "development-9",
+              "development-2",
+              "s15-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 10,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.1,
+            "ndcg": 0,
+            "ms": 14.733099999999467,
+            "top": [
+              "development-13",
+              "s15-main",
+              "development-9",
+              "s15-working",
+              "s14-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 4,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.25,
+            "ndcg": 0.43067655807339306,
+            "ms": 14.736499999999978,
+            "top": [
+              "development-13",
+              "development-9",
+              "s15-main",
+              "development-2",
+              "s23-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 14.68119999999999,
+            "top": [
+              "development-13",
+              "development-2",
+              "development-9",
+              "s22-main",
+              "s15-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 14.674299999999675,
+            "top": [
+              "development-13",
+              "development-2",
+              "development-9",
+              "s22-main",
+              "s15-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-3-exact",
+        "query": "NS-4587",
+        "type": "reference",
+        "relevant": "development-3",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.704200000000128,
+            "top": [
+              "development-3"
+            ]
+          },
+          "semantic": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 5.3115999999999985,
+            "top": [
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-14",
+              "development-3"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.073599999999715,
+            "top": [
+              "development-3",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-14"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.046699999999873,
+            "top": [
+              "development-3",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-14"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.053500000000895,
+            "top": [
+              "development-3",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-14"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.04780000000028,
+            "top": [
+              "development-3",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-14"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 10.045900000000074,
+            "top": [
+              "s12-main",
+              "development-3",
+              "s12-working",
+              "s01-main",
+              "development-14"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.065899999999601,
+            "top": [
+              "development-3",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-14"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-3-concept",
+        "query": "where does the boat across the harbor leave late at night",
+        "type": "paraphrase",
+        "relevant": "development-3",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.246299999999792,
+            "top": [
+              "development-3",
+              "s03-main",
+              "s03-working",
+              "s17-main",
+              "s17-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.51969999999983,
+            "top": [
+              "development-3",
+              "s06-working",
+              "s18-main",
+              "s30-main",
+              "s06-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.895299999999224,
+            "top": [
+              "development-3",
+              "s03-main",
+              "s17-main",
+              "development-16",
+              "s03-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.854699999998957,
+            "top": [
+              "development-3",
+              "s03-main",
+              "s17-main",
+              "s03-working",
+              "development-16"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.860599999999977,
+            "top": [
+              "development-3",
+              "s03-main",
+              "s17-main",
+              "development-16",
+              "s03-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.85819999999967,
+            "top": [
+              "development-3",
+              "s03-main",
+              "s06-working",
+              "development-16",
+              "s17-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.82839999999942,
+            "top": [
+              "development-3",
+              "s06-working",
+              "s03-main",
+              "s18-main",
+              "s30-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.851299999999355,
+            "top": [
+              "development-3",
+              "s06-working",
+              "s03-main",
+              "s18-main",
+              "s30-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-4-exact",
+        "query": "VL-9562",
+        "type": "reference",
+        "relevant": "development-4",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.6136999999998807,
+            "top": [
+              "development-4"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.062699999999495,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.770899999999529,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.729599999999664,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.730899999999565,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.722399999998743,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.722499999999854,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.815999999999804,
+            "top": [
+              "development-4",
+              "s25-context",
+              "s23-context",
+              "s03-working",
+              "s26-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-4-concept",
+        "query": "where are the tools for picking rubbish off the beach",
+        "type": "paraphrase",
+        "relevant": "development-4",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.972400000000562,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s05-working",
+              "s06-main",
+              "s05-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.485099999999875,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "s18-main",
+              "s18-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.637400000000525,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "development-13",
+              "s18-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.659700000000157,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "development-13",
+              "s18-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.606500000000779,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "development-13",
+              "s18-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.638700000000426,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "s18-working",
+              "development-13"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.548600000000988,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "s18-main",
+              "s18-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 14.563200000000506,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s06-main",
+              "s18-main",
+              "s18-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-5-exact",
+        "query": "AU-2964",
+        "type": "reference",
+        "relevant": "development-5",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.9057000000002517,
+            "top": [
+              "development-5"
+            ]
+          },
+          "semantic": {
+            "rank": 96,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.010416666666666666,
+            "ndcg": 0,
+            "ms": 6.289300000000367,
+            "top": [
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record",
+              "s16-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.26010000000042,
+            "top": [
+              "development-5",
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.239700000000994,
+            "top": [
+              "development-5",
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.238900000000285,
+            "top": [
+              "development-5",
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 23,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.043478260869565216,
+            "ndcg": 0,
+            "ms": 9.242600000000493,
+            "top": [
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record",
+              "s16-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 44,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.022727272727272728,
+            "ndcg": 0,
+            "ms": 9.246800000000803,
+            "top": [
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record",
+              "s16-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 9.28020000000106,
+            "top": [
+              "development-5",
+              "s02-main",
+              "s23-record",
+              "development-3",
+              "s28-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-5-concept",
+        "query": "how do i turn soundtrack volume down automatically while someone talks",
+        "type": "paraphrase",
+        "relevant": "development-5",
+        "scored": {
+          "keyword": {
+            "rank": 0,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0,
+            "ndcg": 0,
+            "ms": 5.286700000000565,
+            "top": [
+              "s20-main",
+              "s20-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.956100000000333,
+            "top": [
+              "development-5",
+              "s11-main",
+              "s04-main",
+              "s11-working",
+              "development-8"
+            ]
+          },
+          "rrf60": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 13.305800000001,
+            "top": [
+              "s20-main",
+              "s20-working",
+              "development-5",
+              "s11-main",
+              "s04-main"
+            ]
+          },
+          "rrf10": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 13.27690000000075,
+            "top": [
+              "s20-main",
+              "development-5",
+              "s20-working",
+              "s11-main",
+              "s04-main"
+            ]
+          },
+          "rrf30": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 13.271700000000237,
+            "top": [
+              "s20-main",
+              "s20-working",
+              "development-5",
+              "s11-main",
+              "s04-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.274700000000848,
+            "top": [
+              "development-5",
+              "s11-main",
+              "s04-main",
+              "s11-working",
+              "development-8"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.27560000000176,
+            "top": [
+              "development-5",
+              "s11-main",
+              "s04-main",
+              "s11-working",
+              "development-8"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 13.293500000000677,
+            "top": [
+              "development-5",
+              "s11-main",
+              "s04-main",
+              "s11-working",
+              "development-8"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-6-exact",
+        "query": "MQ-5569",
+        "type": "reference",
+        "relevant": "development-6",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.3512999999993554,
+            "top": [
+              "development-6"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.242600000000493,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.651600000000144,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.637399999999616,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.633899999999812,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.633100000000013,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.639199999999619,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.6556000000000495,
+            "top": [
+              "development-6",
+              "s12-main",
+              "s12-working",
+              "s01-main",
+              "development-12"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-6-concept",
+        "query": "did the lender charge me to assess the value of the house",
+        "type": "paraphrase",
+        "relevant": "development-6",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.68579999999929,
+            "top": [
+              "development-6",
+              "development-10",
+              "s15-main",
+              "s15-working",
+              "s21-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.564000000000306,
+            "top": [
+              "development-6",
+              "s09-main",
+              "s07-working",
+              "s07-main",
+              "development-12"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.378700000000208,
+            "top": [
+              "development-6",
+              "s23-main",
+              "s05-main",
+              "s23-working",
+              "s15-main"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.360399999999572,
+            "top": [
+              "development-6",
+              "s23-main",
+              "s09-main",
+              "s15-main",
+              "development-10"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.330699999999524,
+            "top": [
+              "development-6",
+              "s23-main",
+              "s05-main",
+              "s15-main",
+              "s09-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.333199999999124,
+            "top": [
+              "development-6",
+              "s23-main",
+              "s09-main",
+              "s07-working",
+              "s07-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.32379999999921,
+            "top": [
+              "development-6",
+              "s09-main",
+              "s07-working",
+              "s07-main",
+              "s23-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.31710000000021,
+            "top": [
+              "development-6",
+              "s09-main",
+              "s07-working",
+              "s07-main",
+              "s23-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-7-exact",
+        "query": "PG-7440",
+        "type": "reference",
+        "relevant": "development-7",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.6333999999997104,
+            "top": [
+              "development-7"
+            ]
+          },
+          "semantic": {
+            "rank": 158,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.006329113924050633,
+            "ndcg": 0,
+            "ms": 3.2812999999996464,
+            "top": [
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context",
+              "s16-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.969099999999344,
+            "top": [
+              "development-7",
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.944399999999405,
+            "top": [
+              "development-7",
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.942199999999502,
+            "top": [
+              "development-7",
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 31,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.03225806451612903,
+            "ndcg": 0,
+            "ms": 4.944399999999405,
+            "top": [
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context",
+              "s16-working"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 59,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.01694915254237288,
+            "ndcg": 0,
+            "ms": 4.9452000000001135,
+            "top": [
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context",
+              "s16-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.956399999999121,
+            "top": [
+              "development-7",
+              "s01-main",
+              "development-3",
+              "s03-main",
+              "s10-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-7-concept",
+        "query": "how can i encourage the orange flowers to bloom again",
+        "type": "paraphrase",
+        "relevant": "development-7",
+        "scored": {
+          "keyword": {
+            "rank": 91,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.01098901098901099,
+            "ndcg": 0,
+            "ms": 2.9043000000001484,
+            "top": [
+              "s20-main",
+              "s20-working",
+              "s04-main",
+              "s23-main",
+              "s05-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.174700000000485,
+            "top": [
+              "development-7",
+              "s14-main",
+              "s14-working",
+              "s29-record",
+              "s17-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 17,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.058823529411764705,
+            "ndcg": 0,
+            "ms": 10.187400000000707,
+            "top": [
+              "s14-main",
+              "s23-schedule",
+              "s22-schedule",
+              "s18-schedule",
+              "s29-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.156500000000051,
+            "top": [
+              "development-7",
+              "s14-main",
+              "s20-main",
+              "s20-working",
+              "s14-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 10.162100000000464,
+            "top": [
+              "s14-main",
+              "s29-record",
+              "development-7",
+              "s23-schedule",
+              "s14-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 10.162200000000666,
+            "top": [
+              "s14-main",
+              "development-7",
+              "s29-record",
+              "s14-working",
+              "s17-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.141300000000228,
+            "top": [
+              "development-7",
+              "s14-main",
+              "s14-working",
+              "s29-record",
+              "s17-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 10.133900000000722,
+            "top": [
+              "development-7",
+              "s14-main",
+              "s14-working",
+              "s29-record",
+              "s17-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-8-exact",
+        "query": "AL-6820",
+        "type": "reference",
+        "relevant": "development-8",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.8890000000001237,
+            "top": [
+              "development-8"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.815399999999499,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.764299999999821,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.745700000000397,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.744499999999789,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.743499999999585,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.744099999999889,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.759499999999207,
+            "top": [
+              "development-8",
+              "s28-record",
+              "s02-main",
+              "s27-record",
+              "s06-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-8-concept",
+        "query": "where are interviews about working underground in the mines",
+        "type": "paraphrase",
+        "relevant": "development-8",
+        "scored": {
+          "keyword": {
+            "rank": 76,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.013157894736842105,
+            "ndcg": 0,
+            "ms": 3.605899999999565,
+            "top": [
+              "s06-working",
+              "s05-working",
+              "s18-working",
+              "s29-working",
+              "s11-working"
+            ]
+          },
+          "semantic": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 6.186799999999494,
+            "top": [
+              "s05-working",
+              "s05-main",
+              "development-4",
+              "s03-working",
+              "development-8"
+            ]
+          },
+          "rrf60": {
+            "rank": 17,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.058823529411764705,
+            "ndcg": 0,
+            "ms": 9.897699999998622,
+            "top": [
+              "s05-working",
+              "development-4",
+              "s05-main",
+              "s03-working",
+              "s20-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 10,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.1,
+            "ndcg": 0,
+            "ms": 9.919999999999163,
+            "top": [
+              "s05-working",
+              "s05-main",
+              "development-4",
+              "s03-working",
+              "s06-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 13,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.07692307692307693,
+            "ndcg": 0,
+            "ms": 9.951099999999315,
+            "top": [
+              "s05-working",
+              "development-4",
+              "s05-main",
+              "s03-working",
+              "s20-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 9.92739999999867,
+            "top": [
+              "s05-working",
+              "s05-main",
+              "development-4",
+              "s03-working",
+              "development-8"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 9.865299999999479,
+            "top": [
+              "s05-working",
+              "s05-main",
+              "development-4",
+              "s03-working",
+              "development-8"
+            ]
+          },
+          "reference-gate": {
+            "rank": 5,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.2,
+            "ndcg": 0.38685280723454163,
+            "ms": 9.862299999999777,
+            "top": [
+              "s05-working",
+              "s05-main",
+              "development-4",
+              "s03-working",
+              "development-8"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-9-exact",
+        "query": "SM-2108",
+        "type": "reference",
+        "relevant": "development-9",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.500799999999799,
+            "top": [
+              "development-9"
+            ]
+          },
+          "semantic": {
+            "rank": 99,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.010101010101010102,
+            "ndcg": 0,
+            "ms": 4.280399999999645,
+            "top": [
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context",
+              "s23-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.845299999999952,
+            "top": [
+              "development-9",
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.837899999999536,
+            "top": [
+              "development-9",
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.829600000000028,
+            "top": [
+              "development-9",
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 23,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.043478260869565216,
+            "ndcg": 0,
+            "ms": 6.814399999999296,
+            "top": [
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context",
+              "s23-context"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 45,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.022222222222222223,
+            "ndcg": 0,
+            "ms": 6.812199999999393,
+            "top": [
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context",
+              "s23-context"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.82549999999992,
+            "top": [
+              "development-9",
+              "s23-record",
+              "s12-working",
+              "s12-main",
+              "s21-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-9-concept",
+        "query": "which needle should i use on stretch fabric",
+        "type": "paraphrase",
+        "relevant": "development-9",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.8517000000001644,
+            "top": [
+              "development-9",
+              "development-15",
+              "development-3",
+              "s06-main",
+              "development-16"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.773499999999331,
+            "top": [
+              "development-9",
+              "development-2",
+              "development-1",
+              "s28-main",
+              "s28-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.693899999999303,
+            "top": [
+              "development-9",
+              "development-16",
+              "development-3",
+              "development-15",
+              "s06-main"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.694199999999,
+            "top": [
+              "development-9",
+              "development-16",
+              "development-3",
+              "development-15",
+              "s06-main"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.677899999999681,
+            "top": [
+              "development-9",
+              "development-16",
+              "development-3",
+              "development-15",
+              "s06-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.679599999999482,
+            "top": [
+              "development-9",
+              "development-16",
+              "development-3",
+              "development-2",
+              "development-1"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.680399999999281,
+            "top": [
+              "development-9",
+              "development-2",
+              "development-16",
+              "development-1",
+              "s28-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.693199999999706,
+            "top": [
+              "development-9",
+              "development-2",
+              "development-16",
+              "development-1",
+              "s28-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-10-exact",
+        "query": "DT-4733",
+        "type": "reference",
+        "relevant": "development-10",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.365299999999479,
+            "top": [
+              "development-10"
+            ]
+          },
+          "semantic": {
+            "rank": 12,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.08333333333333333,
+            "ndcg": 0,
+            "ms": 4.77219999999943,
+            "top": [
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16",
+              "s16-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.186399999999594,
+            "top": [
+              "development-10",
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.167599999998856,
+            "top": [
+              "development-10",
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.166399999998248,
+            "top": [
+              "development-10",
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.164299999998548,
+            "top": [
+              "development-10",
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 7,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.14285714285714285,
+            "ndcg": 0,
+            "ms": 7.167399999999361,
+            "top": [
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16",
+              "s16-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.184799999999086,
+            "top": [
+              "development-10",
+              "s16-working",
+              "development-3",
+              "s12-working",
+              "development-16"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-10-concept",
+        "query": "what does the skin doctor need me to bring",
+        "type": "paraphrase",
+        "relevant": "development-10",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.586199999999735,
+            "top": [
+              "development-10",
+              "development-9",
+              "s01-main",
+              "s19-main",
+              "s01-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.746399999999994,
+            "top": [
+              "development-10",
+              "s21-main",
+              "s21-working",
+              "s03-main",
+              "s19-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.443000000000211,
+            "top": [
+              "development-10",
+              "s19-main",
+              "s19-working",
+              "s01-main",
+              "s04-main"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.398199999999633,
+            "top": [
+              "development-10",
+              "s19-main",
+              "s19-working",
+              "s01-main",
+              "development-9"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.394399999999223,
+            "top": [
+              "development-10",
+              "s19-main",
+              "s19-working",
+              "s01-main",
+              "s04-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.397999999999229,
+            "top": [
+              "development-10",
+              "s19-main",
+              "s19-working",
+              "s03-main",
+              "s01-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.373400000000402,
+            "top": [
+              "development-10",
+              "s19-main",
+              "s21-main",
+              "s19-working",
+              "s21-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.373000000000502,
+            "top": [
+              "development-10",
+              "s19-main",
+              "s21-main",
+              "s19-working",
+              "s21-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-11-exact",
+        "query": "RF-9376",
+        "type": "reference",
+        "relevant": "development-11",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.5927000000001499,
+            "top": [
+              "development-11"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.413499999999658,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.050099999999475,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.035499999999956,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.034599999999045,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.03269999999975,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.032400000000052,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.046299999999974,
+            "top": [
+              "development-11",
+              "development-14",
+              "s23-context",
+              "s16-main",
+              "s23-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-11-concept",
+        "query": "where is the update to the number used to route my deposits",
+        "type": "paraphrase",
+        "relevant": "development-11",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.471099999999751,
+            "top": [
+              "development-11",
+              "s16-main",
+              "s16-working",
+              "s30-schedule",
+              "s29-schedule"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.158300000000054,
+            "top": [
+              "development-11",
+              "s07-working",
+              "s07-main",
+              "s09-main",
+              "development-12"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.749700000000303,
+            "top": [
+              "development-11",
+              "s16-working",
+              "s30-schedule",
+              "s16-main",
+              "s29-schedule"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.72399999999925,
+            "top": [
+              "development-11",
+              "s16-working",
+              "s16-main",
+              "s30-schedule",
+              "s07-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.717399999999543,
+            "top": [
+              "development-11",
+              "s16-working",
+              "s30-schedule",
+              "s16-main",
+              "s29-schedule"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.840499999999338,
+            "top": [
+              "development-11",
+              "s07-working",
+              "s07-main",
+              "s09-main",
+              "development-12"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.710900000000038,
+            "top": [
+              "development-11",
+              "s07-working",
+              "s07-main",
+              "s09-main",
+              "development-12"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 8.696899999999914,
+            "top": [
+              "development-11",
+              "s07-working",
+              "s07-main",
+              "s09-main",
+              "development-12"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-12-exact",
+        "query": "IV-1520",
+        "type": "reference",
+        "relevant": "development-12",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.430699999999888,
+            "top": [
+              "development-12"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.4007000000001426,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.875100000000202,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.873999999999796,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.860999999999876,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.858000000000175,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.857899999999972,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.8725000000004,
+            "top": [
+              "development-12",
+              "s03-main",
+              "s03-working",
+              "s23-record",
+              "s15-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-12-concept",
+        "query": "when is the agency dealing with supplier bills",
+        "type": "paraphrase",
+        "relevant": "development-12",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.3041000000002896,
+            "top": [
+              "development-12",
+              "s16-main",
+              "s16-working",
+              "s13-main",
+              "development-14"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.8864000000003216,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s06-main",
+              "s09-working",
+              "s12-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.273000000000138,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s04-main",
+              "s06-main",
+              "s09-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.2478000000000975,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s06-main",
+              "s16-main",
+              "s16-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.243700000000899,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s06-main",
+              "s04-main",
+              "s09-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.247000000000298,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s06-main",
+              "s09-working",
+              "s04-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.2304000000003725,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s06-main",
+              "s09-working",
+              "s12-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.228300000000672,
+            "top": [
+              "development-12",
+              "s09-main",
+              "s06-main",
+              "s09-working",
+              "s12-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-13-exact",
+        "query": "PX-1886",
+        "type": "reference",
+        "relevant": "development-13",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.7106999999996333,
+            "top": [
+              "development-13"
+            ]
+          },
+          "semantic": {
+            "rank": 44,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.022727272727272728,
+            "ndcg": 0,
+            "ms": 4.371599999999489,
+            "top": [
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main",
+              "s19-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.124699999999393,
+            "top": [
+              "development-13",
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.149799999999232,
+            "top": [
+              "development-13",
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.136699999999109,
+            "top": [
+              "development-13",
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 11,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.09090909090909091,
+            "ndcg": 0,
+            "ms": 6.135999999998603,
+            "top": [
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main",
+              "s19-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 24,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.041666666666666664,
+            "ndcg": 0,
+            "ms": 6.138499999999112,
+            "top": [
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main",
+              "s19-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.143299999998817,
+            "top": [
+              "development-13",
+              "s22-main",
+              "s12-record",
+              "s22-working",
+              "s29-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-13-concept",
+        "query": "how do i replace the gasket around my food container",
+        "type": "paraphrase",
+        "relevant": "development-13",
+        "scored": {
+          "keyword": {
+            "rank": 10,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.1,
+            "ndcg": 0,
+            "ms": 2.65729999999985,
+            "top": [
+              "s27-main",
+              "s27-working",
+              "s20-main",
+              "s20-working",
+              "s03-main"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.722799999999552,
+            "top": [
+              "development-13",
+              "s13-main",
+              "s13-working",
+              "s12-main",
+              "s27-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 7.5241999999989275,
+            "top": [
+              "s27-main",
+              "s27-working",
+              "development-13",
+              "s02-main",
+              "s25-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 7.535399999999754,
+            "top": [
+              "s27-main",
+              "s27-working",
+              "development-13",
+              "s13-main",
+              "s02-main"
+            ]
+          },
+          "rrf30": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 7.496699999998782,
+            "top": [
+              "s27-main",
+              "s27-working",
+              "development-13",
+              "s02-main",
+              "s13-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.589399999999841,
+            "top": [
+              "development-13",
+              "s27-main",
+              "s27-working",
+              "s13-main",
+              "s13-working"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.478099999999358,
+            "top": [
+              "development-13",
+              "s27-main",
+              "s13-main",
+              "s27-working",
+              "s13-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.454200000000128,
+            "top": [
+              "development-13",
+              "s27-main",
+              "s13-main",
+              "s27-working",
+              "s13-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-14-exact",
+        "query": "CR-6741",
+        "type": "reference",
+        "relevant": "development-14",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.3395999999993364,
+            "top": [
+              "development-14"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.379500000000007,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.803199999999379,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.805399999999281,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.771199999999226,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.764400000000023,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.7664999999997235,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.777999999999338,
+            "top": [
+              "development-14",
+              "s07-working",
+              "s12-working",
+              "development-12",
+              "s16-working"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-14-concept",
+        "query": "which class teaches how to read terrain on a map",
+        "type": "paraphrase",
+        "relevant": "development-14",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 2.584100000000035,
+            "top": [
+              "development-14",
+              "s20-main",
+              "s20-working",
+              "development-15",
+              "s28-record"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.5437999999994645,
+            "top": [
+              "development-14",
+              "s30-main",
+              "s01-context",
+              "s02-context",
+              "s03-context"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.225399999999354,
+            "top": [
+              "development-14",
+              "s26-main",
+              "s28-record",
+              "s22-record",
+              "s25-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.192799999998897,
+            "top": [
+              "development-14",
+              "s20-main",
+              "s26-main",
+              "s01-context",
+              "s28-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.190099999998893,
+            "top": [
+              "development-14",
+              "s26-main",
+              "s28-record",
+              "s25-record",
+              "s22-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.193299999998999,
+            "top": [
+              "development-14",
+              "s01-context",
+              "s26-main",
+              "s02-context",
+              "s30-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.166199999999662,
+            "top": [
+              "development-14",
+              "s30-main",
+              "s01-context",
+              "s02-context",
+              "s03-context"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.162800000000061,
+            "top": [
+              "development-14",
+              "s30-main",
+              "s01-context",
+              "s02-context",
+              "s03-context"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-15-exact",
+        "query": "CF-3296",
+        "type": "reference",
+        "relevant": "development-15",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 1.6028000000005704,
+            "top": [
+              "development-15"
+            ]
+          },
+          "semantic": {
+            "rank": 95,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.010526315789473684,
+            "ndcg": 0,
+            "ms": 3.5516999999999825,
+            "top": [
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record",
+              "s23-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.198600000000624,
+            "top": [
+              "development-15",
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.1840000000001965,
+            "top": [
+              "development-15",
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.181300000000192,
+            "top": [
+              "development-15",
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 22,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.045454545454545456,
+            "ndcg": 0,
+            "ms": 5.184400000000096,
+            "top": [
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record",
+              "s23-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 44,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.022727272727272728,
+            "ndcg": 0,
+            "ms": 5.1840000000001965,
+            "top": [
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record",
+              "s23-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 5.188600000000406,
+            "top": [
+              "development-15",
+              "s07-working",
+              "s18-working",
+              "development-11",
+              "s28-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-15-concept",
+        "query": "how can i find an old shell command from my keyboard",
+        "type": "paraphrase",
+        "relevant": "development-15",
+        "scored": {
+          "keyword": {
+            "rank": 0,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0,
+            "ndcg": 0,
+            "ms": 2.692500000000109,
+            "top": [
+              "s21-main",
+              "s20-main",
+              "s21-working",
+              "s20-working",
+              "development-8"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.592399999999543,
+            "top": [
+              "development-15",
+              "s23-record",
+              "development-13",
+              "s18-record",
+              "s29-record"
+            ]
+          },
+          "rrf60": {
+            "rank": 43,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.023255813953488372,
+            "ndcg": 0,
+            "ms": 7.3421999999991385,
+            "top": [
+              "development-8",
+              "s30-main",
+              "development-3",
+              "s06-main",
+              "s30-working"
+            ]
+          },
+          "rrf10": {
+            "rank": 2,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.5,
+            "ndcg": 0.6309297535714575,
+            "ms": 7.3265999999994165,
+            "top": [
+              "s21-main",
+              "development-15",
+              "development-8",
+              "s20-main",
+              "s21-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 11,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.09090909090909091,
+            "ndcg": 0,
+            "ms": 7.32339999999931,
+            "top": [
+              "development-8",
+              "s30-main",
+              "development-3",
+              "s21-main",
+              "s06-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.32549999999992,
+            "top": [
+              "development-15",
+              "s23-record",
+              "development-13",
+              "s18-record",
+              "s29-record"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.3213000000005195,
+            "top": [
+              "development-15",
+              "s23-record",
+              "development-13",
+              "s18-record",
+              "s29-record"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.3203999999996086,
+            "top": [
+              "development-15",
+              "s23-record",
+              "development-13",
+              "s18-record",
+              "s29-record"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-16-exact",
+        "query": "AH-5940",
+        "type": "reference",
+        "relevant": "development-16",
+        "scored": {
+          "keyword": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 3.117000000000189,
+            "top": [
+              "development-16"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 4.326299999999719,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          },
+          "rrf60": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.501199999999699,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          },
+          "rrf10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.4848000000001775,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          },
+          "rrf30": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.48279999999977,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.482299999999668,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.481699999999364,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 7.48949999999968,
+            "top": [
+              "development-16",
+              "s23-main",
+              "development-1",
+              "s12-main",
+              "s01-main"
+            ]
+          }
+        }
+      },
+      {
+        "id": "development-16-concept",
+        "query": "when and where should i take the extra bedding for the animals",
+        "type": "paraphrase",
+        "relevant": "development-16",
+        "scored": {
+          "keyword": {
+            "rank": 106,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.009433962264150943,
+            "ndcg": 0,
+            "ms": 4.6406000000006316,
+            "top": [
+              "s10-main",
+              "development-4",
+              "s10-working",
+              "s14-working",
+              "s03-working"
+            ]
+          },
+          "semantic": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 6.589799999999741,
+            "top": [
+              "development-16",
+              "development-2",
+              "s17-main",
+              "s30-main",
+              "development-9"
+            ]
+          },
+          "rrf60": {
+            "rank": 20,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.05,
+            "ndcg": 0,
+            "ms": 11.343499999999949,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s30-main",
+              "s03-working",
+              "development-9"
+            ]
+          },
+          "rrf10": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 11.304699999999684,
+            "top": [
+              "development-4",
+              "s10-main",
+              "development-16",
+              "s30-main",
+              "s14-working"
+            ]
+          },
+          "rrf30": {
+            "rank": 10,
+            "p5": 0,
+            "r5": 0,
+            "mrr": 0.1,
+            "ndcg": 0,
+            "ms": 11.301699999999983,
+            "top": [
+              "development-4",
+              "s06-working",
+              "s30-main",
+              "s03-working",
+              "development-9"
+            ]
+          },
+          "semantic-weighted": {
+            "rank": 3,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 0.3333333333333333,
+            "ndcg": 0.5,
+            "ms": 11.33220000000074,
+            "top": [
+              "development-4",
+              "s30-main",
+              "development-16",
+              "development-9",
+              "s06-working"
+            ]
+          },
+          "lexical-top10": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.276500000000851,
+            "top": [
+              "development-16",
+              "development-2",
+              "development-4",
+              "s17-main",
+              "s30-main"
+            ]
+          },
+          "reference-gate": {
+            "rank": 1,
+            "p5": 0.2,
+            "r5": 1,
+            "mrr": 1,
+            "ndcg": 1,
+            "ms": 11.267299999999523,
+            "top": [
+              "development-16",
+              "development-2",
+              "development-4",
+              "s17-main",
+              "s30-main"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

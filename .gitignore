@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.local
+.vite/
+.catch-cache/
+.chart-data-*/
+.cache/
+release/
+test-results/
+playwright-report/
+*.sqlite
+*.sqlite-*
+*.log
+.env
+.env.*

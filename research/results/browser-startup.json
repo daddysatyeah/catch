@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-25T05:20:02.693Z",
+  "chromium": "158.0.8127.37",
+  "viewport": "1440x900",
+  "trials": [
+    {
+      "appReadyMs": 1168.27,
+      "domContentLoadedMs": 401.8,
+      "firstContentfulPaintMs": 472
+    },
+    {
+      "appReadyMs": 1299.39,
+      "domContentLoadedMs": 304.4,
+      "firstContentfulPaintMs": 408
+    },
+    {
+      "appReadyMs": 1455.17,
+      "domContentLoadedMs": 777.5,
+      "firstContentfulPaintMs": 876
+    }
+  ],
+  "medianAppReadyMs": 1299.39
+}

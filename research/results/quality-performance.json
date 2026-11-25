@@ -1,0 +1,63 @@
+{
+  "system": {
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "installedMiB": 8073,
+    "platform": "Windows 11 Pro"
+  },
+  "size": 600,
+  "chromium": {
+    "startupMs": [
+      1888.88,
+      888.13,
+      1144.2
+    ],
+    "idle": {
+      "workingSetMiB": 573.2,
+      "processes": 8,
+      "privateCommitMiB": 307
+    },
+    "lightContrast": {
+      "body": 17.48,
+      "muted": 6.13,
+      "accentLabel": 4.55,
+      "searchMatch": 5.37,
+      "focusOutline": 6.47
+    },
+    "darkContrast": {
+      "body": 15.78,
+      "muted": 6.88,
+      "accentLabel": 5.75,
+      "searchMatch": 5.88,
+      "focusOutline": 6.94
+    },
+    "keywordMs": 188.46,
+    "workerKeyboardMs": 227.03,
+    "coldIndexAndSearchMs": 58286.16,
+    "indexing": {
+      "workingSetMiB": 958.4,
+      "processes": 8,
+      "privateCommitMiB": 687.8
+    },
+    "warmSearchMs": 441.82,
+    "withIndex": {
+      "workingSetMiB": 933.2,
+      "processes": 8,
+      "privateCommitMiB": 659
+    },
+    "saveAndOcrMs": 2368.51
+  },
+  "electron": {
+    "freshLaunchMs": 2940.63,
+    "idle": {
+      "workingSetMiB": 378,
+      "processes": 5,
+      "privateCommitMiB": 178.2
+    },
+    "withLibrary": {
+      "workingSetMiB": 417.1,
+      "processes": 5,
+      "privateCommitMiB": 214.6
+    },
+    "keywordMs": 124.19
+  }
+}

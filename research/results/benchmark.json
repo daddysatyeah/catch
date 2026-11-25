@@ -1,0 +1,4443 @@
+{
+  "started": "2026-11-25T05:05:43.255Z",
+  "runtime": "v26.13.1",
+  "os": "Windows 11 Pro",
+  "architecture": "x64",
+  "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+  "logicalProcessors": 4,
+  "installedBytes": 8465002496,
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+  "quantization": "q8",
+  "engine": "Transformers.js 4.3.2 with ONNX Runtime Node CPU (2 inference threads)",
+  "timing": {
+    "modelInitMs": 959.178,
+    "ocrInitMs": 1129.277,
+    "pdfTwoPagesMs": 57.611,
+    "indexMs": 6260.201,
+    "embeddingBatchP95Ms": 177.747,
+    "baselineRssMb": 106.2,
+    "sampledPeakRssMb": 223.5
+  },
+  "dataset": {
+    "captures": 150,
+    "chunks": 307,
+    "queries": 60,
+    "development": 20,
+    "heldOut": 40
+  },
+  "search": [
+    {
+      "split": "development",
+      "count": 20,
+      "modes": {
+        "keyword": {
+          "p5": 0.31,
+          "r5": 0.825,
+          "mrr": 0.7833,
+          "ndcg": 0.7853,
+          "p95Ms": 24.23
+        },
+        "semantic": {
+          "p5": 0.38,
+          "r5": 1,
+          "mrr": 0.9667,
+          "ndcg": 0.9021,
+          "p95Ms": 29.7
+        },
+        "hybrid": {
+          "p5": 0.32,
+          "r5": 0.85,
+          "mrr": 0.8287,
+          "ndcg": 0.814,
+          "p95Ms": 64.05
+        }
+      }
+    },
+    {
+      "split": "held-out",
+      "count": 40,
+      "modes": {
+        "keyword": {
+          "p5": 0.28,
+          "r5": 0.75,
+          "mrr": 0.7514,
+          "ndcg": 0.7446,
+          "p95Ms": 13.79
+        },
+        "semantic": {
+          "p5": 0.355,
+          "r5": 0.9375,
+          "mrr": 0.9635,
+          "ndcg": 0.9047,
+          "p95Ms": 29.21
+        },
+        "hybrid": {
+          "p5": 0.32,
+          "r5": 0.85,
+          "mrr": 0.8481,
+          "ndcg": 0.8439,
+          "p95Ms": 39.53
+        }
+      }
+    }
+  ],
+  "tuning": [
+    {
+      "k": 10,
+      "developmentNdcg": 0.8507
+    },
+    {
+      "k": 30,
+      "developmentNdcg": 0.814
+    },
+    {
+      "k": 60,
+      "developmentNdcg": 0.814
+    }
+  ],
+  "scored": [
+    {
+      "id": "s01-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "pigeonhole exam",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s01-main",
+          "s01-working"
+        ],
+        "ms": 47.832
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s01-main",
+          "s01-working",
+          "s17-main",
+          "s06-main",
+          "s03-schedule"
+        ],
+        "ms": 24.37
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s01-main",
+          "s01-working",
+          "s17-main",
+          "s06-main",
+          "s03-schedule"
+        ],
+        "ms": 72.854
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s01-concept",
+      "type": "ambiguous",
+      "split": "development",
+      "query": "What topics should I study for the counting and graph theory test?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s01-main",
+          "s01-working",
+          "s30-context",
+          "s29-context",
+          "s28-context"
+        ],
+        "ms": 24.233
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s01-working",
+          "s01-main",
+          "s03-context",
+          "s27-context",
+          "s02-context"
+        ],
+        "ms": 39.492
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s01-main",
+          "s01-working",
+          "s27-context",
+          "s28-context",
+          "s26-context"
+        ],
+        "ms": 64.048
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s02-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "titration endpoint",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s02-main",
+          "s02-working"
+        ],
+        "ms": 13.79
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s02-main",
+          "s02-working",
+          "s09-main",
+          "s16-main",
+          "s09-working"
+        ],
+        "ms": 25.661
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s02-main",
+          "s02-working",
+          "s09-main",
+          "s16-main",
+          "s09-working"
+        ],
+        "ms": 39.533
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s02-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where did I record when the acid-base reaction finished?",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 0.2,
+        "ndcg": 0.3196311965446524,
+        "top": [
+          "s07-main",
+          "s07-working",
+          "s20-main",
+          "s20-working",
+          "s02-main"
+        ],
+        "ms": 7.596
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s02-main",
+          "s02-working",
+          "s03-working",
+          "s19-record",
+          "s29-record"
+        ],
+        "ms": 45.153
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.9327783893101107,
+        "top": [
+          "s02-main",
+          "s03-working",
+          "s29-record",
+          "s19-record",
+          "s02-working"
+        ],
+        "ms": 52.886
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.8262346571285599
+        },
+        {
+          "k": 30,
+          "ndcg": 0.9327783893101107
+        },
+        {
+          "k": 60,
+          "ndcg": 0.9327783893101107
+        }
+      ]
+    },
+    {
+      "id": "s03-exact",
+      "type": "document-dependent",
+      "split": "held-out",
+      "query": "B-215 18:30",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s03-main",
+          "s24-main",
+          "s24-working"
+        ],
+        "ms": 14.081
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s03-main",
+          "s17-main",
+          "s06-main",
+          "s01-main",
+          "s16-main"
+        ],
+        "ms": 17.643
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s03-main",
+          "s24-main",
+          "s24-working",
+          "s17-main",
+          "s06-main"
+        ],
+        "ms": 31.818
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s03-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where and when is the evening science orientation?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s03-main",
+          "s03-working",
+          "s16-main",
+          "s06-main",
+          "s16-working"
+        ],
+        "ms": 110.897
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s03-main",
+          "s03-working",
+          "s17-main",
+          "s19-working",
+          "s06-main"
+        ],
+        "ms": 94.234
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s03-main",
+          "s03-working",
+          "s06-main",
+          "s14-working",
+          "s26-record"
+        ],
+        "ms": 205.659
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s04-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "handoff wireframes",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s04-main",
+          "s04-working"
+        ],
+        "ms": 4.899
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s04-main",
+          "s04-working",
+          "s22-main",
+          "s29-main",
+          "s29-working"
+        ],
+        "ms": 15.062
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s04-main",
+          "s04-working",
+          "s22-main",
+          "s29-main",
+          "s29-working"
+        ],
+        "ms": 20.056
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s04-concept",
+      "type": "paraphrase",
+      "split": "development",
+      "query": "What should the team pass to production after the font decision?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s04-main",
+          "s04-working",
+          "s25-main",
+          "s22-main",
+          "s11-main"
+        ],
+        "ms": 9.756
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s04-main",
+          "s04-working",
+          "s29-main",
+          "s10-main",
+          "s29-working"
+        ],
+        "ms": 7.725
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s04-main",
+          "s04-working",
+          "s25-main",
+          "s25-working",
+          "s24-main"
+        ],
+        "ms": 17.68
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s05-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "interview postmortems",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s05-main",
+          "s05-working"
+        ],
+        "ms": 3.488
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s05-working",
+          "s05-main",
+          "s21-working",
+          "s06-main",
+          "s20-record"
+        ],
+        "ms": 7.277
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s05-main",
+          "s05-working",
+          "s21-working",
+          "s06-main",
+          "s20-record"
+        ],
+        "ms": 10.834
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s05-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "What did the hiring panel ask about reliability incidents?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s05-main",
+          "s05-working",
+          "s29-main",
+          "s29-working",
+          "s02-main"
+        ],
+        "ms": 5.218
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s05-working",
+          "s05-main",
+          "s03-working",
+          "s06-main",
+          "s03-main"
+        ],
+        "ms": 8.059
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s05-main",
+          "s05-working",
+          "s03-working",
+          "s03-main",
+          "s06-main"
+        ],
+        "ms": 13.373
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s06-exact",
+      "type": "document-dependent",
+      "split": "held-out",
+      "query": "QZ-9157",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s06-main"
+        ],
+        "ms": 5.06
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714574,
+        "top": [
+          "s10-main",
+          "s06-main",
+          "s12-main",
+          "s15-main",
+          "s16-main"
+        ],
+        "ms": 9.301
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s06-main",
+          "s10-main",
+          "s12-main",
+          "s15-main",
+          "s16-main"
+        ],
+        "ms": 14.447
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s06-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where are the due date and equipment reference for my coastal survey?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s06-main",
+          "s06-working",
+          "s18-working",
+          "s03-main",
+          "s18-main"
+        ],
+        "ms": 10.951
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s06-working",
+          "s06-main",
+          "s30-main",
+          "s30-working",
+          "s23-working"
+        ],
+        "ms": 18.358
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s06-main",
+          "s06-working",
+          "s18-working",
+          "s03-working",
+          "s18-main"
+        ],
+        "ms": 29.496
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s07-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "TX-48217",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s07-main",
+          "s07-working"
+        ],
+        "ms": 6.299
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s07-working",
+          "s07-main",
+          "s16-main",
+          "s09-main",
+          "s10-main"
+        ],
+        "ms": 10.415
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s07-main",
+          "s07-working",
+          "s16-main",
+          "s09-main",
+          "s10-main"
+        ],
+        "ms": 16.821
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s07-concept",
+      "type": "ambiguous",
+      "split": "development",
+      "query": "Where is the proof I moved money into the household reserve?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s07-main",
+          "s07-working",
+          "s03-main",
+          "s16-main",
+          "s16-working"
+        ],
+        "ms": 7.036
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s07-main",
+          "s07-working",
+          "s13-record",
+          "s17-working",
+          "s04-record"
+        ],
+        "ms": 27.105
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s07-main",
+          "s07-working",
+          "s25-record",
+          "s13-record",
+          "s22-record"
+        ],
+        "ms": 34.463
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s08-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "tax worksheet",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s08-main",
+          "s08-working",
+          "s12-main",
+          "s12-working"
+        ],
+        "ms": 3.895
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s08-working",
+          "s08-main",
+          "s12-main",
+          "s12-working",
+          "s06-context"
+        ],
+        "ms": 8.215
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s08-main",
+          "s08-working",
+          "s12-main",
+          "s12-working",
+          "s06-context"
+        ],
+        "ms": 13.265
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s08-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "How should I separate business reimbursements from the amount I owe?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 0.5,
+        "ndcg": 0.639909328045346,
+        "top": [
+          "s20-main",
+          "s08-main",
+          "s20-working",
+          "s08-working",
+          "s30-main"
+        ],
+        "ms": 6.736
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 1,
+        "ndcg": 0.8262346571285599,
+        "top": [
+          "s08-main",
+          "s12-main",
+          "s09-schedule",
+          "s07-schedule",
+          "s12-working"
+        ],
+        "ms": 15.836
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s08-main",
+          "s08-working",
+          "s09-main",
+          "s09-working",
+          "s20-working"
+        ],
+        "ms": 22.717
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s09-exact",
+      "type": "document-dependent",
+      "split": "held-out",
+      "query": "TD-6512",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s09-main"
+        ],
+        "ms": 2.975
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s09-main",
+          "s16-main",
+          "s10-main",
+          "s07-working",
+          "s12-main"
+        ],
+        "ms": 23.92
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s09-main",
+          "s16-main",
+          "s10-main",
+          "s07-working",
+          "s12-main"
+        ],
+        "ms": 26.957
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s09-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where is the bill for Tideline and how much is due?",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 1,
+        "ndcg": 0.8262346571285599,
+        "top": [
+          "s09-main",
+          "s03-main",
+          "s12-working",
+          "s12-main",
+          "s20-main"
+        ],
+        "ms": 7.574
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 1,
+        "ndcg": 0.8262346571285599,
+        "top": [
+          "s09-main",
+          "s12-main",
+          "s12-working",
+          "s06-working",
+          "s23-working"
+        ],
+        "ms": 14.801
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 1,
+        "ndcg": 0.8262346571285599,
+        "top": [
+          "s09-main",
+          "s12-main",
+          "s12-working",
+          "s16-working",
+          "s06-main"
+        ],
+        "ms": 22.512
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.8262346571285599
+        },
+        {
+          "k": 30,
+          "ndcg": 0.8262346571285599
+        },
+        {
+          "k": 60,
+          "ndcg": 0.8262346571285599
+        }
+      ]
+    },
+    {
+      "id": "s10-exact",
+      "type": "document-dependent",
+      "split": "development",
+      "query": "ZK-4821",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s10-main"
+        ],
+        "ms": 7.289
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s10-main",
+          "s27-record",
+          "s24-record",
+          "s28-record",
+          "s21-record"
+        ],
+        "ms": 10.154
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s10-main",
+          "s27-record",
+          "s24-record",
+          "s28-record",
+          "s21-record"
+        ],
+        "ms": 17.539
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s10-concept",
+      "type": "paraphrase",
+      "split": "development",
+      "query": "Where is my bill for the framed artwork order?",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.41311732856427996,
+        "top": [
+          "s12-working",
+          "s12-main",
+          "s10-main",
+          "s16-working",
+          "s16-main"
+        ],
+        "ms": 12.968
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.9327783893101107,
+        "top": [
+          "s10-main",
+          "s22-working",
+          "s29-working",
+          "s22-main",
+          "s10-working"
+        ],
+        "ms": 16.509
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.9327783893101107,
+        "top": [
+          "s10-main",
+          "s12-working",
+          "s12-main",
+          "s03-main",
+          "s10-working"
+        ],
+        "ms": 29.605
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.9327783893101107
+        },
+        {
+          "k": 30,
+          "ndcg": 0.9327783893101107
+        },
+        {
+          "k": 60,
+          "ndcg": 0.9327783893101107
+        }
+      ]
+    },
+    {
+      "id": "s11-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "headphone refund",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s11-main",
+          "s11-working"
+        ],
+        "ms": 6.655
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s11-main",
+          "s11-working",
+          "s12-schedule",
+          "s11-schedule",
+          "s30-schedule"
+        ],
+        "ms": 14.81
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s11-main",
+          "s11-working",
+          "s12-schedule",
+          "s11-schedule",
+          "s30-schedule"
+        ],
+        "ms": 21.61
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s11-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "When will the shop put my money back after I send my earphones?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.14285714285714285,
+        "ndcg": 0,
+        "top": [
+          "s04-main",
+          "s04-working",
+          "s14-main",
+          "s14-working",
+          "s25-main"
+        ],
+        "ms": 8.138
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s11-main",
+          "s11-working",
+          "s12-schedule",
+          "s10-schedule",
+          "s11-schedule"
+        ],
+        "ms": 18.371
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s11-main",
+          "s11-working",
+          "s22-main",
+          "s04-main",
+          "s04-working"
+        ],
+        "ms": 27.533
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s12-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "Juniper Kitchen receipt",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s12-main",
+          "s12-working",
+          "s10-working",
+          "s10-main"
+        ],
+        "ms": 7.7
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s12-main",
+          "s12-working",
+          "s10-main",
+          "s10-working",
+          "s30-record"
+        ],
+        "ms": 10.531
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s12-main",
+          "s12-working",
+          "s10-working",
+          "s10-main",
+          "s30-record"
+        ],
+        "ms": 18.304
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s12-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Find the proof of what I paid for the meal at the cafe.",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.009433962264150943,
+        "ndcg": 0,
+        "top": [
+          "s15-main",
+          "s15-working",
+          "s21-main",
+          "s21-working",
+          "s20-working"
+        ],
+        "ms": 7.594
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s12-main",
+          "s12-working",
+          "s10-main",
+          "s10-working",
+          "s09-main"
+        ],
+        "ms": 29.215
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.038461538461538464,
+        "ndcg": 0,
+        "top": [
+          "s15-main",
+          "s17-working",
+          "s10-working",
+          "s03-main",
+          "s20-working"
+        ],
+        "ms": 36.987
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s13-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "sourdough Dutch oven",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s13-main",
+          "s13-working"
+        ],
+        "ms": 6.462
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s13-working",
+          "s13-main",
+          "s29-working",
+          "s02-working",
+          "s02-main"
+        ],
+        "ms": 17.06
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s13-main",
+          "s13-working",
+          "s29-working",
+          "s02-working",
+          "s02-main"
+        ],
+        "ms": 23.593
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s13-concept",
+      "type": "ambiguous",
+      "split": "development",
+      "query": "How did I make that crusty fermented bread at home?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s20-main",
+          "s20-working",
+          "s19-main",
+          "s17-main",
+          "s19-working"
+        ],
+        "ms": 8.567
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s13-main",
+          "s13-working",
+          "s02-working",
+          "s12-working",
+          "s02-main"
+        ],
+        "ms": 12.586
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.027777777777777776,
+        "ndcg": 0,
+        "top": [
+          "s17-working",
+          "s15-main",
+          "s17-main",
+          "s20-working",
+          "s03-main"
+        ],
+        "ms": 21.32
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.3196311965446524
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s14-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "balcony pothos",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s14-main",
+          "s14-working"
+        ],
+        "ms": 5.909
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s14-main",
+          "s14-working",
+          "s17-main",
+          "s22-main",
+          "s12-main"
+        ],
+        "ms": 11.161
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s14-main",
+          "s14-working",
+          "s17-main",
+          "s22-main",
+          "s12-main"
+        ],
+        "ms": 18.263
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s14-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Which houseplants can grow in the shaded corner of my apartment?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.05263157894736842,
+        "ndcg": 0,
+        "top": [
+          "s18-main",
+          "s18-working",
+          "s15-main",
+          "s15-working",
+          "s21-main"
+        ],
+        "ms": 5.082
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s14-main",
+          "s14-working",
+          "s28-main",
+          "s03-main",
+          "s03-working"
+        ],
+        "ms": 9.178
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 0.25,
+        "ndcg": 0.35583989829307827,
+        "top": [
+          "s15-main",
+          "s17-main",
+          "s21-main",
+          "s14-main",
+          "s17-working"
+        ],
+        "ms": 14.37
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.9327783893101107
+        },
+        {
+          "k": 30,
+          "ndcg": 0.41311732856427996
+        },
+        {
+          "k": 60,
+          "ndcg": 0.35583989829307827
+        }
+      ]
+    },
+    {
+      "id": "s15-exact",
+      "type": "document-dependent",
+      "split": "held-out",
+      "query": "VELVET-513",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s15-main"
+        ],
+        "ms": 2.889
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s15-main",
+          "s10-main",
+          "s11-main",
+          "s11-working",
+          "s29-main"
+        ],
+        "ms": 10.648
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s15-main",
+          "s10-main",
+          "s11-main",
+          "s11-working",
+          "s29-main"
+        ],
+        "ms": 13.602
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s15-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "When can I see the printed material in the library cabinet?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s15-main",
+          "s15-working",
+          "s18-main",
+          "s10-working",
+          "s10-main"
+        ],
+        "ms": 4.868
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s15-main",
+          "s15-working",
+          "s10-working",
+          "s10-main",
+          "s22-working"
+        ],
+        "ms": 9.5
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s15-main",
+          "s15-working",
+          "s10-working",
+          "s10-main",
+          "s03-working"
+        ],
+        "ms": 14.471
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s16-exact",
+      "type": "document-dependent",
+      "split": "development",
+      "query": "TR-9542",
+      "keyword": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s16-main"
+        ],
+        "ms": 5.033
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s16-main",
+          "s10-main",
+          "s06-main",
+          "s09-main",
+          "s12-main"
+        ],
+        "ms": 6.555
+      },
+      "hybrid": {
+        "p5": 0.2,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s16-main",
+          "s10-main",
+          "s06-main",
+          "s09-main",
+          "s12-main"
+        ],
+        "ms": 11.655
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s16-concept",
+      "type": "paraphrase",
+      "split": "development",
+      "query": "Where is my train ticket and what time does transport depart?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s16-working",
+          "s16-main",
+          "s15-working",
+          "s15-main",
+          "s03-main"
+        ],
+        "ms": 6.956
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s16-main",
+          "s16-working",
+          "s18-main",
+          "s18-working",
+          "s17-context"
+        ],
+        "ms": 7.132
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s16-working",
+          "s16-main",
+          "s15-main",
+          "s06-main",
+          "s17-context"
+        ],
+        "ms": 14.21
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.7967075809905066
+        },
+        {
+          "k": 30,
+          "ndcg": 0.7967075809905066
+        },
+        {
+          "k": 60,
+          "ndcg": 0.7967075809905066
+        }
+      ]
+    },
+    {
+      "id": "s17-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "KO-2816",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s17-main",
+          "s17-working"
+        ],
+        "ms": 3.693
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.9639404333166532,
+        "top": [
+          "s17-main",
+          "s10-main",
+          "s17-working",
+          "s18-working",
+          "s16-main"
+        ],
+        "ms": 9.586
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s17-main",
+          "s17-working",
+          "s10-main",
+          "s18-working",
+          "s16-main"
+        ],
+        "ms": 13.349
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s17-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Find my place to stay in Kochi when I arrive at night.",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s17-main",
+          "s17-working",
+          "s03-main",
+          "s03-working",
+          "s20-main"
+        ],
+        "ms": 4.023
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s17-main",
+          "s17-working",
+          "s14-working",
+          "s18-main",
+          "s18-working"
+        ],
+        "ms": 16.324
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s17-main",
+          "s17-working",
+          "s03-main",
+          "s18-main",
+          "s18-working"
+        ],
+        "ms": 20.585
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s18-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "flight Terminal 2",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s18-main",
+          "s18-working",
+          "s16-main",
+          "s16-working",
+          "s10-main"
+        ],
+        "ms": 8.611
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s18-main",
+          "s18-working",
+          "s16-main",
+          "s16-working",
+          "s18-context"
+        ],
+        "ms": 5.378
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s18-main",
+          "s18-working",
+          "s16-main",
+          "s16-working",
+          "s10-main"
+        ],
+        "ms": 14.164
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s18-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Which airport gate building should I go to and where does the battery travel?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.125,
+        "ndcg": 0,
+        "top": [
+          "s23-main",
+          "s23-working",
+          "s18-schedule",
+          "s17-schedule",
+          "s16-schedule"
+        ],
+        "ms": 6.65
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s18-main",
+          "s18-working",
+          "s14-main",
+          "s14-working",
+          "s17-context"
+        ],
+        "ms": 8.568
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s18-main",
+          "s18-working",
+          "s23-main",
+          "s17-context",
+          "s18-context"
+        ],
+        "ms": 15.336
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.9639404333166532
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s19-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "physiotherapy intake",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s19-main",
+          "s19-working"
+        ],
+        "ms": 3.77
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s19-main",
+          "s19-working",
+          "s20-working",
+          "s20-main",
+          "s19-schedule"
+        ],
+        "ms": 16.445
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s19-main",
+          "s19-working",
+          "s20-working",
+          "s20-main",
+          "s19-schedule"
+        ],
+        "ms": 20.286
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s19-concept",
+      "type": "ambiguous",
+      "split": "development",
+      "query": "Where is the visit I scheduled with the movement therapist?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s13-main",
+          "s03-main",
+          "s16-main",
+          "s16-working",
+          "s13-working"
+        ],
+        "ms": 6.55
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s19-working",
+          "s19-main",
+          "s20-working",
+          "s20-main",
+          "s03-main"
+        ],
+        "ms": 29.702
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.02040816326530612,
+        "ndcg": 0,
+        "top": [
+          "s03-main",
+          "s03-working",
+          "s16-working",
+          "s20-main",
+          "s16-main"
+        ],
+        "ms": 36.366
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s20-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "ankle walk journal",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s20-main",
+          "s20-working"
+        ],
+        "ms": 3.285
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s20-working",
+          "s20-main",
+          "s03-working",
+          "s03-main",
+          "s23-record"
+        ],
+        "ms": 5.635
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s20-main",
+          "s20-working",
+          "s03-working",
+          "s03-main",
+          "s23-record"
+        ],
+        "ms": 8.99
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s20-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where did I track how my foot felt after walking?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s20-main",
+          "s20-working",
+          "s22-main",
+          "s04-main",
+          "s11-main"
+        ],
+        "ms": 2.957
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s20-main",
+          "s20-working",
+          "s15-main",
+          "s23-main",
+          "s03-main"
+        ],
+        "ms": 7.739
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s20-main",
+          "s20-working",
+          "s11-main",
+          "s22-main",
+          "s22-working"
+        ],
+        "ms": 10.775
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s21-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "clinic medicines list",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s21-main",
+          "s21-working",
+          "s19-main",
+          "s19-working",
+          "s29-main"
+        ],
+        "ms": 4.055
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s21-main",
+          "s21-working",
+          "s20-context",
+          "s21-context",
+          "s19-main"
+        ],
+        "ms": 6.673
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s21-main",
+          "s21-working",
+          "s19-main",
+          "s19-working",
+          "s20-context"
+        ],
+        "ms": 10.798
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s21-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "What should I take with me when I meet the doctor?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s13-main",
+          "s13-working",
+          "s26-main",
+          "s26-working",
+          "s02-main"
+        ],
+        "ms": 4.658
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s21-main",
+          "s21-working",
+          "s19-main",
+          "s19-working",
+          "s20-schedule"
+        ],
+        "ms": 8.191
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.02,
+        "ndcg": 0,
+        "top": [
+          "s29-record",
+          "s26-record",
+          "s23-record",
+          "s17-record",
+          "s20-record"
+        ],
+        "ms": 12.976
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.5196610607458307
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s22-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "return museum catalog",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s22-main",
+          "s22-working",
+          "s11-main",
+          "s11-working",
+          "s29-main"
+        ],
+        "ms": 2.576
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.531730627995306,
+        "top": [
+          "s29-main",
+          "s29-working",
+          "s22-main",
+          "s22-working",
+          "s10-main"
+        ],
+        "ms": 5.635
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.9639404333166532,
+        "top": [
+          "s22-main",
+          "s29-main",
+          "s22-working",
+          "s29-working",
+          "s11-working"
+        ],
+        "ms": 8.287
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.9639404333166532
+        },
+        {
+          "k": 30,
+          "ndcg": 0.9639404333166532
+        },
+        {
+          "k": 60,
+          "ndcg": 0.9639404333166532
+        }
+      ]
+    },
+    {
+      "id": "s22-concept",
+      "type": "paraphrase",
+      "split": "development",
+      "query": "What book errand did I promise to do before going home?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s08-main",
+          "s08-working",
+          "s30-schedule",
+          "s29-schedule",
+          "s28-schedule"
+        ],
+        "ms": 3.611
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s22-main",
+          "s22-working",
+          "s19-working",
+          "s03-working",
+          "s11-working"
+        ],
+        "ms": 7.708
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.02631578947368421,
+        "ndcg": 0,
+        "top": [
+          "s16-schedule",
+          "s18-schedule",
+          "s17-schedule",
+          "s29-schedule",
+          "s21-schedule"
+        ],
+        "ms": 11.423
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.41311732856427996
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s23-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "water meter submit",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s23-main",
+          "s23-working",
+          "s24-main",
+          "s24-working"
+        ],
+        "ms": 2.982
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s23-main",
+          "s23-working",
+          "s06-main",
+          "s03-working",
+          "s16-main"
+        ],
+        "ms": 5.063
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s23-main",
+          "s23-working",
+          "s24-main",
+          "s24-working",
+          "s06-main"
+        ],
+        "ms": 8.118
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s23-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "What household utility proof needs sending to apartment management?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.027777777777777776,
+        "ndcg": 0,
+        "top": [
+          "s07-main",
+          "s07-working",
+          "s30-schedule",
+          "s29-schedule",
+          "s28-schedule"
+        ],
+        "ms": 3.754
+      },
+      "semantic": {
+        "p5": 0.2,
+        "r5": 0.5,
+        "mrr": 1,
+        "ndcg": 0.8262346571285599,
+        "top": [
+          "s23-main",
+          "s24-record",
+          "s03-record",
+          "s27-record",
+          "s06-record"
+        ],
+        "ms": 7.381
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 0.5,
+        "ndcg": 0.639909328045346,
+        "top": [
+          "s07-main",
+          "s23-main",
+          "s07-working",
+          "s23-working",
+          "s18-schedule"
+        ],
+        "ms": 11.242
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.52129602861432
+        },
+        {
+          "k": 30,
+          "ndcg": 0.639909328045346
+        },
+        {
+          "k": 60,
+          "ndcg": 0.639909328045346
+        }
+      ]
+    },
+    {
+      "id": "s24-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "capstone upload",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s24-main",
+          "s24-working"
+        ],
+        "ms": 2.667
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s24-main",
+          "s24-working",
+          "s15-working",
+          "s15-main",
+          "s09-working"
+        ],
+        "ms": 4.938
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s24-main",
+          "s24-working",
+          "s15-working",
+          "s15-main",
+          "s09-working"
+        ],
+        "ms": 7.667
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s24-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "What do I need to hand in after checking the pagination?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s24-main",
+          "s24-working",
+          "s11-main",
+          "s04-main",
+          "s11-working"
+        ],
+        "ms": 4.933
+      },
+      "semantic": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.038461538461538464,
+        "ndcg": 0,
+        "top": [
+          "s20-schedule",
+          "s18-schedule",
+          "s28-schedule",
+          "s21-schedule",
+          "s15-schedule"
+        ],
+        "ms": 8.488
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s24-main",
+          "s24-working",
+          "s28-schedule",
+          "s20-schedule",
+          "s30-schedule"
+        ],
+        "ms": 13.537
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.9639404333166532
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s25-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "Vite alias monorepo",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s25-main",
+          "s25-working"
+        ],
+        "ms": 2.82
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s25-working",
+          "s25-main",
+          "s04-working",
+          "s05-working",
+          "s04-main"
+        ],
+        "ms": 6.029
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s25-main",
+          "s25-working",
+          "s04-working",
+          "s05-working",
+          "s04-main"
+        ],
+        "ms": 8.902
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s25-concept",
+      "type": "ambiguous",
+      "split": "development",
+      "query": "How did I fix browser imports across packages that share configuration?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.9639404333166532,
+        "top": [
+          "s25-main",
+          "s20-main",
+          "s25-working",
+          "s20-working"
+        ],
+        "ms": 2.715
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s25-main",
+          "s25-working",
+          "s18-schedule",
+          "s08-main",
+          "s22-main"
+        ],
+        "ms": 9.109
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s25-main",
+          "s25-working",
+          "s20-main",
+          "s20-working",
+          "s18-schedule"
+        ],
+        "ms": 11.894
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s26-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "sentence embedding lexical",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s26-main",
+          "s26-working"
+        ],
+        "ms": 3.104
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s26-main",
+          "s26-working",
+          "s16-record",
+          "s26-record",
+          "s18-record"
+        ],
+        "ms": 7.022
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s26-main",
+          "s26-working",
+          "s16-record",
+          "s26-record",
+          "s18-record"
+        ],
+        "ms": 10.191
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s26-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Find the note explaining how search can match meaning without exact words.",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s05-main",
+          "s20-main",
+          "s05-working",
+          "s20-working",
+          "s28-record"
+        ],
+        "ms": 4.4
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s26-working",
+          "s26-main",
+          "s07-schedule",
+          "s12-schedule",
+          "s23-schedule"
+        ],
+        "ms": 9.18
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.02040816326530612,
+        "ndcg": 0,
+        "top": [
+          "s28-record",
+          "s23-schedule",
+          "s12-schedule",
+          "s28-schedule",
+          "s07-schedule"
+        ],
+        "ms": 13.708
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s27-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "Docker bridge port",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s27-main",
+          "s27-working"
+        ],
+        "ms": 3.049
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s27-working",
+          "s27-main",
+          "s16-main",
+          "s06-main",
+          "s06-working"
+        ],
+        "ms": 6.557
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s27-main",
+          "s27-working",
+          "s16-main",
+          "s06-main",
+          "s06-working"
+        ],
+        "ms": 9.684
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s27-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where did I save how isolated containers expose services?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s09-working",
+          "s09-main",
+          "s20-main",
+          "s20-working",
+          "s28-record"
+        ],
+        "ms": 3.348
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s27-main",
+          "s27-working",
+          "s06-main",
+          "s06-working",
+          "s22-main"
+        ],
+        "ms": 7.013
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.06666666666666667,
+        "ndcg": 0,
+        "top": [
+          "s19-record",
+          "s20-working",
+          "s16-record",
+          "s28-record",
+          "s04-record"
+        ],
+        "ms": 10.429
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.35583989829307827
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    },
+    {
+      "id": "s28-exact",
+      "type": "keyword",
+      "split": "development",
+      "query": "optics caustics",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s28-main",
+          "s28-working"
+        ],
+        "ms": 3.026
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s28-working",
+          "s28-main",
+          "s06-main",
+          "s02-main",
+          "s02-working"
+        ],
+        "ms": 5.532
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s28-main",
+          "s28-working",
+          "s06-main",
+          "s02-main",
+          "s02-working"
+        ],
+        "ms": 8.617
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s28-concept",
+      "type": "paraphrase",
+      "split": "development",
+      "query": "Find the article on bright light patterns cast through curved glass.",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.531730627995306,
+        "top": [
+          "s14-main",
+          "s14-working",
+          "s28-main",
+          "s28-working",
+          "s18-main"
+        ],
+        "ms": 4.413
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s28-working",
+          "s28-main",
+          "s14-main",
+          "s14-working",
+          "s15-main"
+        ],
+        "ms": 10.507
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 0.5,
+        "ndcg": 0.58688267143572,
+        "top": [
+          "s14-main",
+          "s28-working",
+          "s28-main",
+          "s14-working",
+          "s03-working"
+        ],
+        "ms": 15.028
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0.58688267143572
+        },
+        {
+          "k": 30,
+          "ndcg": 0.58688267143572
+        },
+        {
+          "k": 60,
+          "ndcg": 0.58688267143572
+        }
+      ]
+    },
+    {
+      "id": "s29-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "graphic grids catalogue",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s29-main",
+          "s29-working"
+        ],
+        "ms": 3.854
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s29-working",
+          "s29-main",
+          "s10-main",
+          "s10-working",
+          "s30-main"
+        ],
+        "ms": 8.41
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s29-main",
+          "s29-working",
+          "s10-main",
+          "s10-working",
+          "s30-main"
+        ],
+        "ms": 12.339
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s29-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Where is the catalogue of functional lettering and industrial symbols?",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s29-main",
+          "s29-working",
+          "s03-main",
+          "s15-main",
+          "s16-main"
+        ],
+        "ms": 5.211
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s29-main",
+          "s29-working",
+          "s04-working",
+          "s10-working",
+          "s10-main"
+        ],
+        "ms": 7.771
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s29-main",
+          "s29-working",
+          "s06-main",
+          "s03-main",
+          "s28-record"
+        ],
+        "ms": 13.096
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s30-exact",
+      "type": "keyword",
+      "split": "held-out",
+      "query": "marine buoy methodology",
+      "keyword": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s30-main",
+          "s30-working"
+        ],
+        "ms": 3.496
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.944847956559586,
+        "top": [
+          "s30-main",
+          "s06-working",
+          "s06-main",
+          "s30-working",
+          "s18-main"
+        ],
+        "ms": 5.14
+      },
+      "hybrid": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 1,
+        "top": [
+          "s30-main",
+          "s30-working",
+          "s06-working",
+          "s06-main",
+          "s18-main"
+        ],
+        "ms": 8.71
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 1
+        },
+        {
+          "k": 30,
+          "ndcg": 1
+        },
+        {
+          "k": 60,
+          "ndcg": 1
+        }
+      ]
+    },
+    {
+      "id": "s30-concept",
+      "type": "paraphrase",
+      "split": "held-out",
+      "query": "Which reading explains how floating instruments measure ocean warmth?",
+      "keyword": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0,
+        "ndcg": 0,
+        "top": [
+          "s20-main",
+          "s20-working",
+          "s30-context",
+          "s29-context",
+          "s28-context"
+        ],
+        "ms": 3.579
+      },
+      "semantic": {
+        "p5": 0.4,
+        "r5": 1,
+        "mrr": 1,
+        "ndcg": 0.7967075809905066,
+        "top": [
+          "s30-working",
+          "s30-main",
+          "s06-main",
+          "s23-main",
+          "s06-working"
+        ],
+        "ms": 6.789
+      },
+      "hybrid": {
+        "p5": 0,
+        "r5": 0,
+        "mrr": 0.027777777777777776,
+        "ndcg": 0,
+        "top": [
+          "s28-context",
+          "s24-context",
+          "s29-context",
+          "s21-context",
+          "s26-context"
+        ],
+        "ms": 10.44
+      },
+      "experimentalK": [
+        {
+          "k": 10,
+          "ndcg": 0
+        },
+        {
+          "k": 30,
+          "ndcg": 0
+        },
+        {
+          "k": 60,
+          "ndcg": 0
+        }
+      ]
+    }
+  ],
+  "classification": {
+    "accuracy": 0.35,
+    "macroPrecision": 0.5,
+    "macroRecall": 0.35,
+    "macroF1": 0.4,
+    "abstention": 0.55,
+    "perCategory": [
+      {
+        "category": "Education",
+        "correct": 0,
+        "predicted": 0,
+        "actual": 2,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      },
+      {
+        "category": "Work",
+        "correct": 1,
+        "predicted": 2,
+        "actual": 2,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      {
+        "category": "Finance",
+        "correct": 0,
+        "predicted": 0,
+        "actual": 2,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      },
+      {
+        "category": "Shopping",
+        "correct": 1,
+        "predicted": 2,
+        "actual": 2,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      {
+        "category": "Personal",
+        "correct": 0,
+        "predicted": 0,
+        "actual": 2,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      },
+      {
+        "category": "Travel",
+        "correct": 1,
+        "predicted": 1,
+        "actual": 2,
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6667
+      },
+      {
+        "category": "Health",
+        "correct": 2,
+        "predicted": 2,
+        "actual": 2,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "category": "Tasks",
+        "correct": 1,
+        "predicted": 1,
+        "actual": 2,
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6667
+      },
+      {
+        "category": "Technology",
+        "correct": 0,
+        "predicted": 0,
+        "actual": 2,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      },
+      {
+        "category": "References",
+        "correct": 1,
+        "predicted": 1,
+        "actual": 2,
+        "precision": 1,
+        "recall": 0.5,
+        "f1": 0.6667
+      }
+    ],
+    "confusion": {
+      "Education": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 2
+      },
+      "Work": {
+        "Education": 0,
+        "Work": 1,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 1
+      },
+      "Finance": {
+        "Education": 0,
+        "Work": 1,
+        "Finance": 0,
+        "Shopping": 1,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 0
+      },
+      "Shopping": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 1,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 1
+      },
+      "Personal": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 2
+      },
+      "Travel": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 1,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 1
+      },
+      "Health": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 2,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 0
+      },
+      "Tasks": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 1,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 1
+      },
+      "Technology": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 0,
+        "Abstained": 2
+      },
+      "References": {
+        "Education": 0,
+        "Work": 0,
+        "Finance": 0,
+        "Shopping": 0,
+        "Personal": 0,
+        "Travel": 0,
+        "Health": 0,
+        "Tasks": 0,
+        "Technology": 0,
+        "References": 1,
+        "Abstained": 1
+      }
+    },
+    "examples": [
+      {
+        "id": "s01-main",
+        "split": "development",
+        "expected": "Education",
+        "observed": null,
+        "similarity": 0.2129867524719352,
+        "margin": 0.07829140099058365
+      },
+      {
+        "id": "s02-main",
+        "split": "held-out",
+        "expected": "Education",
+        "observed": null,
+        "similarity": 0.07773757805311934,
+        "margin": 0.08193167493775957
+      },
+      {
+        "id": "s03-main",
+        "split": "held-out",
+        "expected": "Education",
+        "observed": null,
+        "similarity": 0.2087427148391279,
+        "margin": 0.02691771489665154
+      },
+      {
+        "id": "s04-main",
+        "split": "development",
+        "expected": "Work",
+        "observed": "Work",
+        "similarity": 0.32641022780726386,
+        "margin": 0.11620060545760566
+      },
+      {
+        "id": "s05-main",
+        "split": "held-out",
+        "expected": "Work",
+        "observed": "Work",
+        "similarity": 0.2653969613104475,
+        "margin": 0.08237943584667656
+      },
+      {
+        "id": "s06-main",
+        "split": "held-out",
+        "expected": "Work",
+        "observed": null,
+        "similarity": 0.20905310034630475,
+        "margin": 0.007884104094283945
+      },
+      {
+        "id": "s07-main",
+        "split": "development",
+        "expected": "Finance",
+        "observed": "Finance",
+        "similarity": 0.3163932893904744,
+        "margin": 0.18398185764128527
+      },
+      {
+        "id": "s08-main",
+        "split": "held-out",
+        "expected": "Finance",
+        "observed": "Work",
+        "similarity": 0.2991675132343479,
+        "margin": 0.0634351761477458
+      },
+      {
+        "id": "s09-main",
+        "split": "held-out",
+        "expected": "Finance",
+        "observed": "Shopping",
+        "similarity": 0.26982764729871117,
+        "margin": 0.0762527265121716
+      },
+      {
+        "id": "s10-main",
+        "split": "development",
+        "expected": "Shopping",
+        "observed": "Shopping",
+        "similarity": 0.2745865226891397,
+        "margin": 0.04855866776402354
+      },
+      {
+        "id": "s11-main",
+        "split": "held-out",
+        "expected": "Shopping",
+        "observed": null,
+        "similarity": 0.2591136310134723,
+        "margin": 0.14716549867320133
+      },
+      {
+        "id": "s12-main",
+        "split": "held-out",
+        "expected": "Shopping",
+        "observed": "Shopping",
+        "similarity": 0.42981830379364855,
+        "margin": 0.13869938018239253
+      },
+      {
+        "id": "s13-main",
+        "split": "development",
+        "expected": "Personal",
+        "observed": null,
+        "similarity": 0.15059631274079435,
+        "margin": 0.05144236734387499
+      },
+      {
+        "id": "s14-main",
+        "split": "held-out",
+        "expected": "Personal",
+        "observed": null,
+        "similarity": 0.07175608737618532,
+        "margin": 0.025043618322336328
+      },
+      {
+        "id": "s15-main",
+        "split": "held-out",
+        "expected": "Personal",
+        "observed": null,
+        "similarity": 0.24492317013248086,
+        "margin": 0.04369571598544719
+      },
+      {
+        "id": "s16-main",
+        "split": "development",
+        "expected": "Travel",
+        "observed": null,
+        "similarity": 0.2500717501439769,
+        "margin": 0.13803869545224634
+      },
+      {
+        "id": "s17-main",
+        "split": "held-out",
+        "expected": "Travel",
+        "observed": null,
+        "similarity": 0.21565426417703196,
+        "margin": 0.030582423854349672
+      },
+      {
+        "id": "s18-main",
+        "split": "held-out",
+        "expected": "Travel",
+        "observed": "Travel",
+        "similarity": 0.2899597681507745,
+        "margin": 0.14246020622443387
+      },
+      {
+        "id": "s19-main",
+        "split": "development",
+        "expected": "Health",
+        "observed": "Health",
+        "similarity": 0.5018346159275856,
+        "margin": 0.33752061419765866
+      },
+      {
+        "id": "s20-main",
+        "split": "held-out",
+        "expected": "Health",
+        "observed": "Health",
+        "similarity": 0.4402162260364461,
+        "margin": 0.17245889214659804
+      },
+      {
+        "id": "s21-main",
+        "split": "held-out",
+        "expected": "Health",
+        "observed": "Health",
+        "similarity": 0.519368449156635,
+        "margin": 0.20541748299569745
+      },
+      {
+        "id": "s22-main",
+        "split": "development",
+        "expected": "Tasks",
+        "observed": "Tasks",
+        "similarity": 0.2875685242689065,
+        "margin": 0.06919297397518734
+      },
+      {
+        "id": "s23-main",
+        "split": "held-out",
+        "expected": "Tasks",
+        "observed": "Tasks",
+        "similarity": 0.27223259260309957,
+        "margin": 0.11730319035552919
+      },
+      {
+        "id": "s24-main",
+        "split": "held-out",
+        "expected": "Tasks",
+        "observed": null,
+        "similarity": 0.1950699154208627,
+        "margin": 0.053401887966789324
+      },
+      {
+        "id": "s25-main",
+        "split": "development",
+        "expected": "Technology",
+        "observed": null,
+        "similarity": 0.03774767415346527,
+        "margin": 0.024064942688944456
+      },
+      {
+        "id": "s26-main",
+        "split": "held-out",
+        "expected": "Technology",
+        "observed": null,
+        "similarity": 0.13544214758148626,
+        "margin": 0.00936968449997544
+      },
+      {
+        "id": "s27-main",
+        "split": "held-out",
+        "expected": "Technology",
+        "observed": null,
+        "similarity": 0.20110886490712576,
+        "margin": 0.08663398097672027
+      },
+      {
+        "id": "s28-main",
+        "split": "development",
+        "expected": "References",
+        "observed": null,
+        "similarity": 0.2547793103577337,
+        "margin": 0.15052312030446388
+      },
+      {
+        "id": "s29-main",
+        "split": "held-out",
+        "expected": "References",
+        "observed": "References",
+        "similarity": 0.42865254264896197,
+        "margin": 0.11876821727583686
+      },
+      {
+        "id": "s30-main",
+        "split": "held-out",
+        "expected": "References",
+        "observed": null,
+        "similarity": 0.2058027946204532,
+        "margin": 0.026317844571253718
+      }
+    ]
+  },
+  "ocr": {
+    "cer": 0.0256,
+    "wer": 0.0667,
+    "cases": [
+      {
+        "fixture": "studio-order.png",
+        "expected": "FIELDWORK STUDIO Order: ZK-4821 Total INR 2,450.50 Pickup 25/11/2026",
+        "observed": "FIELDWORK STUDIO Order: ZK-4821 Total INR 2,450.50 Pickup 25/11/2026",
+        "cer": 0,
+        "wer": 0,
+        "ms": 871.425
+      },
+      {
+        "fixture": "university-notice.png",
+        "expected": "NIGHT LAB ORIENTATION Report is due 17/12/2026 Room B-215 at 18:30",
+        "observed": "NIGHT LAB ORIENTATION Report is due 17/12/2026 Room B-215 at 18:30",
+        "cer": 0,
+        "wer": 0,
+        "ms": 425.292
+      },
+      {
+        "fixture": "travel-board.png",
+        "expected": "RIVER TERMINAL Reservation: TR-9542 Departure 08:45 Platform Seven",
+        "observed": "RIVER TERMINAL Reservation: TR-9542 Departure 08:45 Platform Seven",
+        "cer": 0,
+        "wer": 0,
+        "ms": 462.11
+      },
+      {
+        "fixture": "subtle-print.png",
+        "expected": "Print Archive Box VELVET-513 Tuesday preview window The cabinet opens at 11:15",
+        "observed": "cr >) Print Archive Box VELVET-513 Tuesday preview window The cabinet opens at 11:15 L J",
+        "cer": 0.1282,
+        "wer": 0.3333,
+        "ms": 259.447
+      },
+      {
+        "fixture": "scanned-invoice.pdf",
+        "expected": "TIDELINE SERVICES Invoice: TD-6512 Payment due 21/11/2026 Total INR 1,23,456.00",
+        "observed": "TIDELINE SERVICES Invoice: TD-6512 Payment due 21/11/2026 Total INR 1,23,456.00",
+        "cer": 0,
+        "wer": 0,
+        "ms": 1709.053
+      }
+    ]
+  },
+  "extraction": {
+    "fixtureCount": 12,
+    "byType": [
+      {
+        "type": "deadline",
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "amount",
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "email",
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "url",
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "reference",
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "time",
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "action",
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "type": "date",
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      }
+    ],
+    "examples": [
+      {
+        "text": "Submit by 25/11/2026",
+        "expected": [
+          "deadline:2026-11-25"
+        ],
+        "observed": [
+          "deadline:2026-11-25"
+        ]
+      },
+      {
+        "text": "Bought supplies. Total INR 1,23,456.50.",
+        "expected": [
+          "amount:INR 123456.50"
+        ],
+        "observed": [
+          "amount:INR 123456.50"
+        ]
+      },
+      {
+        "text": "Reply to editor@example.test, then read https://example.test/archive.",
+        "expected": [
+          "email:editor@example.test",
+          "url:https://example.test/archive"
+        ],
+        "observed": [
+          "url:https://example.test/archive",
+          "email:editor@example.test"
+        ]
+      },
+      {
+        "text": "Due 03/04/2026; the calendar convention is unknown.",
+        "expected": [
+          "deadline:03/04/2026"
+        ],
+        "observed": [
+          "deadline:03/04/2026"
+        ]
+      },
+      {
+        "text": "Reference: SD-2941. Gate closes at 18:35.",
+        "expected": [
+          "reference:SD-2941",
+          "time:18:35"
+        ],
+        "observed": [
+          "time:18:35",
+          "reference:SD-2941"
+        ]
+      },
+      {
+        "text": "The faulty slip reads 31/02/2026 and INR 2,3.",
+        "expected": [],
+        "observed": []
+      },
+      {
+        "text": "TODO: return the test library book.",
+        "expected": [
+          "action:return the test library book."
+        ],
+        "observed": [
+          "action:return the test library book."
+        ]
+      },
+      {
+        "text": "Invoice: CB-4826 and total $35.00.",
+        "expected": [
+          "reference:CB-4826",
+          "amount:$ 35.00"
+        ],
+        "observed": [
+          "amount:$ 35.00",
+          "reference:CB-4826"
+        ]
+      },
+      {
+        "text": "The meeting may happen next Friday.",
+        "expected": [],
+        "observed": []
+      },
+      {
+        "text": "The normalized date is 2026-12-07.",
+        "expected": [
+          "date:2026-12-07"
+        ],
+        "observed": [
+          "date:2026-12-07"
+        ]
+      },
+      {
+        "text": "The extension was 19:99. Deadline 30/02/2026.",
+        "expected": [],
+        "observed": []
+      },
+      {
+        "text": "Departure 9:05 am. Follow https://example.test/terminal.",
+        "expected": [
+          "time:9:05 am",
+          "url:https://example.test/terminal"
+        ],
+        "observed": [
+          "time:9:05 am",
+          "url:https://example.test/terminal"
+        ]
+      }
+    ]
+  }
+}
