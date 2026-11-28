@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from 'react'
+import { useId, type PointerEvent, type ReactNode } from 'react'
 
 const paths = {
   inbox: <><path d="M4 5h16l2 9v5H2v-5l2-9Z"/><path d="M2 14h6l1.5 2h5l1.5-2h6"/></>,
@@ -21,6 +21,8 @@ const paths = {
   copy: <><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></>,
   clipboard: <><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 5H5v16h14V5h-3m-7 7h6m-6 4h6"/></>,
   upload: <path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/>,
+  paperclip: <path d="m9 12 5.6-5.6a2.5 2.5 0 0 1 3.5 3.5l-7.8 7.8a4 4 0 0 1-5.6-5.6l8.3-8.3a5.5 5.5 0 0 1 7.8 7.8l-7.1 7.1"/>,
+  more: <><path d="M5 12h.01m7 0h.01m7 0h.01" strokeWidth="2.6"/></>,
   download: <path d="M12 4v12m-5-5 5 5 5-5M4 17v3h16v-3"/>,
   trash: <path d="M4 6h16m-10-3h4m4 3-1 15H7L6 6m4 4v7m4-7v7"/>,
   check: <path d="m5 12 5 5L20 7"/>,
@@ -42,6 +44,39 @@ export const assetUrl = (name: string) => import.meta.env.BASE_URL + name
 
 export function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
   return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round">{paths[name]}</svg>
+}
+
+export function moveReflection(event: PointerEvent<HTMLElement>) {
+  if (event.pointerType !== 'mouse') return
+  const bounds = event.currentTarget.getBoundingClientRect()
+  event.currentTarget.style.setProperty('--reflection-x', (event.clientX - bounds.left) + 'px')
+  event.currentTarget.style.setProperty('--reflection-y', (event.clientY - bounds.top) + 'px')
+}
+
+export function CaptureGlyphs() {
+  return <div className="empty-types" aria-hidden="true">
+    <svg className="glyph-note" width="56" height="55" viewBox="0 0 56 55">
+      <rect className="glyph-paper" x="9" y="6" width="37" height="44" rx="11"/>
+      <path className="glyph-accent" d="M18 20v-4h19v4m-9.5-4v17m-4 0h8"/>
+      <path d="M18 41h16"/>
+    </svg>
+    <svg className="glyph-link" width="55" height="55" viewBox="0 0 55 55">
+      <rect className="glyph-paper" x="7" y="13" width="42" height="33" rx="16"/>
+      <path d="m25 33-2.5 2.5a5.7 5.7 0 0 1-8-8l6.2-6.3a5.7 5.7 0 0 1 8 0"/>
+      <path className="glyph-accent" d="m30 24 2.5-2.5a5.7 5.7 0 0 1 8 8l-6.2 6.3a5.7 5.7 0 0 1-8 0M22 32l10-10"/>
+    </svg>
+    <svg className="glyph-image" width="56" height="55" viewBox="0 0 56 55">
+      <rect className="glyph-back" x="13" y="9" width="36" height="34" rx="8"/>
+      <rect className="glyph-paper" x="6" y="14" width="38" height="33" rx="8"/>
+      <circle className="glyph-accent" cx="18" cy="25" r="2.6"/>
+      <path d="m10 40 9-7 5 4 8-9 8 8"/>
+    </svg>
+    <svg className="glyph-file" width="53" height="55" viewBox="0 0 53 55">
+      <path className="glyph-paper" d="M17 7h15l10 10v24a7 7 0 0 1-7 7H17a7 7 0 0 1-7-7V14a7 7 0 0 1 7-7Z"/>
+      <path d="M32 8v6a3 3 0 0 0 3 3h6m-23 12h16m-16 7h12"/>
+      <path className="glyph-accent" d="M18 22h7"/>
+    </svg>
+  </div>
 }
 
 const matrix = [

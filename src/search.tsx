@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
-import { Icon } from './graphics'
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type RefObject } from 'react'
+import { Icon, moveReflection } from './graphics'
 import { embed, indexClips } from './inference'
 import { kinds, type Library } from './model'
 import { defaultHybridRanking, eligible, keywordRanking, semanticRanking, type FilterSet, type Hit, type SearchMode } from './retrieval'
@@ -7,6 +7,7 @@ import { TypeMark } from './views'
 import { exampleQueries, isShowcase } from './showcase'
 
 const modeLabels = { keyword: 'Keyword', semantic: 'Semantic', hybrid: 'Hybrid' }
+const searchModes = ['keyword', 'semantic', 'hybrid'] as const
 
 function Highlight({ snippet, terms }: { snippet: string; terms: string[] }) {
   if (!terms.length) return snippet
@@ -90,7 +91,8 @@ export function SearchResults({ library, available, query, onQuery, inputRef, on
   return <section className="search-page" aria-label="Search results">
     <div className="search-page-title"><h1 className="inbox-title">Search</h1><button className="button outline" onClick={onClose}>Close search</button></div>
     <div className="search-controls">
-      <div className="appearance-control" role="group" aria-label="Search mode">{(['keyword', 'semantic', 'hybrid'] as const).map(option =>
+      <div className="appearance-control glass-segments search-modes" role="group" aria-label="Search mode" onPointerMove={moveReflection}
+        style={{ '--segment-index': searchModes.indexOf(activeMode) } as CSSProperties}>{searchModes.map(option =>
         <button key={option} aria-pressed={activeMode === option} aria-disabled={option !== 'keyword' && !available}
           onClick={() => { if (option === 'keyword' || available) { setMode(option); resetResults() } }}>{modeLabels[option]}</button>)}</div>
       <button className="button outline search-filter-toggle" aria-expanded={showFilters} onClick={() => setShowFilters(!showFilters)}><Icon name="sort" size={16}/> Filters</button>

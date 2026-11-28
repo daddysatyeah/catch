@@ -92,7 +92,7 @@ export function App() {
       setOverlay(undefined)
       return
     }
-    closeTimer.current = window.setTimeout(() => setOverlay(undefined), 160)
+    closeTimer.current = window.setTimeout(() => setOverlay(undefined), 190)
   }
   function openSearch() {
     navigate('search')
@@ -452,7 +452,6 @@ export function App() {
           {desktopStatus && <DesktopSettings status={desktopStatus} change={enabled => enabled ? show({ type: 'enable-monitoring' }) : void desktopAction(desktop?.setMonitoring(false))}
             images={enabled => void desktopAction(desktop?.setImages(enabled))} shortcut={value => void desktopAction(desktop?.setShortcut(value))}/>}
         </Settings>}
-        <footer className="workspace-footer"><span><Icon name="lock" size={14}/> Stored locally</span><button className="text-button" onClick={openTour}>{library.tourDone ? 'Replay quick tour' : 'Catch quick tour'}</button></footer>
         </>}
       </main>
     </div>

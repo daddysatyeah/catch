@@ -19,8 +19,8 @@ export function Dialog({ mode = '', title, onClose, children, initialFocus }: {
   </dialog>
 }
 
-export function DialogHeader({ icon, title, close }: { icon: IconName; title: string; close: () => void }) {
-  return <div className="dialog-heading"><span className="dialog-emblem"><Icon name={icon} size={19}/></span><h2>{title}</h2><button className="icon-button" aria-label="Close" title="Close (Esc)" onClick={close}><Icon name="close"/></button></div>
+export function DialogHeader({ icon, title, close, actions }: { icon: IconName; title: string; close: () => void; actions?: ReactNode }) {
+  return <div className="dialog-heading"><span className="dialog-emblem"><Icon name={icon} size={19}/></span><h2>{title}</h2>{actions}<button className="icon-button" aria-label="Close" title="Close (Esc)" onClick={close}><Icon name="close"/></button></div>
 }
 
 export function CollectionDialog({ existing, collections, onClose, onSave, onDelete }: {

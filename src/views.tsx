@@ -1,5 +1,5 @@
-import { useState, type CSSProperties, type RefObject } from 'react'
-import { assetUrl, Icon, MatrixArt, Wordmark, type IconName } from './graphics'
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type RefObject } from 'react'
+import { assetUrl, CaptureGlyphs, Icon, MatrixArt, moveReflection, Wordmark, type IconName } from './graphics'
 import { AttachmentPreview, canPreview, isPdf } from './attachment-preview'
 import { attachmentsOf, clockTime, describe, formatDay, kinds, visibleClips, type Clip, type Collection, type Kind, type Library, type Theme } from './model'
 import { hasShowcaseId, isShowcase, showcasePreview, showcaseSize } from './showcase'
@@ -22,11 +22,28 @@ const libraryNavigation: { id: Page; label: string; icon: IconName }[] = [
 export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, desktop }: {
   library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; desktop?: boolean
 }) {
+  const navigationElement = useRef<HTMLElement>(null)
+  useLayoutEffect(() => {
+    const rail = navigationElement.current
+    if (!rail) return
+    const select = () => {
+      const active = rail.querySelector<HTMLElement>('[aria-current="page"]')
+      rail.toggleAttribute('data-selection', !!active?.offsetHeight)
+      if (!active?.offsetHeight) return
+      rail.style.setProperty('--nav-selection-y', active.offsetTop + 'px')
+      rail.style.setProperty('--nav-selection-height', active.offsetHeight + 'px')
+    }
+    select()
+    const observer = new ResizeObserver(select)
+    observer.observe(rail)
+    return () => observer.disconnect()
+  }, [page, mobile, library.collections])
   return <>
     {mobile && <button className="mobile-scrim" aria-label="Close menu" onClick={onClose}/>}
     <aside className={'sidebar' + (mobile ? ' is-open' : '')} aria-label="Workspace sidebar">
       <button className="brand" aria-label="Catch inbox" onClick={() => navigate('inbox')}><img src={assetUrl('catch.svg')} width="34" height="34" alt=""/><Wordmark/></button>
-      <nav className="sidebar-nav" aria-label="Workspace navigation">
+      <nav ref={navigationElement} className="sidebar-nav" aria-label="Workspace navigation">
+        <i className="nav-selection" aria-hidden="true"/>
         <p className="nav-label micro">Workspace</p>
         {navigation.map(item => <button key={item.id} className={'nav-item' + (page === item.id ? ' active' : '')} aria-current={page === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>
           <Icon name={item.icon} size={18}/><span>{item.label}</span>
@@ -45,7 +62,7 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
       </nav>
       <div className="sidebar-bottom">
         <button className={'nav-item' + (page === 'settings' ? ' active' : '')} aria-current={page === 'settings' ? 'page' : undefined} onClick={() => navigate('settings')}><Icon name="settings" size={18}/> Settings</button>
-        <button className="device" onClick={() => navigate('settings')}>
+        <button className="device" onClick={() => navigate('settings')} onPointerMove={moveReflection}>
           <span className="device-icon"><Icon name="lock" size={16}/></span>
           <span><strong>On this device</strong><small>{desktop ? 'Windows library' : 'Browser library'}</small></span>
         </button>
@@ -58,11 +75,23 @@ export function Header({ scrolled, onMenu, inputRef, query, onQuery, onClear, on
   scrolled: boolean; onMenu: () => void; inputRef: RefObject<HTMLInputElement | null>; query: string;
   onQuery: (value: string) => void; onClear: () => void; onInbox: () => void; onCapture: () => void; captureReady: boolean; menuOpen: boolean
 }) {
+  const search = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const capsule = search.current
+    if (!capsule) return
+    let visible = false
+    const update = () => { capsule.toggleAttribute('data-motion', visible && !document.hidden) }
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update() })
+    observer.observe(capsule)
+    document.addEventListener('visibilitychange', update)
+    return () => { observer.disconnect(); document.removeEventListener('visibilitychange', update) }
+  }, [])
   return <header className={'topbar' + (scrolled ? ' scrolled' : '')}>
     <div className="topbar-content">
       <button className="icon-button menu-trigger" aria-label="Workspace menu" aria-expanded={menuOpen} onClick={onMenu}><Icon name="menu"/></button>
       <button className="brand mobile-brand" aria-label="Catch inbox" onClick={onInbox}><img src={assetUrl('catch.svg')} width="34" height="34" alt=""/><Wordmark/></button>
-      <div className="global-search" role="search">
+      <div ref={search} className="global-search" role="search">
+        <span className="search-spectrum" aria-hidden="true"/>
         <Icon name="search" size={18}/>
         <input ref={inputRef} type="search" aria-label="Search captures" placeholder="Search anything…" value={query} maxLength={350}
           aria-keyshortcuts="Control+K Meta+K" onChange={event => onQuery(event.target.value)}/>
@@ -75,10 +104,10 @@ export function Header({ scrolled, onMenu, inputRef, query, onQuery, onClear, on
 
 export function InboxEmpty({ onCapture }: { onCapture: () => void }) {
   return <section className="empty inbox-empty" aria-labelledby="inbox-empty-title">
-    <div className="empty-types" aria-hidden="true">{(['text', 'link', 'image', 'file'] as const).map(kind => <span key={kind}><Icon name={kind} size={20}/></span>)}</div>
+    <CaptureGlyphs/>
     <h2 id="inbox-empty-title">Capture anything.</h2>
     <p>A place for everything you want to remember.</p>
-    <button className="button primary" onClick={onCapture}><Icon name="plus" size={17}/> Create your first capture</button>
+    <button className="button primary" onClick={onCapture}><Icon name="plus" size={17}/> Create your first capture.</button>
   </section>
 }
 
@@ -89,12 +118,7 @@ export function TypeMark({ clip }: { clip: Clip }) {
 function ClipCard({ clip, open }: { clip: Clip; open: () => void }) {
   const poster = showcasePreview(clip)
   const attachment = attachmentsOf(clip).find(canPreview)
-  return <button className="clip-card" onClick={open} onPointerMove={event => {
-    if (event.pointerType !== 'mouse') return
-    const bounds = event.currentTarget.getBoundingClientRect()
-    event.currentTarget.style.setProperty('--reflection-x', (event.clientX - bounds.left) + 'px')
-    event.currentTarget.style.setProperty('--reflection-y', (event.clientY - bounds.top) + 'px')
-  }}>
+  return <button className="clip-card" onClick={open} onPointerMove={moveReflection}>
     <div className={'card-art ' + (clip.artwork ?? 'basic-art') + (poster || attachment ? ' has-preview' : '') + ((attachment && isPdf(attachment)) || (poster && clip.kind === 'file') ? ' document-preview' : '')}>
       {clip.artwork === 'dots' ? <MatrixArt/> : clip.artwork === 'quote' || clip.kind === 'text' ?
         <><span className="quote-mark" aria-hidden="true">“</span><span className="quote-text">{clip.body.slice(0, 185)}</span></> :
@@ -156,7 +180,7 @@ export function Timeline({ clips, onOpen, onCapture, heading = 'Recent captures'
   }
   return <section className="recent-section" aria-label={heading}>
     <div className="section-heading"><h2>{heading}</h2><div className="timeline-controls">{onBulk && !!clips.length && <button className="button sort-button" aria-pressed={selecting} onClick={() => { setSelecting(!selecting); setSelected([]) }}>{selecting ? 'Done' : 'Select'}</button>}<button className="button sort-button" onClick={() => setNewest(!newest)} title="Change sort order"><Icon name="sort" size={16}/>{newest ? 'Newest first' : 'Oldest first'}</button></div></div>
-    <div className="filter-bar" style={{ '--filter-index': options.indexOf(filter) } as CSSProperties} role="group" aria-label="Filter by type">{options.map(kind => <button key={kind} aria-pressed={kind === filter} onClick={() => setFilter(kind)}>{kind === 'all' ? 'All captures' : kind === 'text' ? 'Text' : kinds[kind] + 's'}</button>)}</div>
+    <div className="glass-segments filter-bar" onPointerMove={moveReflection} style={{ '--segment-index': options.indexOf(filter) } as CSSProperties} role="group" aria-label="Filter by type">{options.map(kind => <button key={kind} aria-pressed={kind === filter} onClick={() => setFilter(kind)}>{kind === 'all' ? 'All captures' : kind === 'text' ? 'Text' : kinds[kind] + 's'}</button>)}</div>
     {selecting && <div className="bulk-actions"><label className="check-label"><input type="checkbox" checked={!!shown.length && shown.length === chosen.length} onChange={event => setSelected(event.target.checked ? shown.map(clip => clip.id) : [])}/> {chosen.length ? chosen.length + ' selected' : 'Select visible'}</label>{actions.map(action => <button key={action} className="button outline" disabled={!chosen.length} onClick={() => { onBulk?.(chosen, action); setSelected([]); setSelecting(false) }}>{{ archive: 'Archive', unarchive: 'Unarchive', restore: 'Restore', trash: 'Move to Trash' }[action]}</button>)}</div>}
     {groups.map(([day, group]) => <div className="day-group" key={day}><h3 className="micro">{day}</h3><div className="rows">{group.map(clip => <div className="select-row" key={clip.id}>
       {selecting && <input type="checkbox" aria-label={'Select ' + clip.title} checked={chosen.includes(clip.id)} onChange={event => setSelected(event.target.checked ? [...selected, clip.id] : selected.filter(id => id !== clip.id))}/>}
@@ -203,7 +227,8 @@ export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo
     <div className="settings-stack">
       <section className="settings-panel"><h2><Icon name="sun" size={19}/> Appearance</h2>
         <div className="settings-row"><div><strong>Theme</strong><p>Choose an appearance or follow your system.</p></div>
-          <div className="appearance-control" role="group" aria-label="Theme">{appearances.map(value => <button key={value.id} aria-pressed={library.theme === value.id} onClick={() => setTheme(value.id)}><Icon name={value.icon} size={16}/>{value.label}</button>)}</div>
+          <div className="appearance-control glass-segments theme-modes" role="group" aria-label="Theme" onPointerMove={moveReflection}
+            style={{ '--segment-index': appearances.findIndex(value => value.id === library.theme) } as CSSProperties}>{appearances.map(value => <button key={value.id} aria-pressed={library.theme === value.id} onClick={() => setTheme(value.id)}><Icon name={value.icon} size={16}/>{value.label}</button>)}</div>
         </div>
         <div className="settings-row"><div><strong>Reduce motion</strong><p>Use fewer transitions and skip smooth scrolling.</p></div><button className="switch" role="switch" aria-label="Reduce motion" aria-checked={library.reduced} onClick={() => setReduced(!library.reduced)}><span/></button></div>
       </section>
