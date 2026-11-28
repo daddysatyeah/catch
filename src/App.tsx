@@ -121,6 +121,7 @@ function Workspace({ controls, portalOpen }: { controls: Omit<AccountActions, 'm
   const [mobile, setMobile] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [toast, setToast] = useState('')
+  const [captureRevision, setCaptureRevision] = useState(0)
   const [busy, setBusy] = useState<{ id: string; label: string }>()
   const [demoLoading, setDemoLoading] = useState(false)
   const [desktopStatus, setDesktopStatus] = useState<DesktopStatus>()
@@ -367,6 +368,7 @@ function Workspace({ controls, portalOpen }: { controls: Omit<AccountActions, 'm
       })
       if (duplicate) return { duplicate: duplicate.title }
       if (!saved) return { issue: 'This capture was moved to Trash while you were editing.' }
+      setCaptureRevision(revision => revision + 1)
       if (!unattended) notify(selectedClip ? 'Capture updated' : 'Saved to Catch')
       return { saved: true }
     } catch (error) {
@@ -496,11 +498,11 @@ function Workspace({ controls, portalOpen }: { controls: Omit<AccountActions, 'm
   return <div className={'app-shell' + (loadedLibrary ? ' library-ready' : '') + (mobile ? ' mobile-menu-open' : '')}>
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); main.current?.focus() }}>Skip to content</a>
     <Sidebar library={library} page={page === 'storage' ? 'settings' : page} mobile={mobile} navigate={navigate} addCollection={addCollection} onClose={closeMenu} onSearch={openSearch}
-      usage={usage?.total} onStorage={() => navigate('storage')} controls={accountControls}/>
+      usage={usage?.total} onStorage={() => navigate('storage')} controls={accountControls} captureRevision={captureRevision}/>
     <div className="workspace" inert={mobile || undefined}>
       <Header scrolled={scrolled} onMenu={() => { mobileTrigger.current = document.activeElement as HTMLElement; setMobile(true) }}
         inputRef={searchInput} query={query} onQuery={changeQuery} onClear={exitSearch} onInbox={() => navigate('inbox')}
-        onCapture={openCapture} captureReady={!!loadedLibrary} menuOpen={mobile}/>
+        onCapture={openCapture} captureReady={!!loadedLibrary} menuOpen={mobile} captureRevision={captureRevision}/>
       <main id="main-content" className="main-content" ref={main} tabIndex={-1}>
         {!loadedLibrary ? <><h1 className="inbox-title">Inbox</h1>{error ?
           <Empty icon="inbox" title="Couldn’t open your library" text="Close other Catch tabs and try again." action="Try again" onAction={load}/> :

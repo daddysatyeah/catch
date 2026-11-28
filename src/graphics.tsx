@@ -81,20 +81,16 @@ export function CaptureGlyphs() {
   </div>
 }
 
-const matrix = [
-  '01110 01110 11111 01110 10001',
-  '10001 10001 00100 10001 10001',
-  '10000 10001 00100 10000 10001',
-  '10000 11111 00100 10000 11111',
-  '10000 10001 00100 10000 10001',
-  '10001 10001 00100 10001 10001',
-  '01110 10001 00100 01110 10001',
-]
-
-export function Wordmark() {
-  return <svg aria-hidden="true" viewBox="0 0 88 23" width="88" height="23" fill="currentColor">
-    {matrix.flatMap((row, y) => [...row].map((cell, x) => cell === '1' && <circle key={x + ',' + y} cx={1.5 + x * 3} cy={2.5 + y * 3} r="1.13"/>))}
-  </svg>
+export function BrandIdentity({ captureRevision = 0 }: { captureRevision?: number }) {
+  return <span className="gravity-identity" aria-hidden="true">
+    <svg className="gravity-mark" viewBox="0 0 48 48" width="34" height="34">
+      <g key={captureRevision}>
+        <path className="gravity-arc" d="M33 15A14 14 0 1 0 33 33" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round"/>
+        <circle className="gravity-dot" cx="23" cy="24" r="3.6" fill="currentColor"/>
+      </g>
+    </svg>
+    <span className="gravity-wordmark">catch.</span>
+  </span>
 }
 
 const field = Array.from({ length: 47 * 21 }, (_, i) => {

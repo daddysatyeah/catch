@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type RefObject } from 'react'
 import { AccountCapsule, AccountSettings, type AccountActions } from './account-ui'
 import { formatBytes } from './storage-usage'
-import { assetUrl, CaptureGlyphs, Icon, MatrixArt, moveReflection, Wordmark, type IconName } from './graphics'
+import { assetUrl, BrandIdentity, CaptureGlyphs, Icon, MatrixArt, moveReflection, type IconName } from './graphics'
 import { AttachmentPreview, canPreview, isPdf } from './attachment-preview'
 import { attachmentsOf, clockTime, describe, formatDay, kinds, visibleClips, type Clip, type Collection, type Kind, type Library, type Theme } from './model'
 import { hasShowcaseId, isShowcase, showcasePreview, showcaseSize } from './showcase'
@@ -21,8 +21,8 @@ const libraryNavigation: { id: Page; label: string; icon: IconName }[] = [
   { id: 'trash', label: 'Trash', icon: 'trash' },
 ]
 
-export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, controls, usage, onStorage }: {
-  library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; controls: AccountActions; usage?: number; onStorage: () => void
+export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, controls, usage, onStorage, captureRevision }: {
+  library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; controls: AccountActions; usage?: number; onStorage: () => void; captureRevision: number
 }) {
   const navigationElement = useRef<HTMLElement>(null)
   useLayoutEffect(() => {
@@ -43,7 +43,7 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
   return <>
     {mobile && <button className="mobile-scrim" aria-label="Close menu" onClick={onClose}/>}
     <aside className={'sidebar' + (mobile ? ' is-open' : '')} aria-label="Workspace sidebar">
-      <button className="brand" aria-label="Catch inbox" onClick={() => navigate('inbox')}><img src={assetUrl('catch.svg')} width="34" height="34" alt=""/><Wordmark/></button>
+      <button className="brand" aria-label="Catch inbox" onClick={() => navigate('inbox')}><BrandIdentity captureRevision={captureRevision}/></button>
       <nav ref={navigationElement} className="sidebar-nav" aria-label="Workspace navigation">
         <i className="nav-selection" aria-hidden="true"/>
         <p className="nav-label micro">Workspace</p>
@@ -73,9 +73,9 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
   </>
 }
 
-export function Header({ scrolled, onMenu, inputRef, query, onQuery, onClear, onInbox, onCapture, captureReady, menuOpen }: {
+export function Header({ scrolled, onMenu, inputRef, query, onQuery, onClear, onInbox, onCapture, captureReady, menuOpen, captureRevision }: {
   scrolled: boolean; onMenu: () => void; inputRef: RefObject<HTMLInputElement | null>; query: string;
-  onQuery: (value: string) => void; onClear: () => void; onInbox: () => void; onCapture: () => void; captureReady: boolean; menuOpen: boolean
+  onQuery: (value: string) => void; onClear: () => void; onInbox: () => void; onCapture: () => void; captureReady: boolean; menuOpen: boolean; captureRevision: number
 }) {
   const search = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -91,7 +91,7 @@ export function Header({ scrolled, onMenu, inputRef, query, onQuery, onClear, on
   return <header className={'topbar' + (scrolled ? ' scrolled' : '')}>
     <div className="topbar-content">
       <button className="icon-button menu-trigger" aria-label="Workspace menu" aria-expanded={menuOpen} onClick={onMenu}><Icon name="menu"/></button>
-      <button className="brand mobile-brand" aria-label="Catch inbox" onClick={onInbox}><img src={assetUrl('catch.svg')} width="34" height="34" alt=""/><Wordmark/></button>
+      <button className="brand mobile-brand" aria-label="Catch inbox" onClick={onInbox}><BrandIdentity captureRevision={captureRevision}/></button>
       <div ref={search} className="global-search" role="search">
         <span className="search-spectrum" aria-hidden="true"/>
         <Icon name="search" size={18}/>

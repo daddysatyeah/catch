@@ -29,7 +29,6 @@
   justify-content: space-between;
 }
 .privacy-brand > div { display: flex; align-items: center; gap: 11px; }
-.privacy-brand img { border-radius: 10px; }
 .portal-close { color: var(--secondary); border: 1px solid #e5ebef; background: #fbfcfd; border-radius: 50%; }
 .portal-close:hover { background: #f1f5f8; color: var(--ink); }
 .privacy-composition {
@@ -104,7 +103,6 @@
 @keyframes portal-copy-in { from { opacity: .35; transform: translateY(6px); } }
 @media (max-width: 820px) {
   .privacy-brand { padding: max(13px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left)); }
-  .privacy-brand img { width: 30px; height: 30px; border-radius: 8px; }
   .privacy-composition {
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;

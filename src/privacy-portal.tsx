@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { authMessage, type Account } from './account'
-import { assetUrl, Icon, Wordmark } from './graphics'
+import { BrandIdentity, Icon } from './graphics'
 import { PrivacyCore } from './privacy-core'
 import type { useAccount } from './use-account'
 import './privacy-portal.css'
@@ -59,7 +59,7 @@ export default function PrivacyPortal({ auth, close, guest, success }: PortalPro
   return <dialog ref={dialog} className="privacy-portal" aria-labelledby="portal-title" onCancel={event => { event.preventDefault(); dismiss() }}>
     <div className="privacy-layout">
       <header className="privacy-brand">
-        <div><img src={assetUrl('catch.svg')} width="34" height="34" alt="Catch"/><Wordmark/></div>
+        <div role="img" aria-label="Catch"><BrandIdentity/></div>
         <button autoFocus className="icon-button portal-close" aria-label="Close sign-in" disabled={!!pending} onClick={dismiss}><Icon name="close" size={20}/></button>
       </header>
       <div className="privacy-composition">
