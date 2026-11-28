@@ -33,7 +33,7 @@ All attached documents, screenshots, and PDF preview images were made for Catch 
 
 The [render script](scripts/render-showcase.py) uses ReportLab, Poppler, and Pillow. The checked-in assets ship with the web app, and the generator is unnecessary for running or building Catch. PDF files use standard PDF fonts. The preview images come from rendered first pages.
 
-Loading the library stores sample files on this device without fetching AI models. Existing user captures and collections stay in place. If an older profile contains the original unchanged demo records, exploring the showcase moves those records to Trash to avoid duplicate examples. Removing the showcase moves current examples to Trash. Restoration reuses saved records and their IDs. Purged examples can be fetched again. A sample edited into a personal capture keeps its slot and is preserved.
+Loading the library stores sample files on this device without fetching AI models. Existing user captures and collections stay in place. On first opening the Phase 1 build, Catch moves recognized legacy demo records to recoverable Trash using recorded demo flags and known IDs. An explicitly imported 0.2.2 library stays active. Catch preserves records whose provenance is unknown, including captures with matching titles or filenames. Removing the showcase moves current examples to Trash. Restoration reuses saved records and their IDs. Purged examples can be fetched again. A sample edited into a personal capture keeps its slot and is preserved.
 
 The showcase is a product demonstration. It does not change the [synthetic research benchmarks](BENCHMARKS.md).
 

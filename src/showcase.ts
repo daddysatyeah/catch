@@ -29,6 +29,17 @@ export const showcaseSize = entries.length
 export const hasShowcaseId = (clip: Clip) => demoEntries.has(clip.id)
 export const isShowcase = (clip: Clip) => !!clip.demo && hasShowcaseId(clip)
 
+// The 0.2.2 showcase was already opt-in. Keep libraries with that recorded choice.
+export function retireAutomaticExamples(library: Library): Library {
+  if (library.retiredAutomaticExamples) return library
+  const now = Date.now()
+  const clips = library.clips.map(clip =>
+    clip.demo && !clip.trashed && (legacy.has(clip.id) || (library.showcaseChoice !== 'demo' && hasShowcaseId(clip)))
+      ? { ...clip, trashed: now }
+      : clip)
+  return { ...library, clips, retiredAutomaticExamples: true }
+}
+
 export function showcasePreview(clip: Clip) {
   const matched = clip.demo ? demoEntries.get(clip.id) : undefined
   if (matched?.extension) return folder + matched.entry.id + (matched.extension === 'pdf' ? '.webp' : '.png')

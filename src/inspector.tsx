@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Dialog, DialogHeader } from './dialogs'
 import { assetUrl, Icon, MatrixArt } from './graphics'
-import { attachmentsOf, kinds, longDate, safeUrl, type Attachment, type Clip, type Collection, type Passage } from './model'
-import { rasterType } from './content'
+import { attachmentsOf, kinds, longDate, safeUrl, type Clip, type Collection, type Passage } from './model'
+import { AttachmentPreview, canPreview, isPdf } from './attachment-preview'
 import { relatedMemories } from './inference'
 import type { Hit } from './retrieval'
 import { download } from './store'
@@ -14,16 +14,6 @@ type Props = {
   onClose: () => void; onPin: () => void; onEdit: () => void; onMove: (collection?: string) => void; onDelete: () => void
   onArchive: () => void; onRestore: () => void; onRead: () => void; onCancel: () => void; onClassify: () => void
   onCorrection: (passage: Passage, text: string) => void; notify: (message: string) => void; onOpen: (id: string) => void
-}
-
-function AttachmentImage({ file }: { file: Attachment }) {
-  const [url, setUrl] = useState('')
-  useEffect(() => {
-    const next = URL.createObjectURL(file.blob)
-    setUrl(next)
-    return () => URL.revokeObjectURL(next)
-  }, [file.blob])
-  return url && <img className="inspection-image" loading="lazy" decoding="async" alt={file.name} src={url}/>
 }
 
 function Snippet({ text }: { text: string }) {
@@ -75,8 +65,8 @@ export function InspectDialog(props: Props) {
       {clip.artwork === 'dots' && <div className="inspection-art"><MatrixArt/></div>}
       {url ? <a className="inspect-link" href={url.href} target="_blank" rel="noopener noreferrer"><Icon name="link" size={18}/><span>{url.href}</span><Icon name="external" size={16}/></a> : clip.body && <p className="inspect-body">{clip.body}</p>}
       {!!files.length && <div className="inspector-files">{files.map(file => <div key={file.id}>
-        {rasterType.test(file.blob.type) && <AttachmentImage file={file}/>}
-        {file.blob.type === 'application/pdf' && preview && <img className="inspection-image pdf-preview" src={assetUrl(preview)} loading="lazy" decoding="async" alt={'Page 1 preview of ' + clip.title}/>}
+        {isPdf(file) && preview ? <img className="inspection-image pdf-preview" src={assetUrl(preview)} loading="lazy" decoding="async" alt={'Page 1 preview of ' + clip.title}/> :
+          canPreview(file) && <AttachmentPreview file={file} className="inspection-image" width={900} alt={isPdf(file) ? 'Page 1 preview of ' + file.name : file.name}/>}
         <button className="button outline download-button" onClick={() => download(file.blob, file.name)}><Icon name="download" size={17}/><span>{file.name}</span></button>
       </div>)}</div>}
       <dl className="inspection-meta">

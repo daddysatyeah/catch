@@ -6,11 +6,11 @@ Catch keeps copied notes, screenshots, links and documents in a local library. I
 
 [Open Catch](https://daddysatyeah.github.io/catch/) · [Windows 0.2.1 release](https://github.com/daddysatyeah/catch/releases/tag/v0.2.1)
 
-![Catch inbox with the professional showcase library](docs/showcase/showcase-inbox.png)
+![Released 0.2.2 inbox with the professional showcase library](docs/showcase/showcase-inbox.png)
 
 ## Explore the showcase
 
-Choose **Explore demo library** for 45 captures or **Start with an empty library** to add your own. The demo has readable PDFs, fictional receipts and travel records, original sample screenshots, work notes and links to their publishers.
+In the Phase 1 local build, new libraries start empty. Open **Settings → Demo library → Explore demo library** to load 45 example captures. The live 0.2.2 release also offers the demo from its welcome screen. The demo has readable PDFs, fictional receipts and travel records, original sample screenshots, work notes and links to their publishers.
 
 - Search **NBS-4821** to retrieve the studio receipt or **graded rubric** to find the retrieval guide's second page.
 - Install the optional MiniLM model in Settings to try **how can I make a model smaller?** in Semantic mode, see related captures, or suggest categories.
@@ -52,7 +52,7 @@ The packaging command writes the Windows x64 folder, a ZIP and SHA-256 checksums
 
 ## Capture and retrieve
 
-- Create a capture with **Ctrl Shift Space**. Open search with **Ctrl K**.
+- Open the capture sheet with **Alt N**. Save with **Ctrl Enter** or **Cmd Enter**. Focus the header search with **Ctrl K** or **Cmd K**. Use **Escape** to close a sheet or return from Search to the previous view.
 - Search defaults to keyword mode. With MiniLM installed and enabled, the default is hybrid with priority for complete reference-code matches. Keyword and semantic modes are also available.
 - Attach up to eight files, 25 MB each and 60 MB total. Catch stores many file types. Text extraction is limited to supported images, PDF, DOCX and plain-text formats such as TXT, Markdown and CSV.
 - Browse with pinned captures, tags, collections, recently viewed, Archive and Trash. Restore a deleted item from Trash before permanently deleting it.

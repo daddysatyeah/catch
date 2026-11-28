@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { Aperture, assetUrl, Icon, MatrixArt, Wordmark, type IconName } from './graphics'
-import { clockTime, describe, formatDay, kinds, visibleClips, type Clip, type Collection, type Kind, type Library, type Theme } from './model'
+import { useState, type CSSProperties, type RefObject } from 'react'
+import { assetUrl, Icon, MatrixArt, Wordmark, type IconName } from './graphics'
+import { AttachmentPreview, canPreview, isPdf } from './attachment-preview'
+import { attachmentsOf, clockTime, describe, formatDay, kinds, visibleClips, type Clip, type Collection, type Kind, type Library, type Theme } from './model'
 import { hasShowcaseId, isShowcase, showcasePreview, showcaseSize } from './showcase'
 
 export type Page = string
@@ -21,7 +22,6 @@ const libraryNavigation: { id: Page; label: string; icon: IconName }[] = [
 export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, desktop }: {
   library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; desktop?: boolean
 }) {
-  const isDemo = library.clips.some(clip => clip.demo && !clip.trashed)
   return <>
     {mobile && <button className="mobile-scrim" aria-label="Close menu" onClick={onClose}/>}
     <aside className={'sidebar' + (mobile ? ' is-open' : '')} aria-label="Workspace sidebar">
@@ -32,7 +32,7 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
           <Icon name={item.icon} size={18}/><span>{item.label}</span>
           {item.id === 'inbox' && <span className="nav-count">{visibleClips(library.clips).length}</span>}
         </button>)}
-        <button className="nav-item" onClick={onSearch}><Icon name="search" size={18}/> Search</button>
+        <button className={'nav-item' + (page === 'search' ? ' active' : '')} aria-current={page === 'search' ? 'page' : undefined} onClick={onSearch}><Icon name="search" size={18}/> Search</button>
         <div className="sidebar-divider"/>
         <p className="nav-label micro">Library</p>
         {libraryNavigation.map(item => <button key={item.id} className={'nav-item' + (page === item.id ? ' active' : '')} aria-current={page === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon name={item.icon} size={17}/><span>{item.label}</span></button>)}
@@ -47,54 +47,39 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
         <button className={'nav-item' + (page === 'settings' ? ' active' : '')} aria-current={page === 'settings' ? 'page' : undefined} onClick={() => navigate('settings')}><Icon name="settings" size={18}/> Settings</button>
         <button className="device" onClick={() => navigate('settings')}>
           <span className="device-icon"><Icon name="lock" size={16}/></span>
-          <span><strong>On this device</strong><small>{desktop ? 'Windows library' : isDemo ? 'Includes demo content' : 'Browser library'}</small></span>
+          <span><strong>On this device</strong><small>{desktop ? 'Windows library' : 'Browser library'}</small></span>
         </button>
       </div>
     </aside>
   </>
 }
 
-export function Header({ title, scrolled, onMenu, onSearch, onCapture, menuOpen }: {
-  title: string; scrolled: boolean; onMenu: () => void; onSearch: () => void; onCapture: () => void; menuOpen: boolean
+export function Header({ scrolled, onMenu, inputRef, query, onQuery, onClear, onInbox, onCapture, captureReady, menuOpen }: {
+  scrolled: boolean; onMenu: () => void; inputRef: RefObject<HTMLInputElement | null>; query: string;
+  onQuery: (value: string) => void; onClear: () => void; onInbox: () => void; onCapture: () => void; captureReady: boolean; menuOpen: boolean
 }) {
   return <header className={'topbar' + (scrolled ? ' scrolled' : '')}>
     <div className="topbar-content">
       <button className="icon-button menu-trigger" aria-label="Workspace menu" aria-expanded={menuOpen} onClick={onMenu}><Icon name="menu"/></button>
-      <div className="breadcrumb"><span className="crumb-root">Workspace</span><Icon name="chevron" size={13}/><strong>{title}</strong></div>
-      <button className="global-search" onClick={onSearch} aria-label="Search captures" aria-keyshortcuts="Control+K Meta+K"><Icon name="search" size={19}/><span>Search anything…</span><kbd>Ctrl K</kbd></button>
-      <button className="button primary header-capture" onClick={onCapture} aria-label="New capture" aria-keyshortcuts="Control+Shift+Space Meta+Shift+Space" title="New capture (Ctrl Shift Space)"><Icon name="plus" size={19}/><span>New capture</span></button>
+      <button className="brand mobile-brand" aria-label="Catch inbox" onClick={onInbox}><img src={assetUrl('catch.svg')} width="34" height="34" alt=""/><Wordmark/></button>
+      <div className="global-search" role="search">
+        <Icon name="search" size={18}/>
+        <input ref={inputRef} type="search" aria-label="Search captures" placeholder="Search anything…" value={query} maxLength={350}
+          aria-keyshortcuts="Control+K Meta+K" onChange={event => onQuery(event.target.value)}/>
+        {query ? <button className="icon-button search-clear" aria-label="Clear search" onClick={onClear}><Icon name="close" size={15}/></button> : <kbd aria-hidden="true">Ctrl K</kbd>}
+      </div>
+      <button className="button primary header-capture" disabled={!captureReady} onClick={onCapture} aria-label="New capture" aria-keyshortcuts="Alt+N" title="New capture (Alt+N)"><Icon name="plus" size={18}/><span>New capture</span></button>
     </div>
   </header>
 }
 
-export function Welcome({ onCapture, onTour, onCollapse, firstRun, demoLoading, onDemo, onEmpty }: {
-  onCapture: () => void; onTour: () => void; onCollapse: () => void
-  firstRun: boolean; demoLoading: boolean; onDemo: () => void; onEmpty: () => void
-}) {
-  return <section className="hero" aria-labelledby="hero-title">
-    <Aperture/>
-    {!firstRun && <button className="icon-button collapse-hero" aria-label="Collapse introduction" title="Collapse introduction" onClick={onCollapse}><Icon name="close" size={18}/></button>}
-    <div className="hero-copy">
-      <div className="hero-kicker micro"><span className="signal"/><span>Your personal inbox</span></div>
-      <h1 id="hero-title">Copy anything.<br/><span>Forget nothing.</span></h1>
-      <p>{firstRun ? 'Try search and Review with ' + showcaseSize + ' sample captures, or start a library of your own.' : 'A place for the things you want to keep.'}</p>
-      <div className="hero-actions">
-        {firstRun ? <>
-          <button className="button accent" onClick={onDemo} disabled={demoLoading}><Icon name="folder" size={17}/> {demoLoading ? 'Loading demo…' : 'Explore demo library'}</button>
-          <button className="button tour-button" onClick={onEmpty} disabled={demoLoading}>Start with an empty library</button>
-        </> : <>
-          <button className="button accent" onClick={onCapture}><Icon name="plus" size={18}/> Capture something</button>
-          <button className="button tour-button" onClick={onTour}><Icon name="play" size={15}/> Quick tour</button>
-        </>}
-      </div>
-    </div>
+export function InboxEmpty({ onCapture }: { onCapture: () => void }) {
+  return <section className="empty inbox-empty" aria-labelledby="inbox-empty-title">
+    <div className="empty-types" aria-hidden="true">{(['text', 'link', 'image', 'file'] as const).map(kind => <span key={kind}><Icon name={kind} size={20}/></span>)}</div>
+    <h2 id="inbox-empty-title">Capture anything.</h2>
+    <p>A place for everything you want to remember.</p>
+    <button className="button primary" onClick={onCapture}><Icon name="plus" size={17}/> Create your first capture</button>
   </section>
-}
-
-export function CompactInbox({ onWelcome, onReview }: { onWelcome: () => void; onReview: () => void }) {
-  return <div className="compact-inbox"><div><div className="micro title-eyebrow"><span className="signal"/> Personal workspace</div><h1>Inbox</h1></div>
-    <div className="compact-actions"><button className="button outline" onClick={onReview}><Icon name="review" size={17}/> Review</button><button className="icon-button" title="Show introduction" aria-label="Show introduction" onClick={onWelcome}><Icon name="info" size={18}/></button></div>
-  </div>
 }
 
 export function TypeMark({ clip }: { clip: Clip }) {
@@ -102,28 +87,40 @@ export function TypeMark({ clip }: { clip: Clip }) {
 }
 
 function ClipCard({ clip, open }: { clip: Clip; open: () => void }) {
-  const preview = showcasePreview(clip)
-  return <button className="clip-card" onClick={open}>
-    <div className={'card-art ' + (preview ? 'showcase-art' + (clip.kind === 'file' ? ' document-preview' : '') : clip.artwork ?? 'basic-art')}>
-      {preview ? <img src={assetUrl(preview)} alt="" decoding="async"/> : clip.artwork === 'dots' ? <MatrixArt/> : clip.artwork === 'quote' ?
-        <><span className="quote-mark" aria-hidden="true">“</span><span className="quote-text">{clip.body}</span></> :
-        <><Icon name={clip.kind} size={33}/><span>{describe(clip)}</span></>}
+  const poster = showcasePreview(clip)
+  const attachment = attachmentsOf(clip).find(canPreview)
+  return <button className="clip-card" onClick={open} onPointerMove={event => {
+    if (event.pointerType !== 'mouse') return
+    const bounds = event.currentTarget.getBoundingClientRect()
+    event.currentTarget.style.setProperty('--reflection-x', (event.clientX - bounds.left) + 'px')
+    event.currentTarget.style.setProperty('--reflection-y', (event.clientY - bounds.top) + 'px')
+  }}>
+    <div className={'card-art ' + (clip.artwork ?? 'basic-art') + (poster || attachment ? ' has-preview' : '') + ((attachment && isPdf(attachment)) || (poster && clip.kind === 'file') ? ' document-preview' : '')}>
+      {clip.artwork === 'dots' ? <MatrixArt/> : clip.artwork === 'quote' || clip.kind === 'text' ?
+        <><span className="quote-mark" aria-hidden="true">“</span><span className="quote-text">{clip.body.slice(0, 185)}</span></> :
+        <><Icon name={clip.kind} size={30}/><span>{describe(clip)}</span></>}
+      {poster ? <img className="card-preview" src={assetUrl(poster)} alt="" decoding="async"/> :
+        attachment && <AttachmentPreview file={attachment} className="card-preview"/>}
       <span className="card-pin" aria-label="Pinned"><Icon name="pin" size={15}/></span>
     </div>
     <div className="card-caption"><TypeMark clip={clip}/><span className="card-caption-copy"><strong>{clip.title}</strong><small>{kinds[clip.kind]}{clip.demo && ' · Demo'}</small></span><Icon name="chevron" size={17}/></div>
   </button>
 }
 
-export function PinnedCards({ clips, onOpen, onViewAll, compact }: { clips: Clip[]; onOpen: (id: string) => void; onViewAll?: () => void; compact?: boolean }) {
-  return <section className={'pinned-section' + (compact ? ' compact-pins' : '')} aria-label="Pinned captures">
+export function PinnedCards({ clips, onOpen, onViewAll }: { clips: Clip[]; onOpen: (id: string) => void; onViewAll?: () => void }) {
+  return <section className="pinned-section" aria-label="Pinned captures">
     {onViewAll && <div className="section-heading"><h2><Icon name="pin" size={18}/> Pinned</h2><button className="text-button" onClick={onViewAll}>View all <Icon name="chevron" size={14}/></button></div>}
     <div className="pinned-grid">{clips.map(clip => <ClipCard key={clip.id} clip={clip} open={() => onOpen(clip.id)}/>)}</div>
   </section>
 }
 
 export function ClipRow({ clip, onOpen, search = false }: { clip: Clip; onOpen: () => void; search?: boolean }) {
+  const poster = showcasePreview(clip)
+  const attachment = attachmentsOf(clip).find(canPreview)
   return <button className="clip-row" onClick={onOpen}>
-    <TypeMark clip={clip}/>
+    <span className="row-preview"><TypeMark clip={clip}/>{poster ?
+      <img className="row-thumbnail" src={assetUrl(poster)} alt="" loading="lazy" decoding="async"/> :
+      attachment && <AttachmentPreview file={attachment} className="row-thumbnail" width={84}/>}</span>
     <span className="row-description"><strong>{clip.title}</strong><small>{describe(clip)}{clip.demo && ' · Demo'}</small></span>
     {!search && <span className="row-time">{clockTime(clip.created)}</span>}
     <Icon name="chevron" size={16}/>
@@ -159,7 +156,7 @@ export function Timeline({ clips, onOpen, onCapture, heading = 'Recent captures'
   }
   return <section className="recent-section" aria-label={heading}>
     <div className="section-heading"><h2>{heading}</h2><div className="timeline-controls">{onBulk && !!clips.length && <button className="button sort-button" aria-pressed={selecting} onClick={() => { setSelecting(!selecting); setSelected([]) }}>{selecting ? 'Done' : 'Select'}</button>}<button className="button sort-button" onClick={() => setNewest(!newest)} title="Change sort order"><Icon name="sort" size={16}/>{newest ? 'Newest first' : 'Oldest first'}</button></div></div>
-    <div className="filter-bar" role="group" aria-label="Filter by type">{options.map(kind => <button key={kind} aria-pressed={kind === filter} onClick={() => setFilter(kind)}>{kind === 'all' ? 'All captures' : kind === 'text' ? 'Text' : kinds[kind] + 's'}</button>)}</div>
+    <div className="filter-bar" style={{ '--filter-index': options.indexOf(filter) } as CSSProperties} role="group" aria-label="Filter by type">{options.map(kind => <button key={kind} aria-pressed={kind === filter} onClick={() => setFilter(kind)}>{kind === 'all' ? 'All captures' : kind === 'text' ? 'Text' : kinds[kind] + 's'}</button>)}</div>
     {selecting && <div className="bulk-actions"><label className="check-label"><input type="checkbox" checked={!!shown.length && shown.length === chosen.length} onChange={event => setSelected(event.target.checked ? shown.map(clip => clip.id) : [])}/> {chosen.length ? chosen.length + ' selected' : 'Select visible'}</label>{actions.map(action => <button key={action} className="button outline" disabled={!chosen.length} onClick={() => { onBulk?.(chosen, action); setSelected([]); setSelecting(false) }}>{{ archive: 'Archive', unarchive: 'Unarchive', restore: 'Restore', trash: 'Move to Trash' }[action]}</button>)}</div>}
     {groups.map(([day, group]) => <div className="day-group" key={day}><h3 className="micro">{day}</h3><div className="rows">{group.map(clip => <div className="select-row" key={clip.id}>
       {selecting && <input type="checkbox" aria-label={'Select ' + clip.title} checked={chosen.includes(clip.id)} onChange={event => setSelected(event.target.checked ? [...selected, clip.id] : selected.filter(id => id !== clip.id))}/>}
@@ -223,7 +220,10 @@ export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo
       {children}
       <section className="settings-panel"><h2><Icon name="info" size={19}/> Using Catch</h2>
         <div className="settings-row"><div><strong>Quick tour</strong><p>Learn how to capture, find, and organize items.</p></div><button className="button outline" onClick={onTour}>Start tour</button></div>
-        <div className="settings-row"><div><strong>Keyboard shortcuts</strong><p>Search or capture from anywhere in Catch.</p></div><div className="shortcut-list"><span>Search <kbd>Ctrl K</kbd></span><span>Capture <kbd>Ctrl ⇧ Space</kbd></span></div></div>
+        <div className="settings-row"><div><strong>Keyboard shortcuts</strong><p>Search or capture from anywhere in Catch.</p></div><div className="shortcut-list"><span>Search <kbd>Ctrl K</kbd></span><span>Capture <kbd>Alt N</kbd></span><span>Save <kbd>Ctrl Enter</kbd></span></div></div>
+      </section>
+      <section className="settings-panel"><h2><Icon name="info" size={19}/> About CATCH</h2>
+        <div className="settings-row"><div><strong>Creator</strong></div><a className="button outline" href="https://github.com/daddysatyeah" target="_blank" rel="noopener noreferrer">SATYEAH ↗</a></div>
       </section>
     </div>
   </>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { mergeLibrary } from './backup'
 import { CaptureDialog, type SaveResult } from './capture'
 import { exactDuplicates, maxAttachmentBytes, maxTextLength, prepareClip, rasterType } from './content'
@@ -7,31 +7,36 @@ import { assetUrl, Icon } from './graphics'
 import { classifyClip } from './inference'
 import { InspectDialog } from './inspector'
 import { DataSettings, DesktopSettings, ImportDialog, ModelSettings, ReviewPage } from './library-ui'
-import { attachmentsOf, safeUrl, visibleClips, type Clip, type Collection, type Library, type Passage } from './model'
+import { attachmentsOf, safeUrl, starterLibrary, visibleClips, type Clip, type Collection, type Library, type Passage } from './model'
 import type { ClipboardValue, DesktopStatus } from './platform'
 import { applyCaptureState, recordSearch } from './privacy'
 import { decide } from './review'
-import { SearchDialog } from './search'
+import { SearchResults } from './search'
 import { sensitiveReason } from './sensitive'
 import { isShowcase, mergeShowcase, missingShowcase } from './showcase'
 import { exportLibrary, useLibrary } from './store'
 import { useModels } from './use-models'
-import { Collections, CompactInbox, Empty, Header, PageTitle, PinnedCards, Settings, Sidebar, Timeline, Welcome, type BulkAction, type Page } from './views'
+import { Collections, Empty, Header, InboxEmpty, PageTitle, PinnedCards, Settings, Sidebar, Timeline, type BulkAction, type Page } from './views'
 
 type Overlay =
-  | { type: 'search' | 'tour' | 'remove-demo' | 'import' | 'clear' | 'enable-monitoring' }
+  | { type: 'tour' | 'remove-demo' | 'import' | 'clear' | 'enable-monitoring' }
   | { type: 'capture' | 'collection'; id?: string }
   | { type: 'inspect' | 'purge' | 'delete-collection'; id: string }
 
 const pages: Record<string, string> = {
   inbox: 'Inbox', pinned: 'Pinned', collections: 'Collections', settings: 'Settings', review: 'Review',
-  archive: 'Archive', trash: 'Trash', viewed: 'Recently viewed',
+  search: 'Search', archive: 'Archive', trash: 'Trash', viewed: 'Recently viewed',
 }
 const readPage = () => window.location.hash.slice(1) || 'inbox'
 const desktop = window.catchDesktop
+const emptyLibrary = starterLibrary()
 
 export function App() {
-  const { library, update, error, load } = useLibrary()
+  const { library: loadedLibrary, update, error, load } = useLibrary()
+  const library = loadedLibrary ?? emptyLibrary
+  const [query, setQuery] = useState('')
+  const searchInput = useRef<HTMLInputElement>(null)
+  const searchOrigin = useRef<Page>('inbox')
   const models = useModels()
   const [requestedPage, setRequestedPage] = useState<Page>(readPage)
   const [overlay, setOverlay] = useState<Overlay>()
@@ -42,6 +47,8 @@ export function App() {
   const [demoLoading, setDemoLoading] = useState(false)
   const [desktopStatus, setDesktopStatus] = useState<DesktopStatus>()
   const toastTimer = useRef<number>(0)
+  const closeTimer = useRef<number>(0)
+  const dialogEpoch = useRef(0)
   const toastRegion = useRef<HTMLDivElement>(null)
   const main = useRef<HTMLElement>(null)
   const mobileTrigger = useRef<HTMLElement | null>(null)
@@ -62,7 +69,10 @@ export function App() {
     setMobile(false)
   }
   function show(next: Overlay, target?: HTMLElement | null) {
-    if (!overlay) {
+    window.clearTimeout(closeTimer.current)
+    const closing = document.querySelector('dialog[data-closing]')
+    if (closing) dialogEpoch.current++
+    if (!overlay || closing) {
       const current = document.activeElement
       overlayReturn.current = target ?? (mobile ? mobileTrigger.current : current instanceof HTMLElement && current !== document.body ? current : main.current)
     }
@@ -70,25 +80,45 @@ export function App() {
   }
   function close() {
     const target = overlayReturn.current
+    const dialog = document.querySelector<HTMLDialogElement>('dialog[open]')
+    if (!dialog && document.querySelector('dialog[data-closing]')) return
     overlayReturn.current = null
-    setOverlay(undefined)
-    requestAnimationFrame(() => {
-      if (!document.querySelector('dialog[open]')) (target?.isConnected ? target : main.current)?.focus({ preventScroll: true })
-    })
+    if (dialog) {
+      dialog.dataset.closing = ''
+      dialog.close()
+    }
+    if (!document.querySelector('dialog[open]')) (target?.isConnected ? target : main.current)?.focus({ preventScroll: true })
+    if (!dialog || matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.reduce === 'true') {
+      setOverlay(undefined)
+      return
+    }
+    closeTimer.current = window.setTimeout(() => setOverlay(undefined), 160)
   }
   function openSearch() {
-    const trigger = document.querySelector<HTMLElement>('.global-search')
-    show({ type: 'search' }, trigger)
-    closeMenu()
+    navigate('search')
+    if (mobile) requestAnimationFrame(() => searchInput.current?.focus({ preventScroll: true }))
+    else searchInput.current?.focus({ preventScroll: true })
   }
-  const openCapture = () => show({ type: 'capture' })
+  function changeQuery(value: string) {
+    setQuery(value)
+    if (value) navigate('search')
+    else if (page === 'search') exitSearch()
+  }
+  function exitSearch() {
+    setQuery('')
+    navigate(searchOrigin.current)
+    searchInput.current?.focus({ preventScroll: true })
+  }
+  const openCapture = () => { if (loadedLibrary) show({ type: 'capture' }) }
   const openTour = () => show({ type: 'tour' })
   const addCollection = () => { show({ type: 'collection' }); closeMenu() }
 
   function navigate(target: Page) {
+    if (target === 'search' && page !== 'search') searchOrigin.current = page
     const hash = target === 'inbox' ? '' : target
     if (window.location.hash.slice(1) !== hash) window.location.hash = hash
     setRequestedPage(target)
+    if (target !== 'search') setQuery('')
     closeMenu()
   }
   function notify(message: string) {
@@ -107,8 +137,8 @@ export function App() {
       return false
     }
   }
-  function openClip(id: string, query = '') {
-    show({ type: 'inspect', id })
+  function openClip(id: string, query = '', target?: HTMLElement | null) {
+    show({ type: 'inspect', id }, target)
     void commit(state => {
       const value = recordSearch(state, query)
       return { ...value, clips: value.clips.map(clip => clip.id === id && !clip.trashed ? { ...clip, viewed: Date.now() } : clip) }
@@ -122,11 +152,15 @@ export function App() {
   }
 
   useEffect(() => {
-    const onHash = () => setRequestedPage(readPage())
+    const onHash = () => {
+      const target = readPage()
+      setRequestedPage(target)
+      if (target !== 'search') setQuery('')
+    }
     const onScroll = () => setScrolled(window.scrollY > 9)
     window.addEventListener('hashchange', onHash)
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => { window.removeEventListener('hashchange', onHash); window.removeEventListener('scroll', onScroll); window.clearTimeout(toastTimer.current); job.current?.abort() }
+    return () => { window.removeEventListener('hashchange', onHash); window.removeEventListener('scroll', onScroll); window.clearTimeout(toastTimer.current); window.clearTimeout(closeTimer.current); job.current?.abort() }
   }, [])
   useEffect(() => {
     const appearance = matchMedia('(prefers-color-scheme: dark)')
@@ -169,18 +203,24 @@ export function App() {
   }, [mobile])
   useEffect(() => {
     const shortcuts = (event: KeyboardEvent) => {
-      if ((!event.ctrlKey && !event.metaKey) || event.altKey || overlay) return
+      if ((overlay && !document.querySelector('dialog[data-closing]')) || event.isComposing || event.defaultPrevented) return
+      if (event.key === 'Escape' && page === 'search' && !mobile) { event.preventDefault(); exitSearch(); return }
+      if (loadedLibrary && event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey && event.code === 'KeyN') {
+        event.preventDefault(); show({ type: 'capture' }, mobile ? mobileTrigger.current : document.querySelector<HTMLElement>('.header-capture')); closeMenu()
+        return
+      }
+      if ((!event.ctrlKey && !event.metaKey) || event.altKey) return
       if (event.key.toLowerCase() === 'k' && !event.shiftKey) { event.preventDefault(); openSearch() }
-      if (event.code === 'Space' && event.shiftKey) {
+      if (loadedLibrary && event.code === 'Space' && event.shiftKey) {
         event.preventDefault(); show({ type: 'capture' }, document.querySelector<HTMLElement>('.header-capture')); closeMenu()
       }
     }
     window.addEventListener('keydown', shortcuts)
     const stopQuickCapture = desktop?.onQuickCapture(() => {
-      if (!overlay) { show({ type: 'capture' }, document.querySelector<HTMLElement>('.header-capture')); closeMenu() }
+      if (loadedLibrary && !overlay) { show({ type: 'capture' }, document.querySelector<HTMLElement>('.header-capture')); closeMenu() }
     })
     return () => { window.removeEventListener('keydown', shortcuts); stopQuickCapture?.() }
-  }, [overlay, mobile])
+  }, [overlay, mobile, page, loadedLibrary])
   useEffect(() => {
     if (!desktop) return
     void desktop.getStatus().then(setDesktopStatus).catch(() => undefined)
@@ -189,12 +229,12 @@ export function App() {
     return () => { stopStatus(); stopCapture() }
   }, [update])
   useEffect(() => {
-    if (!library || busy || job.current) return
+    if (!loadedLibrary || busy || job.current) return
     const candidates = library.clips.filter(clip => !clip.trashed && (!clip.demo || isShowcase(clip)))
     const active = [...candidates.filter(clip => !clip.demo), ...candidates.filter(isShowcase)]
     const pending = active.find(clip => !clip.processing && !attempted.current.has('read:' + clip.id + clip.modified) &&
       attachmentsOf(clip).some(file => /\.(pdf|docx|txt|md|markdown|csv|tsv)$/i.test(file.name) || (ocrEnabled && rasterType.test(file.blob.type))))
-    const interactive = overlay?.type === 'search' || overlay?.type === 'inspect'
+    const interactive = page === 'search' || overlay?.type === 'inspect'
     const modelJob = !pending && !interactive && canClassify && library.preferences?.autoClassify ?
       active.find(clip => !clip.prediction && !attempted.current.has('classify:' + clip.id + clip.modified)) : undefined
     const candidate = pending ?? modelJob
@@ -206,22 +246,18 @@ export function App() {
       void runJob(candidate, mode, true)
     }, 360)
     return () => clearTimeout(timer)
-  }, [library, busy, canClassify, ocrEnabled, overlay?.type])
-
-  if (!library) return <div className="loading"><img src={assetUrl('catch.svg')} width="48" height="48" alt="Catch"/>{error ? <><p>Catch couldn’t open your library. Close other Catch tabs and try again.</p><button className="button outline" onClick={load}>Try again</button></> : <p>Opening your inbox…</p>}</div>
+  }, [library, loadedLibrary, busy, canClassify, ocrEnabled, overlay?.type, page])
 
   const inbox = visibleClips(library.clips)
   const pinned = inbox.filter(clip => clip.pinned).sort((a, b) => b.created - a.created)
-  const compact = library.welcomeCollapsed ?? library.tourDone
-  const firstRun = !library.showcaseChoice && !library.clips.length
 
   async function loadDemo() {
-    if (!library || importingDemo.current) return
+    if (!loadedLibrary || importingDemo.current) return
     importingDemo.current = true
     setDemoLoading(true)
     try {
       const prepared = await missingShowcase(library, assetUrl)
-      if (await commit(state => mergeShowcase(state, prepared), 'Demo library ready')) {
+      if (await commit(state => mergeShowcase(state, prepared))) {
         navigate('inbox')
         requestAnimationFrame(() => main.current?.focus({ preventScroll: true }))
       }
@@ -334,9 +370,8 @@ export function App() {
   }
 
   function renderOverlay() {
-    if (!overlay || !library) return null
+    if (!overlay || !loadedLibrary) return null
     switch (overlay.type) {
-      case 'search': return <SearchDialog library={library} available={canClassify} onClose={close} onOpen={openClip}/>
       case 'capture': return <CaptureDialog collections={library.collections} defaultCollection={activeCollection?.id} existing={selectedClip} onClose={() => selectedClip ? show({ type: 'inspect', id: selectedClip.id }) : close()} onSave={saveClip}/>
       case 'inspect': return selectedClip && <InspectDialog key={selectedClip.id} clip={selectedClip} collections={library.collections} siblings={library.clips} canClassify={canClassify}
         busy={busy?.id === selectedClip.id ? busy.label : undefined} onClose={close} notify={notify} onOpen={openClip}
@@ -374,22 +409,24 @@ export function App() {
     }
   }
 
-  return <div className={'app-shell' + (mobile ? ' mobile-menu-open' : '')}>
+  return <div className={'app-shell' + (loadedLibrary ? ' library-ready' : '') + (mobile ? ' mobile-menu-open' : '')}>
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); main.current?.focus() }}>Skip to content</a>
     <Sidebar library={library} page={page} mobile={mobile} navigate={navigate} addCollection={addCollection} onClose={closeMenu} onSearch={openSearch} desktop={!!desktop}/>
     <div className="workspace" inert={mobile || undefined}>
-      <Header title={title} scrolled={scrolled} onMenu={() => { mobileTrigger.current = document.activeElement as HTMLElement; setMobile(true) }}
-        onSearch={openSearch} onCapture={openCapture} menuOpen={mobile}/>
+      <Header scrolled={scrolled} onMenu={() => { mobileTrigger.current = document.activeElement as HTMLElement; setMobile(true) }}
+        inputRef={searchInput} query={query} onQuery={changeQuery} onClear={exitSearch} onInbox={() => navigate('inbox')}
+        onCapture={openCapture} captureReady={!!loadedLibrary} menuOpen={mobile}/>
       <main id="main-content" className="main-content" ref={main} tabIndex={-1}>
+        {!loadedLibrary ? <><h1 className="inbox-title">Inbox</h1>{error ?
+          <Empty icon="inbox" title="Couldn’t open your library" text="Close other Catch tabs and try again." action="Try again" onAction={load}/> :
+          <p className="library-opening" role="status">Opening your library…</p>}</> : <>
         {page === 'inbox' && <>
-          {compact ? <CompactInbox onWelcome={() => commit(state => ({ ...state, welcomeCollapsed: false }))} onReview={() => navigate('review')}/> :
-            <Welcome onCapture={openCapture} onTour={openTour} onCollapse={() => commit(state => ({ ...state, welcomeCollapsed: true }))}
-              firstRun={firstRun} demoLoading={demoLoading} onDemo={loadDemo} onEmpty={async () => {
-                if (await commit(state => ({ ...state, welcomeCollapsed: true, showcaseChoice: 'empty' }))) main.current?.focus({ preventScroll: true })
-              }}/>}
-          {!!pinned.length && <PinnedCards clips={pinned.slice(0, 2)} onOpen={openClip} onViewAll={() => navigate('pinned')} compact={compact}/>}
-          {(!firstRun || compact) && <Timeline key={page} clips={inbox} onOpen={openClip} onCapture={openCapture} onBulk={bulk}/>}
+          <h1 className="inbox-title">Inbox</h1>
+          {!!pinned.length && <PinnedCards clips={pinned.slice(0, 2)} onOpen={openClip} onViewAll={() => navigate('pinned')}/>}
+          {inbox.length ? <Timeline key={page} clips={inbox} onOpen={openClip} onBulk={bulk}/> : <InboxEmpty onCapture={openCapture}/>}
         </>}
+        {page === 'search' && <SearchResults library={library} available={canClassify} query={query} onQuery={changeQuery}
+          inputRef={searchInput} onClose={exitSearch} onOpen={(id, term) => openClip(id, term, searchInput.current)}/>}
         {page === 'pinned' && <><PageTitle eyebrow="Your library" title="Pinned" description="Keep the important things close at hand."/>
           {pinned.length ? <PinnedCards clips={pinned} onOpen={openClip}/> : <Empty icon="pin" title="Nothing pinned yet" text="Open any capture and choose Pin to keep it here." action="Go to inbox" onAction={() => navigate('inbox')}/>}</>}
         {page === 'collections' && <Collections library={library} navigate={navigate} create={addCollection} edit={collection => show({ type: 'collection', id: collection.id })}/>}
@@ -416,9 +453,10 @@ export function App() {
             images={enabled => void desktopAction(desktop?.setImages(enabled))} shortcut={value => void desktopAction(desktop?.setShortcut(value))}/>}
         </Settings>}
         <footer className="workspace-footer"><span><Icon name="lock" size={14}/> Stored locally</span><button className="text-button" onClick={openTour}>{library.tourDone ? 'Replay quick tour' : 'Catch quick tour'}</button></footer>
+        </>}
       </main>
     </div>
-    {renderOverlay()}
+    <Fragment key={dialogEpoch.current}>{renderOverlay()}</Fragment>
     <div className="toast-region" ref={toastRegion} popover="manual" role="status">{toast && <div className="toast"><span className="signal"/>{toast}</div>}</div>
   </div>
 }

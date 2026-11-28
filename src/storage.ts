@@ -1,4 +1,5 @@
 import { attachmentsOf, starterLibrary, type Clip, type Library } from './model.ts'
+import { retireAutomaticExamples } from './showcase.ts'
 import { applyRetention } from './content.ts'
 
 export type Change = (current: Library) => Library
@@ -91,7 +92,8 @@ export async function transact(change?: Change) {
 
 export async function readLibrary() {
   const library = await transact()
-  return applyRetention(library) === library ? library : transact(current => applyRetention(current))
+  if (library.retiredAutomaticExamples && applyRetention(library) === library) return library
+  return transact(current => retireAutomaticExamples(applyRetention(current)))
 }
 
 export async function readVectors() {

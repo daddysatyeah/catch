@@ -1,14 +1,17 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
+import { useLayoutEffect, useRef, useState, type FormEvent, type ReactNode, type RefObject } from 'react'
 import { Aperture, Icon, type IconName } from './graphics'
 import { collectionColors, type Collection } from './model'
 
-export function Dialog({ mode = '', title, onClose, children }: { mode?: string; title: string; onClose: () => void; children: ReactNode }) {
+export function Dialog({ mode = '', title, onClose, children, initialFocus }: {
+  mode?: string; title: string; onClose: () => void; children: ReactNode; initialFocus?: RefObject<HTMLElement | null>
+}) {
   const element = useRef<HTMLDialogElement>(null)
-  useEffect(() => {
+  useLayoutEffect(() => {
     const dialog = element.current
     if (dialog && !dialog.open) dialog.showModal()
+    initialFocus?.current?.focus({ preventScroll: true })
     return () => { if (dialog?.open) dialog.close() }
-  }, [])
+  }, [initialFocus])
   return <dialog ref={element} className={'dialog ' + mode} aria-label={title}
     onCancel={event => { event.preventDefault(); onClose() }}
     onClick={event => { if (event.target === event.currentTarget) onClose() }}>

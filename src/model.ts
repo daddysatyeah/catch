@@ -40,6 +40,7 @@ export type Library = {
   reduced: boolean
   tourDone: boolean
   welcomeCollapsed?: boolean
+  retiredAutomaticExamples?: boolean
   showcaseChoice?: 'demo' | 'empty'
   preferences?: {
     recentSearches?: string[]
