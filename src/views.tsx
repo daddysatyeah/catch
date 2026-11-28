@@ -1,4 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type RefObject } from 'react'
+import { AccountCapsule, AccountSettings, type AccountActions } from './account-ui'
+import { formatBytes } from './storage-usage'
 import { assetUrl, CaptureGlyphs, Icon, MatrixArt, moveReflection, Wordmark, type IconName } from './graphics'
 import { AttachmentPreview, canPreview, isPdf } from './attachment-preview'
 import { attachmentsOf, clockTime, describe, formatDay, kinds, visibleClips, type Clip, type Collection, type Kind, type Library, type Theme } from './model'
@@ -19,8 +21,8 @@ const libraryNavigation: { id: Page; label: string; icon: IconName }[] = [
   { id: 'trash', label: 'Trash', icon: 'trash' },
 ]
 
-export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, desktop }: {
-  library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; desktop?: boolean
+export function Sidebar({ library, page, mobile, navigate, addCollection, onClose, onSearch, controls, usage, onStorage }: {
+  library: Library; page: Page; mobile: boolean; navigate: (page: Page) => void; addCollection: () => void; onClose: () => void; onSearch: () => void; controls: AccountActions; usage?: number; onStorage: () => void
 }) {
   const navigationElement = useRef<HTMLElement>(null)
   useLayoutEffect(() => {
@@ -62,10 +64,10 @@ export function Sidebar({ library, page, mobile, navigate, addCollection, onClos
       </nav>
       <div className="sidebar-bottom">
         <button className={'nav-item' + (page === 'settings' ? ' active' : '')} aria-current={page === 'settings' ? 'page' : undefined} onClick={() => navigate('settings')}><Icon name="settings" size={18}/> Settings</button>
-        <button className="device" onClick={() => navigate('settings')} onPointerMove={moveReflection}>
-          <span className="device-icon"><Icon name="lock" size={16}/></span>
-          <span><strong>On this device</strong><small>{desktop ? 'Windows library' : 'Browser library'}</small></span>
+        <button className="storage-indicator" onClick={onStorage} aria-label="Storage" aria-describedby="sidebar-storage-size">
+          <Icon name="archive" size={15}/><span>Storage</span><small id="sidebar-storage-size">{usage === undefined ? '—' : formatBytes(usage)}</small>
         </button>
+        <AccountCapsule controls={controls}/>
       </div>
     </aside>
   </>
@@ -215,9 +217,9 @@ const appearances: { id: Theme; icon: IconName; label: string }[] = [
   { id: 'light', icon: 'sun', label: 'Light' }, { id: 'dark', icon: 'moon', label: 'Dark' }, { id: 'system', icon: 'monitor', label: 'System' },
 ]
 
-export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo, onLoadDemo, demoLoading, onTour, desktop, children }: {
+export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo, onLoadDemo, demoLoading, onTour, desktop, children, controls, onStorage }: {
   library: Library; setTheme: (theme: Theme) => void; setReduced: (reduced: boolean) => void; onExport: () => void; onRemoveDemo: () => void; onTour: () => void
-  onLoadDemo: () => void; demoLoading: boolean; desktop?: boolean; children?: React.ReactNode
+  onLoadDemo: () => void; demoLoading: boolean; desktop?: boolean; children?: React.ReactNode; controls: AccountActions; onStorage: () => void
 }) {
   const pack = library.clips.filter(isShowcase)
   const hasExamples = library.clips.some(clip => clip.demo && !clip.trashed)
@@ -225,6 +227,7 @@ export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo
   return <>
     <PageTitle eyebrow="Your workspace" title="Settings" description="Make Catch feel at home on this device."/>
     <div className="settings-stack">
+      <AccountSettings controls={controls}/>
       <section className="settings-panel"><h2><Icon name="sun" size={19}/> Appearance</h2>
         <div className="settings-row"><div><strong>Theme</strong><p>Choose an appearance or follow your system.</p></div>
           <div className="appearance-control glass-segments theme-modes" role="group" aria-label="Theme" onPointerMove={moveReflection}
@@ -233,6 +236,7 @@ export function Settings({ library, setTheme, setReduced, onExport, onRemoveDemo
         <div className="settings-row"><div><strong>Reduce motion</strong><p>Use fewer transitions and skip smooth scrolling.</p></div><button className="switch" role="switch" aria-label="Reduce motion" aria-checked={library.reduced} onClick={() => setReduced(!library.reduced)}><span/></button></div>
       </section>
       <section className="settings-panel"><h2><Icon name="lock" size={18}/> Privacy and storage</h2>
+        <div className="settings-row"><div><strong>Storage</strong><p>See capture usage, browser quota, and persistence.</p></div><button className="button outline" onClick={onStorage}>View storage</button></div>
         <div className="settings-row"><div><strong>{desktop ? 'Stored in this Windows profile' : 'Stored in this browser'}</strong><p>{desktop ? 'Windows storage stays separate from browser libraries. Use a backup to transfer captures.' : 'Captures and attachments stay in this browser profile. Clearing site data removes your library.'} Catch uses local storage without its own encryption layer.</p></div></div>
         <div className="settings-row"><div><strong>Export library</strong><p>Download your captures, collections, and attachments as JSON.</p></div><button className="button outline" onClick={onExport}><Icon name="download" size={16}/> Export</button></div>
         <div className="settings-row"><div><strong>Demo library</strong><p>Explore {showcaseSize} examples stored on this device. Keyword search works immediately. Semantic search, category suggestions and OCR use optional models.</p></div>

@@ -5,12 +5,13 @@ import { attachmentsOf, kinds, longDate, safeUrl, type Clip, type Collection, ty
 import { AttachmentPreview, canPreview, isPdf } from './attachment-preview'
 import { relatedMemories } from './inference'
 import type { Hit } from './retrieval'
+import type { LibraryScope } from './storage'
 import { download } from './store'
 import { TypeMark } from './views'
 import { showcasePreview } from './showcase'
 
 type Props = {
-  clip: Clip; collections: Collection[]; siblings: Clip[]; busy?: string; canClassify: boolean
+  scope: LibraryScope; clip: Clip; collections: Collection[]; siblings: Clip[]; busy?: string; canClassify: boolean
   onClose: () => void; onPin: () => void; onEdit: () => void; onMove: (collection?: string) => void; onDelete: () => void
   onArchive: () => void; onRestore: () => void; onRead: () => void; onCancel: () => void; onClassify: () => void
   onCorrection: (passage: Passage, text: string) => void; notify: (message: string) => void; onOpen: (id: string) => void
@@ -33,11 +34,11 @@ export function InspectDialog(props: Props) {
   useEffect(() => {
     if (!showRelated) return
     const controller = new AbortController()
-    relatedMemories(clip, props.siblings.filter(value => value.id !== clip.id && !value.trashed), controller.signal)
+    relatedMemories(clip, props.siblings.filter(value => value.id !== clip.id && !value.trashed), controller.signal, props.scope)
       .then(results => { if (!controller.signal.aborted) setRelated(results) })
       .catch(() => { if (!controller.signal.aborted) setRelatedError(true) })
     return () => controller.abort()
-  }, [clip, props.siblings, showRelated])
+  }, [clip, props.siblings, props.scope, showRelated])
 
   async function copy() {
     try {

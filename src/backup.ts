@@ -39,7 +39,7 @@ function decode(value: unknown, type: unknown) {
 type FileReference = { id: string; name: string; hash: string; type: string }
 
 export async function createBackup(library: Library) {
-  const binaries: { hash: string; type: string; data: string }[] = []
+  const binaries: Blob[] = []
   const seen = new Set<string>()
   let size = 0
   async function reference(files: Attachment[]): Promise<FileReference[]> {
@@ -49,7 +49,7 @@ export async function createBackup(library: Library) {
       if (!seen.has(hash)) {
         size += file.blob.size
         if (size > maxBinaryBytes) throw new Error('This backup exceeds 100 MB of attachments.')
-        binaries.push({ hash, type: file.blob.type, data: await encode(file.blob) })
+        binaries.push(new Blob([JSON.stringify({ hash, type: file.blob.type, data: await encode(file.blob) })]))
         seen.add(hash)
       }
       result.push({ id: file.id, name: file.name, hash, type: file.blob.type })
@@ -62,7 +62,10 @@ export async function createBackup(library: Library) {
     clips.push({ ...fields, attachments: await reference(attachmentsOf(clip)), original: original && { ...original, attachments: await reference(original.attachments) } })
   }
   const { recentSearches: _history, ...preferences } = library.preferences ?? {}
-  const blob = new Blob([JSON.stringify({ ...library, version: 2, exportedAt: Date.now(), preferences, clips, binaries })], { type: 'application/json' })
+  const metadata = JSON.stringify({ ...library, version: 2, exportedAt: Date.now(), preferences, clips })
+  const parts: BlobPart[] = [metadata.slice(0, -1), ',"binaries":[']
+  binaries.forEach((binary, index) => { if (index) parts.push(','); parts.push(binary) })
+  const blob = new Blob([...parts, ']}'], { type: 'application/json' })
   if (blob.size > maxBackupBytes) throw new Error('The encoded library exceeds the backup limit.')
   return blob
 }

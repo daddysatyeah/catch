@@ -5,7 +5,8 @@ import { applyRetention } from './content.ts'
 export type Change = (current: Library) => Library
 export type VectorRecord = { id: string; version: string; signature: string; chunks: { text: string; page?: number; attachment?: string; vector: Float32Array }[] }
 type Metadata = Omit<Library, 'clips'>
-let opening: Promise<IDBDatabase> | undefined
+export type LibraryScope = string | undefined
+const connections = new Map<LibraryScope, Promise<IDBDatabase>>()
 
 function migrateClip(clip: Clip) {
   const { attachment: _blob, filename: _name, ...fields } = clip
@@ -19,9 +20,13 @@ function requestResult<T>(request: IDBRequest<T>) {
   })
 }
 
-function open() {
-  opening ??= new Promise<IDBDatabase>((resolve, reject) => {
-    const request = indexedDB.open('catch-library', 2)
+function open(scope: LibraryScope) {
+  const existing = connections.get(scope)
+  if (existing) return existing
+  // Keep the pre-account database and its upgrade path intact for guests.
+  const name = scope ? 'catch-library:profile:' + scope : 'catch-library'
+  const opening = new Promise<IDBDatabase>((resolve, reject) => {
+    const request = indexedDB.open(name, 2)
     request.onupgradeneeded = () => {
       const db = request.result
       const transaction = request.transaction!
@@ -48,15 +53,16 @@ function open() {
     request.onerror = () => reject(request.error)
     request.onsuccess = () => {
       const db = request.result
-      db.onversionchange = () => { db.close(); opening = undefined }
+      db.onversionchange = () => { db.close(); connections.delete(scope) }
       resolve(db)
     }
-  }).catch(error => { opening = undefined; throw error })
+  }).catch(error => { connections.delete(scope); throw error })
+  connections.set(scope, opening)
   return opening
 }
 
-export async function transact(change?: Change) {
-  const db = await open()
+export async function transact(change?: Change, scope?: LibraryScope) {
+  const db = await open(scope)
   return new Promise<Library>((resolve, reject) => {
     const transaction = db.transaction(['metadata', 'clips', 'vectors'], change ? 'readwrite' : 'readonly')
     const settings = transaction.objectStore('metadata')
@@ -90,21 +96,21 @@ export async function transact(change?: Change) {
   })
 }
 
-export async function readLibrary() {
-  const library = await transact()
+export async function readLibrary(scope?: LibraryScope) {
+  const library = await transact(undefined, scope)
   if (library.retiredAutomaticExamples && applyRetention(library) === library) return library
-  return transact(current => retireAutomaticExamples(applyRetention(current)))
+  return transact(current => retireAutomaticExamples(applyRetention(current)), scope)
 }
 
-export async function readVectors() {
-  const db = await open()
+export async function readVectors(scope?: LibraryScope) {
+  const db = await open(scope)
   return requestResult(db.transaction('vectors').objectStore('vectors').getAll()) as Promise<VectorRecord[]>
 }
 
 type VectorWrite = { record: VectorRecord; expected: { hash?: string; modified?: number } }
 
-export async function writeVectors(writes: VectorWrite[]) {
-  const db = await open()
+export async function writeVectors(writes: VectorWrite[], scope?: LibraryScope) {
+  const db = await open(scope)
   return new Promise<void>((resolve, reject) => {
     const transaction = db.transaction(['vectors', 'clips'], 'readwrite')
     const clips = transaction.objectStore('clips'), vectors = transaction.objectStore('vectors')
@@ -120,12 +126,12 @@ export async function writeVectors(writes: VectorWrite[]) {
   })
 }
 
-export function writeVector(record: VectorRecord, expected: VectorWrite['expected']) {
-  return writeVectors([{ record, expected }])
+export function writeVector(record: VectorRecord, expected: VectorWrite['expected'], scope?: LibraryScope) {
+  return writeVectors([{ record, expected }], scope)
 }
 
-export async function clearVectors() {
-  const db = await open()
+export async function clearVectors(scope?: LibraryScope) {
+  const db = await open(scope)
   return new Promise<void>((resolve, reject) => {
     const transaction = db.transaction('vectors', 'readwrite')
     transaction.objectStore('vectors').clear()

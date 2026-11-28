@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { warmEncoder, stopEncoder } from './inference'
 import { embeddingAssets, hasAssets, installAssets, ocrAssets, removeAssets } from './model-assets'
-import { clearVectors } from './storage'
+import { clearVectors, type LibraryScope } from './storage'
 
 export type ModelName = 'semantic' | 'ocr'
 type ModelState = { phase: 'checking' | 'missing' | 'downloading' | 'loading' | 'ready' | 'error'; percent?: number; message?: string }
@@ -28,7 +28,7 @@ async function cacheSemanticRuntime(signal: AbortSignal) {
   })
 }
 
-export function useModels() {
+export function useModels(scope: LibraryScope) {
   const [status, setStatus] = useState<Record<ModelName, ModelState>>({ semantic: { phase: 'checking' }, ocr: { phase: 'checking' } })
   const operations = useRef<Partial<Record<ModelName, AbortController>>>({})
   const update = (name: ModelName, value: ModelState) => setStatus(previous => ({ ...previous, [name]: value }))
@@ -80,7 +80,7 @@ export function useModels() {
     cancel(name)
     try {
       await removeAssets(assets[name])
-      if (name === 'semantic') await clearVectors()
+      if (name === 'semantic') await clearVectors(scope)
       update(name, { phase: 'missing' })
     } catch { update(name, { phase: 'error', message: 'Could not remove the model from this browser.' }) }
   }

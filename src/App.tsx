@@ -1,4 +1,12 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, lazy, Suspense, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+import { authMessage, type Account } from './account'
+import { AccountPhoto, type AccountActions } from './account-ui'
+import { useAccount } from './use-account'
+import type { CoreFlight } from './privacy-portal'
+import { captureUsage } from './storage-usage'
+import { StoragePage } from './storage-ui'
+import { embeddingAssets, ocrAssets } from './model-assets'
+import './account-storage.css'
 import { mergeLibrary } from './backup'
 import { CaptureDialog, type SaveResult } from './capture'
 import { exactDuplicates, maxAttachmentBytes, maxTextLength, prepareClip, rasterType } from './content'
@@ -24,20 +32,90 @@ type Overlay =
   | { type: 'inspect' | 'purge' | 'delete-collection'; id: string }
 
 const pages: Record<string, string> = {
-  inbox: 'Inbox', pinned: 'Pinned', collections: 'Collections', settings: 'Settings', review: 'Review',
+  inbox: 'Inbox', pinned: 'Pinned', collections: 'Collections', settings: 'Settings', storage: 'Storage', review: 'Review',
   search: 'Search', archive: 'Archive', trash: 'Trash', viewed: 'Recently viewed',
 }
 const readPage = () => window.location.hash.slice(1) || 'inbox'
 const desktop = window.catchDesktop
 const emptyLibrary = starterLibrary()
 
+const PrivacyPortal = lazy(() => import('./privacy-portal').catch(() => ({
+  default: ({ close }: { close: () => void }) => <ConfirmDialog title="Couldn’t open sign-in"
+    message="The sign-in screen is temporarily unavailable. Your local library is still available."
+    label="Return to Catch" onClose={close} confirm={close}/>,
+})))
+
 export function App() {
-  const { library: loadedLibrary, update, error, load } = useLibrary()
+  const auth = useAccount()
+  const [portal, setPortal] = useState(false)
+  const [issue, setIssue] = useState('')
+  const [flight, setFlight] = useState<{ account: Account; core: CoreFlight; end: DOMRect }>()
+  const opener = useRef<HTMLElement>(null)
+  const motionFrame = useRef(0)
+  const motionTimer = useRef(0)
+  useEffect(() => () => { cancelAnimationFrame(motionFrame.current); clearTimeout(motionTimer.current) }, [])
+
+  function signIn() {
+    opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    setIssue('')
+    setPortal(true)
+  }
+  function close() {
+    setPortal(false)
+    requestAnimationFrame(() => {
+      const target = opener.current?.isConnected && opener.current.getClientRects().length ? opener.current :
+        [...document.querySelectorAll<HTMLElement>('.account-capsule,.menu-trigger')].find(node => node.getClientRects().length)
+      target?.focus({ preventScroll: true })
+    })
+  }
+  async function guest() {
+    if (auth.account) await auth.provider?.signOut()
+    close()
+  }
+  function success(account: Account, core?: CoreFlight) {
+    close()
+    if (!core) return
+    cancelAnimationFrame(motionFrame.current)
+    clearTimeout(motionTimer.current)
+    motionFrame.current = requestAnimationFrame(() => {
+      const target = [...document.querySelectorAll<HTMLElement>('.account-capsule .account-photo,.menu-trigger')].find(node => node.getClientRects().length)
+      if (!target) return
+      setFlight({ account, core, end: target.getBoundingClientRect() })
+      motionTimer.current = window.setTimeout(() => setFlight(undefined), 690)
+    })
+  }
+  const controls = {
+    account: auth.account, loading: auth.loading, issue, signIn, signOut: () => {
+      setIssue('')
+      void auth.provider?.signOut().catch(error => setIssue(authMessage(error)))
+    },
+  }
+  return <>
+    <Workspace key={auth.account?.scope ?? 'guest'} controls={controls} portalOpen={portal}/>
+    {portal && <Suspense fallback={<div className="portal-loading" role="status">Opening sign-in…</div>}>
+      <PrivacyPortal auth={auth} close={close} guest={guest} success={success}/>
+    </Suspense>}
+    {flight && <div className="profile-flight" aria-hidden="true" style={{
+      left: flight.core.bounds.left, top: flight.core.bounds.top, width: flight.core.bounds.width, height: flight.core.bounds.height,
+      '--flight-x': flight.end.left + flight.end.width / 2 - flight.core.bounds.left - flight.core.bounds.width / 2 + 'px',
+      '--flight-y': flight.end.top + flight.end.height / 2 - flight.core.bounds.top - flight.core.bounds.height / 2 + 'px',
+      '--flight-scale': flight.end.width / flight.core.bounds.width,
+    } as CSSProperties}>
+      {flight.core.snapshot && <img className="flight-core" src={flight.core.snapshot} alt=""/>}
+      <AccountPhoto account={flight.account}/>
+    </div>}
+  </>
+}
+
+function Workspace({ controls, portalOpen }: { controls: Omit<AccountActions, 'manage'>; portalOpen: boolean }) {
+  const scope = controls.account?.scope
+  const { library: loadedLibrary, update, error, load } = useLibrary(scope, !controls.loading)
   const library = loadedLibrary ?? emptyLibrary
+  const usage = useMemo(() => loadedLibrary && captureUsage(loadedLibrary), [loadedLibrary])
   const [query, setQuery] = useState('')
   const searchInput = useRef<HTMLInputElement>(null)
   const searchOrigin = useRef<Page>('inbox')
-  const models = useModels()
+  const models = useModels(scope)
   const [requestedPage, setRequestedPage] = useState<Page>(readPage)
   const [overlay, setOverlay] = useState<Overlay>()
   const [mobile, setMobile] = useState(false)
@@ -193,7 +271,7 @@ export function App() {
     const lockFocus = (event: KeyboardEvent) => {
       if (event.key === 'Escape') { setMobile(false); requestAnimationFrame(() => mobileTrigger.current?.focus()) }
       if (event.key !== 'Tab' || !sidebar) return
-      const buttons = [...sidebar.querySelectorAll<HTMLButtonElement>('button')]
+      const buttons = [...sidebar.querySelectorAll<HTMLElement>('button:not([disabled]),summary')].filter(button => button.getClientRects().length)
       const first = buttons[0], last = buttons.at(-1)
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
       if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
@@ -203,7 +281,7 @@ export function App() {
   }, [mobile])
   useEffect(() => {
     const shortcuts = (event: KeyboardEvent) => {
-      if ((overlay && !document.querySelector('dialog[data-closing]')) || event.isComposing || event.defaultPrevented) return
+      if (portalOpen || (overlay && !document.querySelector('dialog[data-closing]')) || event.isComposing || event.defaultPrevented) return
       if (event.key === 'Escape' && page === 'search' && !mobile) { event.preventDefault(); exitSearch(); return }
       if (loadedLibrary && event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey && event.code === 'KeyN') {
         event.preventDefault(); show({ type: 'capture' }, mobile ? mobileTrigger.current : document.querySelector<HTMLElement>('.header-capture')); closeMenu()
@@ -220,7 +298,7 @@ export function App() {
       if (loadedLibrary && !overlay) { show({ type: 'capture' }, document.querySelector<HTMLElement>('.header-capture')); closeMenu() }
     })
     return () => { window.removeEventListener('keydown', shortcuts); stopQuickCapture?.() }
-  }, [overlay, mobile, page, loadedLibrary])
+  }, [overlay, mobile, page, loadedLibrary, portalOpen])
   useEffect(() => {
     if (!desktop) return
     void desktop.getStatus().then(setDesktopStatus).catch(() => undefined)
@@ -373,7 +451,7 @@ export function App() {
     if (!overlay || !loadedLibrary) return null
     switch (overlay.type) {
       case 'capture': return <CaptureDialog collections={library.collections} defaultCollection={activeCollection?.id} existing={selectedClip} onClose={() => selectedClip ? show({ type: 'inspect', id: selectedClip.id }) : close()} onSave={saveClip}/>
-      case 'inspect': return selectedClip && <InspectDialog key={selectedClip.id} clip={selectedClip} collections={library.collections} siblings={library.clips} canClassify={canClassify}
+      case 'inspect': return selectedClip && <InspectDialog key={selectedClip.id} scope={scope} clip={selectedClip} collections={library.collections} siblings={library.clips} canClassify={canClassify}
         busy={busy?.id === selectedClip.id ? busy.label : undefined} onClose={close} notify={notify} onOpen={openClip}
         onPin={() => changeClip(selectedClip.id, clip => ({ ...clip, pinned: !clip.pinned }), selectedClip.pinned ? 'Capture unpinned' : 'Capture pinned')}
         onEdit={() => show({ type: 'capture', id: selectedClip.id })}
@@ -409,9 +487,16 @@ export function App() {
     }
   }
 
+  async function exportCurrent() {
+    try { await exportLibrary(library); notify('Library exported') }
+    catch (error) { notify(error instanceof Error ? error.message : 'Couldn’t export the library.') }
+  }
+  const accountControls = { ...controls, signIn: () => { controls.signIn(); closeMenu() }, manage: () => navigate('settings') }
+
   return <div className={'app-shell' + (loadedLibrary ? ' library-ready' : '') + (mobile ? ' mobile-menu-open' : '')}>
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); main.current?.focus() }}>Skip to content</a>
-    <Sidebar library={library} page={page} mobile={mobile} navigate={navigate} addCollection={addCollection} onClose={closeMenu} onSearch={openSearch} desktop={!!desktop}/>
+    <Sidebar library={library} page={page === 'storage' ? 'settings' : page} mobile={mobile} navigate={navigate} addCollection={addCollection} onClose={closeMenu} onSearch={openSearch}
+      usage={usage?.total} onStorage={() => navigate('storage')} controls={accountControls}/>
     <div className="workspace" inert={mobile || undefined}>
       <Header scrolled={scrolled} onMenu={() => { mobileTrigger.current = document.activeElement as HTMLElement; setMobile(true) }}
         inputRef={searchInput} query={query} onQuery={changeQuery} onClear={exitSearch} onInbox={() => navigate('inbox')}
@@ -425,7 +510,7 @@ export function App() {
           {!!pinned.length && <PinnedCards clips={pinned.slice(0, 2)} onOpen={openClip} onViewAll={() => navigate('pinned')}/>}
           {inbox.length ? <Timeline key={page} clips={inbox} onOpen={openClip} onBulk={bulk}/> : <InboxEmpty onCapture={openCapture}/>}
         </>}
-        {page === 'search' && <SearchResults library={library} available={canClassify} query={query} onQuery={changeQuery}
+        {page === 'search' && <SearchResults library={library} scope={scope} available={canClassify} query={query} onQuery={changeQuery}
           inputRef={searchInput} onClose={exitSearch} onOpen={(id, term) => openClip(id, term, searchInput.current)}/>}
         {page === 'pinned' && <><PageTitle eyebrow="Your library" title="Pinned" description="Keep the important things close at hand."/>
           {pinned.length ? <PinnedCards clips={pinned} onOpen={openClip}/> : <Empty icon="pin" title="Nothing pinned yet" text="Open any capture and choose Pin to keep it here." action="Go to inbox" onAction={() => navigate('inbox')}/>}</>}
@@ -442,10 +527,14 @@ export function App() {
           onCombine={item => void changeClip(item.clip.id, clip => ({ ...decide(clip, item, 'accepted'), tags: [...new Set([...(clip.tags ?? []), ...(item.related?.tags ?? [])])].slice(0, 30) }), 'Tags merged; both captures kept')}
           onDiscard={item => { if (item.related) void bulk([item.related.id], 'trash') }}
           onComplete={(id, task, complete) => void changeClip(id, clip => ({ ...clip, tasks: clip.tasks?.map(value => value.id === task ? { ...value, complete } : value) }), complete ? 'Task completed' : 'Task reopened')}/>}
+        {page === 'storage' && usage && <StoragePage capture={usage}
+          models={(models.status.semantic.phase === 'ready' ? embeddingAssets.reduce((sum, asset) => sum + asset.bytes, 0) : 0) +
+            (models.status.ocr.phase === 'ready' ? ocrAssets.reduce((sum, asset) => sum + asset.bytes, 0) : 0)}
+          onBack={() => navigate('settings')} onExport={exportCurrent} onImport={() => show({ type: 'import' })}/>}
         {page === 'settings' && <Settings library={library} desktop={!!desktop} setTheme={theme => commit(state => ({ ...state, theme }))} setReduced={reduced => commit(state => ({ ...state, reduced }))}
-          onExport={async () => { try { await exportLibrary(library); notify('Library exported') } catch (error) { notify(error instanceof Error ? error.message : 'Couldn’t export the library.') } }}
+          onExport={exportCurrent} controls={accountControls} onStorage={() => navigate('storage')}
           onRemoveDemo={() => show({ type: 'remove-demo' })} onLoadDemo={loadDemo} demoLoading={demoLoading} onTour={openTour}>
-          <DataSettings library={library} desktop={!!desktop} setPreferences={setPreferences} onImport={() => show({ type: 'import' })} onClear={() => show({ type: 'clear' })}/>
+          <DataSettings library={library} setPreferences={setPreferences} onImport={() => show({ type: 'import' })} onClear={() => show({ type: 'clear' })}/>
           <ModelSettings models={models} enabled={ocrEnabled} setOcr={ocr => void setPreferences({ ocr })}
             semantic={canClassify} setSemantic={enabled => void setPreferences({ semanticDisabled: !enabled })}
             auto={canClassify && !!library.preferences?.autoClassify} setAuto={autoClassify => void setPreferences({ autoClassify })}/>

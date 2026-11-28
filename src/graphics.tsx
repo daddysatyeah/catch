@@ -35,6 +35,8 @@ const paths = {
   sort: <path d="M5 7h14M7 12h10m-7 5h4"/>,
   play: <path d="m9 5 11 7-11 7Z"/>,
   review: <><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 2.5 2.5L16 9"/></>,
+  person: <><circle cx="12" cy="8" r="3.15"/><path d="M5.5 20v-2a6.5 6.5 0 0 1 13 0v2"/></>,
+  logout: <><path d="M10 4H5v16h5m3-12 4 4-4 4m-4-4h11"/></>,
   archive: <><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></>,
   history: <><path d="M4 10a8 8 0 1 1 2 8M4 4v6h6m2-3v5l3 2"/></>,
 } satisfies Record<string, ReactNode>

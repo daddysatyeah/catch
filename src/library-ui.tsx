@@ -1,6 +1,5 @@
 import { useMemo, useRef, useState, type ReactNode } from 'react'
 import { parseBackup } from './backup'
-import { localUsage } from './content'
 import { Dialog, DialogHeader } from './dialogs'
 import { Icon } from './graphics'
 import { visibleClips, type Library, type ReviewState } from './model'
@@ -124,10 +123,8 @@ export function ModelSettings({ models, enabled, setOcr, semantic, setSemantic, 
   </section>
 }
 
-export function DataSettings({ library, setPreferences, onImport, onClear, desktop }: { library: Library; setPreferences: (preferences: Partial<NonNullable<Library['preferences']>>) => void; onImport: () => void; onClear: () => void; desktop: boolean }) {
-  const usage = useMemo(() => localUsage(library), [library])
+export function DataSettings({ library, setPreferences, onImport, onClear }: { library: Library; setPreferences: (preferences: Partial<NonNullable<Library['preferences']>>) => void; onImport: () => void; onClear: () => void }) {
   return <section className="settings-panel"><h2><Icon name="archive" size={19}/> Library controls</h2>
-    <SettingsRow title="Stored content" text={(usage / 1024 ** 2).toFixed(2) + ' MB estimated for text and attachments. ' + (desktop ? 'The Windows library is separate from other browser profiles.' : 'This is separate from the browser’s overall storage quota.')}/>
     <SettingsRow title="Restore a backup" text="Validate a Catch JSON file and preview a merge."><button className="button outline" onClick={onImport}><Icon name="upload" size={16}/> Import</button></SettingsRow>
     <SettingsRow title="Retention" text="Move older, unpinned inbox captures to Trash on startup. Archived captures stay in Archive.">
       <select aria-label="Retention" value={library.preferences?.retentionDays ?? 0} onChange={event => setPreferences({ retentionDays: Number(event.target.value) || undefined })}><option value={0}>Keep until I delete</option><option value={30}>30 days</option><option value={90}>90 days</option></select>

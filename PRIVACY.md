@@ -15,3 +15,11 @@ Catch has no analytics, capture-upload endpoint or cloud database. Browsers init
 The classifier uses the downloaded MiniLM encoder and a small set of weights bundled with Catch. The weights come from public project fixtures. Captures do not train or update the classifier. A browser regression traces external requests while installing models and while running local search, classification and OCR.
 
 Cache Storage holds verified model files separately. Local libraries and exports are accessible to software with sufficient access to the operating-system account or browser profile. Catch has no application-level encryption or secure-erasure guarantee. Clearing site data removes the browser library and caches. Older backups may still contain deleted records.
+
+## Browser accounts
+
+Sign-in is optional. A configured build uses Firebase Authentication for profile and session information and uses Google for Google sign-in. Google profile photos, when available, are fetched from Google's profile image host.
+
+The existing IndexedDB library is the guest library. Every verified account opens a separate local database. Signing out or switching accounts does not transfer or delete these databases. Ordinary app navigation exposes only the active library. The browser profile, its developer tools, and software with equivalent privileges can still access unencrypted local data. Authentication does not encrypt or synchronize captures.
+
+Origin usage and persistence apply to the browser origin, which can include multiple projects on GitHub Pages. Clearing site data can remove libraries for every account in that browser profile. Backups remain local files.

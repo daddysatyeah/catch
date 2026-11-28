@@ -37,6 +37,10 @@ node scripts/serve.mjs
 
 Open [the production-style preview](http://127.0.0.1:4280/catch/). The production app uses relative asset paths, hash navigation and a scoped service worker. The repository includes a manually triggered GitHub Pages workflow for an approved deployment.
 
+## Optional browser accounts
+
+Phase 2 adds optional Google sign-in in configured builds. The existing local library remains available to guests. Each verified account has its own local library and search index. See the [Firebase setup and storage notes](docs/phase-2-accounts.md).
+
 ## Windows
 
 Unpack the portable ZIP and run **Catch.exe** from the extracted folder. Keep its companion files. For a source checkout:

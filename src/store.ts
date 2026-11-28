@@ -1,33 +1,36 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { Library } from './model'
-import { readLibrary, transact, type Change } from './storage'
+import { readLibrary, transact, type Change, type LibraryScope } from './storage'
 import { createBackup } from './backup'
 
-function publish() {
+const channelName = (scope: LibraryScope) => scope ? 'catch-library:profile:' + scope : 'catch-library'
+
+function publish(scope: LibraryScope) {
   if (typeof BroadcastChannel === 'undefined') return
   try {
-    const channel = new BroadcastChannel('catch-library')
+    const channel = new BroadcastChannel(channelName(scope))
     channel.postMessage('changed')
     channel.close()
   } catch { /* Storage has already committed, even without cross-tab updates. */ }
 }
 
-export function useLibrary() {
+export function useLibrary(scope: LibraryScope, ready = true) {
   const [library, setLibrary] = useState<Library>()
   const [error, setError] = useState(false)
   const load = useCallback(() => {
-    readLibrary().then(value => { setLibrary(value); setError(false) }).catch(() => setError(true))
-  }, [])
+    readLibrary(scope).then(value => { setLibrary(value); setError(false) }).catch(() => setError(true))
+  }, [scope])
   useEffect(() => {
+    if (!ready) return
     load()
-    const channel = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('catch-library') : undefined
+    const channel = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel(channelName(scope)) : undefined
     if (channel) channel.onmessage = load
     return () => channel?.close()
-  }, [load])
+  }, [load, ready, scope])
   const update = useCallback(async (change: Change) => {
-    setLibrary(await transact(change))
-    publish()
-  }, [])
+    setLibrary(await transact(change, scope))
+    publish(scope)
+  }, [scope])
   return { library, update, error, load }
 }
 

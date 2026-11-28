@@ -3,6 +3,7 @@ import { Icon, moveReflection } from './graphics'
 import { embed, indexClips } from './inference'
 import { kinds, type Library } from './model'
 import { defaultHybridRanking, eligible, keywordRanking, semanticRanking, type FilterSet, type Hit, type SearchMode } from './retrieval'
+import type { LibraryScope } from './storage'
 import { TypeMark } from './views'
 import { exampleQueries, isShowcase } from './showcase'
 
@@ -16,8 +17,8 @@ function Highlight({ snippet, terms }: { snippet: string; terms: string[] }) {
   return snippet.split(match).map((part, index) => index % 2 ? <mark key={index}>{part}</mark> : part)
 }
 
-export function SearchResults({ library, available, query, onQuery, inputRef, onClose, onOpen }: {
-  library: Library; available: boolean; query: string; onQuery: (value: string) => void; inputRef: RefObject<HTMLInputElement | null>;
+export function SearchResults({ library, scope, available, query, onQuery, inputRef, onClose, onOpen }: {
+  library: Library; scope: LibraryScope; available: boolean; query: string; onQuery: (value: string) => void; inputRef: RefObject<HTMLInputElement | null>;
   onClose: () => void; onOpen: (id: string, query: string) => void
 }) {
   const [mode, setMode] = useState<SearchMode>('hybrid')
@@ -42,7 +43,7 @@ export function SearchResults({ library, available, query, onQuery, inputRef, on
     const timer = window.setTimeout(async () => {
       try {
         setStatus('Preparing the local index…')
-        const vectors = await indexClips(matches, controller.signal, (done, total) => setStatus(done < total ? 'Checking index · ' + done + '/' + total : 'Searching locally…'))
+        const vectors = await indexClips(matches, controller.signal, (done, total) => setStatus(done < total ? 'Checking index · ' + done + '/' + total : 'Searching locally…'), scope)
         const [vector] = await embed([query.trim()])
         if (controller.signal.aborted) return
         setRanked({ query, matches, hits: semanticRanking(matches, vectors, vector) })
@@ -52,7 +53,7 @@ export function SearchResults({ library, available, query, onQuery, inputRef, on
       }
     }, 220)
     return () => { clearTimeout(timer); controller.abort() }
-  }, [activeMode, matches, query])
+  }, [activeMode, matches, query, scope])
 
   useEffect(() => { storage.current?.querySelectorAll('.search-result')[selected]?.scrollIntoView({ block: 'nearest' }) }, [selected])
 

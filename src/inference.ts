@@ -3,7 +3,7 @@ import { categoryVersion, decideCategory, linearCategoryScores } from './classif
 import { vectorVersion } from './model-assets'
 import type { Clip } from './model'
 import { chunksOf, semanticRanking } from './retrieval'
-import { readVectors, writeVectors, type VectorRecord } from './storage'
+import { readVectors, writeVectors, type VectorRecord, type LibraryScope } from './storage'
 
 type Answer = { id: number; vectors?: number[][]; error?: string }
 const pending = new Map<number, { resolve: (value: number[][]) => void; reject: (error: Error) => void }>()
@@ -59,8 +59,8 @@ export async function embed(text: string[]) {
   return (await request(text)).map(value => Float32Array.from(value))
 }
 
-export async function indexClips(clips: Clip[], signal: AbortSignal, onProgress: (current: number, total: number) => void) {
-  const saved = new Map((await readVectors()).filter(record => record.version === vectorVersion).map(record => [record.id, record]))
+export async function indexClips(clips: Clip[], signal: AbortSignal, onProgress: (current: number, total: number) => void, scope?: LibraryScope) {
+  const saved = new Map((await readVectors(scope)).filter(record => record.version === vectorVersion).map(record => [record.id, record]))
   const output: VectorRecord[] = []
   for (let offset = 0; offset < clips.length; offset += 16) {
     signal.throwIfAborted()
@@ -81,7 +81,7 @@ export async function indexClips(clips: Clip[], signal: AbortSignal, onProgress:
     const writes = changed.map(({ clip, signature, embedded }) => ({
       expected: clip, record: { id: clip.id, version: vectorVersion, signature, chunks: embedded },
     }))
-    if (writes.length) await writeVectors(writes)
+    if (writes.length) await writeVectors(writes, scope)
     for (const { record } of writes) saved.set(record.id, record)
     output.push(...group.map(({ clip }) => saved.get(clip.id)!))
     onProgress(output.length, clips.length)
@@ -89,8 +89,8 @@ export async function indexClips(clips: Clip[], signal: AbortSignal, onProgress:
   return output
 }
 
-export async function relatedMemories(clip: Clip, others: Clip[], signal: AbortSignal) {
-  const all = await indexClips([clip, ...others], signal, () => undefined)
+export async function relatedMemories(clip: Clip, others: Clip[], signal: AbortSignal, scope?: LibraryScope) {
+  const all = await indexClips([clip, ...others], signal, () => undefined, scope)
   const actual = all[0].chunks.find((_, index) => index === 1) ?? all[0].chunks[0]
   return actual ? semanticRanking(others, all.slice(1), actual.vector).filter(hit => hit.score >= .36).slice(0, 4) : []
 }

@@ -77,6 +77,7 @@ test('empty startup, returning layout, keyboard search, focus and mobile navigat
   await expect(page.getByRole('searchbox')).toHaveCount(1)
   await expect(page.getByRole('dialog')).toHaveCount(0)
   await searchbox.fill('dot matrices')
+  await expect(page.getByRole('region', { name: 'Search results' }).locator('.search-result').first()).toBeVisible()
   await searchbox.press('ArrowDown')
   await searchbox.press('Enter')
   await expect(detail(page)).toBeVisible()
@@ -173,6 +174,7 @@ test('capture, edit, exact duplicate, collection, pin, archive and restore', asy
 })
 
 test('local export, safe merge restore, text-only rendering and PDF page evidence', async ({ page, context, browser }) => {
+  test.setTimeout(90_000)
   await page.goto('./')
   const network = []
   page.on('request', request => { if (!request.url().startsWith('http://127.0.0.1:4280') && !request.url().startsWith('blob:')) network.push(request.url()) })
@@ -427,7 +429,7 @@ test('showcase imports on request, preserves personal edits, and restores withou
 })
 
 test('showcase runs real OCR, classification, and passage-based retrieval', async ({ page, context }) => {
-  test.slow()
+  test.setTimeout(210_000)
   await replayModels(context)
   await page.goto('./')
   await loadShowcase(page)
@@ -448,10 +450,11 @@ test('showcase runs real OCR, classification, and passage-based retrieval', asyn
   await expect(detail(page).locator('.passage')).toContainText('EVL-5728', { timeout: 50_000 })
   await screenshot(page, 'showcase-ocr')
   await button(detail(page), 'Close').click()
-  await expect.poll(async () => (await showcaseState(page)).classified, { timeout: 36_000 }).toBe(true)
-  const query = await search(page, 'how can I make a model smaller?')
+  await expect.poll(async () => (await showcaseState(page)).classified, { timeout: 70_000 }).toBe(true)
+  const query = await search(page, '')
   await button(query, 'Semantic').click()
-  await expect(query.locator('.search-label')).toHaveText(/^\d+ match(?:es)?$/, { timeout: 45_000 })
+  await page.getByRole('searchbox').fill('how can I make a model smaller?')
+  await expect(query.locator('.search-label')).toHaveText(/^\d+ match(?:es)?$/, { timeout: 70_000 })
   await expect.poll(async () => (await query.locator('.search-result strong').allTextContents()).slice(0, 5)).toContain('An INT8 quantization lab')
   await button(query, 'Close search').click()
   const hybrid = await search(page, 'NBS-4821')

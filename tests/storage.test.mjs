@@ -57,3 +57,21 @@ test('does not revive stale derived data after edits or removal', async () => {
   assert.equal((await readLibrary()).clips.length, 0)
   assert.equal((await readVectors()).length, 0)
 })
+
+test('guest and account libraries keep captures, collections, preferences and vectors separate', async () => {
+  const first = 'test-project:account-a', second = 'test-project:account-b'
+  const clip = { id: 'same', title: 'first profile only', body: 'account scoped', kind: 'text', created: 1, modified: 2, hash: 'a' }
+  await transact(library => ({ ...library, clips: [clip], theme: 'dark', collections: [{ id: 'a', name: 'Scoped', color: '#333333' }] }), first)
+  await transact(library => ({ ...library, clips: [{ ...clip, title: 'second profile only', hash: 'b' }] }), second)
+  await transact(library => ({ ...library, clips: [{ ...clip, title: 'guest only', hash: 'guest' }] }))
+  await writeVector({ id: clip.id, version: 'test', signature: 'a', chunks: [{ text: 'first profile only', vector: Float32Array.of(1) }] }, clip, first)
+  assert.equal((await readVectors(first)).length, 1)
+  assert.equal((await readVectors(second)).length, 0)
+  assert.equal((await readVectors()).length, 0)
+  await assert.rejects(transact(() => { throw new DOMException('storage full', 'QuotaExceededError') }, first), { name: 'QuotaExceededError' })
+  assert.equal((await readLibrary(first)).clips[0].title, 'first profile only')
+  assert.equal((await readLibrary(first)).theme, 'dark')
+  assert.equal((await readLibrary(first)).collections[0].name, 'Scoped')
+  assert.equal((await readLibrary(second)).clips[0].title, 'second profile only')
+  assert.equal((await readLibrary()).clips[0].title, 'guest only')
+})
